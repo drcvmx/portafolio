@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 35% 7%;
+    --foreground: 0 0% 100%;
+    --card: 260 35% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 260 35% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 320 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 260 35% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 190 100% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 35% 20%;
+    --input: 260 35% 20%;
+    --ring: 320 100% 65%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 260 35% 7%;
+    --foreground: 0 0% 100%;
+    --card: 260 35% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 260 35% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 320 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 260 35% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 190 100% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 35% 20%;
+    --input: 260 35% 20%;
+    --ring: 320 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glitch {
+  position: relative;
+  color: white;
+  font-weight: bold;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitch::before {
+  color: #ff00ff;
+  z-index: -1;
+}
+
+.glitch::after {
+  color: #00ffff;
+  z-index: -2;
+}
+
+.glitch:hover::before {
+  animation: glitch-animation 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  opacity: 1;
+}
+
+.glitch:hover::after {
+  animation: glitch-animation 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  opacity: 1;
+}
+
+@keyframes glitch-animation {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: #ff00ff;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.1);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 0, 255, 0.2), 0 0 5px rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(255, 0, 255, 0.6);
+}
+
+.terminal-window {
+  border: 1px solid rgba(255, 0, 255, 0.5);
+  background-color: rgba(13, 10, 30, 0.8);
+  border-radius: 4px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.terminal-button-red {
+  background-color: #ff5f56;
+}
+
+.terminal-button-yellow {
+  background-color: #ffbd2e;
+}
+
+.terminal-button-green {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.terminal-content {
+  font-family: var(--font-mono);
+  line-height: 1.5;
+}
+
+.command-prompt::before {
+  content: "$ ";
+  color: #ff00ff;
+}
+
+/* Añadir efecto de neón a los bordes */
+.neon-border {
+  box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 5px #9d4edd, 0 0 10px #9d4edd;
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+
+/* Añadir efecto de gradiente para fondos */
+.cyberpunk-gradient {
+  background: linear-gradient(135deg, rgba(13, 10, 30, 0.8) 0%, rgba(45, 10, 80, 0.8) 100%);
+}
+
+/* Efecto de scanline para un look más retro */
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+/* Asegurar que todos los elementos usen JetBrains Mono */
+.tech-stack-section *,
+.terminal-window *,
+.terminal-content * {
+  font-family: var(--font-mono), monospace !important;
+}
