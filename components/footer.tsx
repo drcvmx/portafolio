@@ -14,12 +14,17 @@ export function Footer() {
             </p>
           </div>
           <div className="flex space-x-4">
-            <Link href="https://github.com/drcvmx" className="text-muted-foreground hover:text-neon-pink transition-colors">
+          <Link
+              href="https://github.com/drcvmx"
+              className="text-muted-foreground hover:text-neon-pink transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Github size={20} />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
-              href={PORTFOLIO_URL}
+              href="mailto:drcv.work.code@gmail.com"
               className="text-muted-foreground hover:text-neon-pink transition-colors"
             >
               <Mail size={20} />

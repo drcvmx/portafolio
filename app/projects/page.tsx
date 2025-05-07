@@ -48,6 +48,14 @@ export default function ProjectsPage() {
       category: "web",
     },
     {
+      id: "luchavsludopatia",
+      title: "luchavsludopatia",
+      description: "A supportive and informative website dedicated to combating gambling addiction, drawing inspiration from government resources to offer information, tools, and resources for prevention and seeking help.",
+      image: "project/ludopatiav1.png",
+      technologies: ["Next.js", "React", "TailwindCSS"],
+      category: "web",
+    },
+    {
       id: "school_system",
       title: "school_system",
       description: "This project develops a school management system to efficiently digitize academic and administrative data, allowing secure and remote access for authorized users.",

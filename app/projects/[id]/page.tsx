@@ -32,6 +32,17 @@ export default function ProjectPage() {
       longDescription:
         "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
     },
+    "luchavsludopatia": {
+      title: "luchavsludopatia",
+      description: "A supportive and informative website dedicated to combating gambling addiction, drawing inspiration from government resources to offer information, tools, and resources for prevention and seeking help.",
+      image: "/project/ludopatiav1.png",
+      technologies: ["Next.js", "React", "TailwindCSS"],
+      category: "web",
+      github: "https://github.com/drcvmx/luchavsludopatia",
+      demo: "https://luchavsludopatia.vercel.app/",
+      longDescription:
+        "This is a supportive and informative web platform, inspired by government resources, with the strong aim of addressing and mitigating the issue of gambling addiction. The project will focus on providing users with clear and accessible information about gambling addiction, its risks and consequences, as well as offering practical tools and resources for prevention, early detection, and seeking professional help.",
+    },
     "school_system": {
       title: "school_system",
       description: "Real-time cryptocurrency tracking dashboard with customizable widgets and alerts.",
