@@ -1,7 +1,5 @@
 import Link from "next/link"
-import { Github, Mail } from "lucide-react"
-
-const PORTFOLIO_URL = "/";
+import { Github } from "lucide-react"
 
 export function Footer() {
   return (
@@ -22,13 +20,6 @@ export function Footer() {
             >
               <Github size={20} />
               <span className="sr-only">GitHub</span>
-            </Link>
-            <Link
-              href="mailto:drcv.work.code@gmail.com"
-              className="text-muted-foreground hover:text-neon-pink transition-colors"
-            >
-              <Mail size={20} />
-              <span className="sr-only">Email</span>
             </Link>
           </div>
         </div>
