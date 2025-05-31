@@ -5,14 +5,12 @@ import { ProjectCard } from "@/components/project-card"
 import { Terminal } from "@/components/terminal"
 
 export default function ProjectsPage() {
-  // Inicializar estados con valores de localStorage si están disponibles
   const [isLoading, setIsLoading] = useState(true)
   const [activeFilter, setActiveFilter] = useState<string>("all")
   const [introComplete, setIntroComplete] = useState(false)
   const [skipAnimation, setSkipAnimation] = useState(false)
 
   useEffect(() => {
-    // Verificar localStorage al montar el componente
     const animationCompleted = localStorage.getItem("projectsAnimationCompleted") === "true"
 
     if (animationCompleted) {
@@ -20,11 +18,9 @@ export default function ProjectsPage() {
       setIntroComplete(true)
     }
 
-    // Indicar que la carga inicial ha terminado
     setIsLoading(false)
   }, [])
 
-  // Guardar el estado de la animación cuando se complete
   const handleIntroComplete = () => {
     setIntroComplete(true)
     localStorage.setItem("projectsAnimationCompleted", "true")
@@ -35,46 +31,53 @@ export default function ProjectsPage() {
       id: "drcv_note",
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-      image: "project/notasv1.png",
-      technologies: ["React", "Next.j", "Supabase"],
+      image: "project/app_note/note1.png",
+      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
       category: "app",
     },
     {
       id: "carpinteria_verdeja",
       title: "carpinteria_verdeja",
       description: "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
-      image: "project/carpinteriav1.png",
-      technologies: ["Next.js", "React", "TailwindCSS"],
+      image: "project/carpinteria/carpinteria1.png",
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
       category: "web",
+    },
+    {
+      id: "crime_control",
+      title: "crime_control",
+      description: "A real-time crime control system that centralizes criminal data, incident tracking, and provides precise offender location within correctional facilities, enabling rapid and strategic police response.",
+      image: "project/crimen/crimen1.png",
+      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
+      category: "app",
     },
     {
       id: "luchavsludopatia",
       title: "luchavsludopatia",
       description: "A supportive and informative website dedicated to combating gambling addiction, drawing inspiration from government resources to offer information, tools, and resources for prevention and seeking help.",
-      image: "project/ludopatiav1.png",
-      technologies: ["Next.js", "React", "TailwindCSS"],
+      image: "project/ludopatia/ludo1.png",
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
       category: "web",
     },
     {
       id: "school_system",
       title: "school_system",
       description: "This project develops a school management system to efficiently digitize academic and administrative data, allowing secure and remote access for authorized users.",
-      image: "project/systemv1.png",
-      technologies: ["React", "Next.j", "Supabase"],
+      image: "project/system/systemv1.png",
+      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
       category: "app",
     },
   ]
 
   const categories = [
     { id: "all", name: "All Projects" },
-    { id: "web", name: "Web Store" },
+    { id: "web", name: "Static Web" },
     { id: "app", name: "Web App"},
   ]
 
   const filteredProjects =
     activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
 
-  // Mostrar un estado de carga mientras se verifica localStorage
   if (isLoading) {
     return <div className="py-12 flex justify-center">Cargando...</div>
   }
@@ -82,7 +85,6 @@ export default function ProjectsPage() {
   return (
     <div className="space-y-8">
       {skipAnimation ? (
-        // Si ya se completó la animación anteriormente, mostrar directamente el terminal con el texto completo
         <div className="terminal-window scanline">
           <div className="terminal-header">
             <div className="terminal-button terminal-button-red"></div>
@@ -98,7 +100,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       ) : (
-        // Si es la primera vez, mostrar la animación
         <Terminal
           text="Displaying projects directory. Select category to filter results."
           typingSpeed={40}

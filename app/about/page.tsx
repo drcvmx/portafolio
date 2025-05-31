@@ -21,17 +21,25 @@ const BIO_TEXT = "Hello, my name is Dante Ricardo Chavez Verdeja, and I am a Com
 
 const EXPERIENCES = [
   {
-    title: "Universidad Autónoma del Estado de México",
-    period: "2021 - Present",
+    title: "Frontend Developer",
+    company: "SVENSON",
+    period: "2024 - 2025",
     description:
-      "My professional training in Computer Engineering, where I have worked on academic and social impact projects for my institution.",
+      "Developed and enhanced the main customer-facing web application using React.js and Next.js (App Router), building robust and interactive interfaces. Optimized frontend code modularity and efficiency with custom hooks, and connected the frontend to a WhatsApp chatbot, significantly improving customer interaction and query management.",
   },
   {
     title: "Project Development",
-    company: "Digital Solutions",
+    company: "Freelance",
     period: "2024 - Present",
     description:
       "Developing web projects and applications to demonstrate my skills using React, Node.js, JavaScript, and CSS.",
+  },
+  {
+    title: "Professional Development",
+    company: "Universidad Autónoma del Estado de México",
+    period: "2021 - Present",
+    description:
+      "My professional training in Computer Engineering, where I have worked on academic and social impact projects for my institution.",
   },
 ];
 
@@ -152,14 +160,23 @@ export default function AboutPage() {
           </>
         )}
 
-        <div className="flex justify-center mt-8">
+<div className="flex justify-center gap-4 mt-8">
           <a
-            href={`/${CV_FILENAME}`}
-            download={CV_FILENAME}
+            href="/placeholder.svg?height=600&width=800&text=CV"
+            download="cv_drcv.pdf"
             className="inline-flex items-center gap-2 bg-neon-pink/10 hover:bg-neon-pink/20 text-neon-pink px-6 py-3 rounded-md transition-colors border border-neon-pink/30 shadow-neon-pink font-mono"
           >
             <FileDown size={18} />
             Download CV
+          </a>
+          <a
+            href="https://drive.google.com/file/d/14LjDT4z-2KxwNcra_zRZso_hBijjJN2o/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-neon-purple/10 hover:bg-neon-purple/20 text-neon-purple px-6 py-3 rounded-md transition-colors border border-neon-purple/30 shadow-neon-purple font-mono"
+          >
+            <ExternalLink size={18} />
+            View Online
           </a>
         </div>
       </section>
@@ -184,6 +201,9 @@ export default function AboutPage() {
                     <div className="mb-2">
                       <p>
                         <span className="text-neon-pink">title:</span> {exp.title}
+                      </p>
+                      <p>
+                        <span className="text-neon-pink">company:</span> {exp.company}
                       </p>
                       <p>
                         <span className="text-neon-pink">period:</span> {exp.period}
@@ -275,7 +295,7 @@ export default function AboutPage() {
                         className="flex items-center gap-2 hover:text-neon-pink transition-colors font-mono"
                       >
                         <ExternalLink size={16} />
-                        DRCV_WORK
+                        DRCV
                       </Link>
                     </div>
                   </div>

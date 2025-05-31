@@ -8,13 +8,11 @@ import { TechStack } from "@/components/tech-stack"
 import { ArrowRight } from "lucide-react"
 
 export default function Home() {
-  // Inicializar estados con valores de localStorage si están disponibles
   const [isLoading, setIsLoading] = useState(true)
   const [introComplete, setIntroComplete] = useState(false)
   const [skipAnimation, setSkipAnimation] = useState(false)
 
   useEffect(() => {
-    // Verificar localStorage al montar el componente
     const animationCompleted = localStorage.getItem("introAnimationCompleted") === "true"
 
     if (animationCompleted) {
@@ -22,11 +20,9 @@ export default function Home() {
       setIntroComplete(true)
     }
 
-    // Indicar que la carga inicial ha terminado
     setIsLoading(false)
   }, [])
 
-  // Guardar el estado de la animación cuando se complete
   const handleIntroComplete = () => {
     setIntroComplete(true)
     localStorage.setItem("introAnimationCompleted", "true")
@@ -37,26 +33,25 @@ export default function Home() {
       id: "drcv_note",
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-      image: "project/notasv1.png",
-      technologies: ["React", "Next.j", "Supabase"],
+      image: "project/app_note/note1.png",
+      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
     },
     {
       id: "carpinteria_verdeja",
       title: "carpinteria_verdeja",
       description: "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
-      image: "project/carpinteriav1.png",
-      technologies: ["Next.js", "React", "TailwindCSS"],
+      image: "project/carpinteria/carpinteria1.png",
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],      
     },
     {
-      id: "school_system",
-      title: "school_systemt",
-      description: "This project develops a school management system to efficiently digitize academic and administrative data, allowing secure and remote access for authorized users.",
-      image: "project/systemv1.png",
-      technologies: ["React", "Next.j", "Supabase"],
+      id: "crime_control",
+      title: "crime_control",
+      description: "A real-time crime control system that centralizes criminal data, incident tracking, and provides precise offender location within correctional facilities, enabling rapid and strategic police response.",
+      image: "project/crimen/crimen1.png",
+      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
     },
   ]
 
-  // Mostrar un estado de carga mientras se verifica localStorage
   if (isLoading) {
     return <div className="py-12 flex justify-center text-neon-pink">Cargando...</div>
   }
@@ -65,7 +60,6 @@ export default function Home() {
     <div className="space-y-16">
       <section className="py-12">
         {skipAnimation ? (
-          // Si ya se completó la animación anteriormente, mostrar directamente el terminal con el texto completo
           <div className="terminal-window scanline max-w-3xl mx-auto">
             <div className="terminal-header">
               <div className="terminal-button terminal-button-red"></div>
@@ -82,7 +76,6 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          // Si es la primera vez, mostrar la animación
           <Terminal
             text="Hello, my name is Dante. I am a Frontend developer passionate about web design and programming"
             typingSpeed={40}
