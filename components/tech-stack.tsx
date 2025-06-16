@@ -1,112 +1,91 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
+import { useState, useEffect } from "react"
 
 interface TechItem {
   name: string
   icon: string
-}
-
-interface TechCategory {
-  name: string
   color: string
-  shadowColor: string
-  items: TechItem[]
 }
 
 export function TechStack() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const categories: TechCategory[] = [
-    {
-      name: "Frontend",
-      color: "text-neon-pink",
-      shadowColor: "shadow-neon-pink",
-      items: [
-        { name: "HTML", icon: "skills/html.png" },
-        { name: "CSS", icon: "skills/css.png" },
-        { name: "React", icon: "skills/react.png" },
-        { name: "Next.js", icon: "skills/nextjs.png" },
-        { name: "TailwindCSS", icon: "skills/tailwild.png" },
-        { name: "JavaScript", icon: "skills/javascript.png" },
-        { name: "TypeScript", icon: "skills/typescript.png" },
-      ],
-    },
-    {
-      name: "Backend",
-      color: "text-neon-purple",
-      shadowColor: "shadow-neon-purple",
-      items: [
-        { name: "MySQL", icon: "skills/sql.png" },
-        { name: "Supabase", icon: "skills/supabase.png" },
-        { name: "Python", icon: "skills/python.png" },
-      ],
-    },
-    {
-      name: "Learning",
-      color: "text-neon-cyan",
-      shadowColor: "shadow-neon-cyan",
-      items: [
-        { name: "Java", icon: "skills/java.png" },
-        { name: "Node.js", icon: "skills/nodejs.png" },
-      ],
-    },
-    {
-      name: "Tools",
-      color: "text-neon-pink",
-      shadowColor: "shadow-neon-pink",
-      items: [
-        { name: "Git", icon: "skills/git.png" },
-        { name: "GitHub", icon:"skills/github.png" },
-        { name: "Oracle", icon: "skills/oracle.png" },
-      ],
-    },
+  const technologies: TechItem[] = [
+    { name: "React", icon: "skills/react.png", color: "text-neon-pink" },
+    { name: "Next.js", icon: "skills/nextjs.png", color: "text-neon-pink" },
+    { name: "Vue", icon: "skills/vue.png", color: "text-neon-cyan" },
+    { name: "TailwindCSS", icon: "skills/tailwild.png", color: "text-neon-pink" },
+    { name: "JavaScript", icon: "skills/javascript.png", color: "text-neon-pink" },
+    { name: "TypeScript", icon: "skills/typescript.png", color: "text-neon-pink" },
+    { name: "SQL", icon: "skills/sql.png", color: "text-neon-purple" },
+    { name: "Supabase", icon: "skills/supabase.png", color: "text-neon-purple" },
+    { name: "Python", icon: "skills/python.png", color: "text-neon-purple" },
+    { name: "Java", icon: "skills/java.png", color: "text-neon-purple" },
+    { name: "Git", icon: "skills/git.png", color: "text-neon-pink" },
+    { name: "GitHub", icon:"skills/github.png", color: "text-neon-pink" },
   ]
 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % technologies.length)
+    }, 2500) // Cambia cada 2.5 segundos
+
+    return () => clearInterval(interval)
+  }, [technologies.length])
+
+  const currentTech = technologies[currentIndex]
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono">
-      {categories.map((category) => (
-        <div
-          key={category.name}
-          className="bg-cyber-dark border border-border/40 rounded-md overflow-hidden card-hover scanline font-mono"
-          onMouseEnter={() => setSelectedCategory(category.name)}
-          onMouseLeave={() => setSelectedCategory(null)}
-        >
-          <div className="p-4 border-b border-border/40 cyberpunk-gradient">
-            <h3
-              className={`text-xl font-bold ${category.color} ${selectedCategory === category.name ? "animate-glow" : ""} font-mono`}
-            >
-              {category.name}
-            </h3>
-          </div>
-          <div className="p-6 font-mono">
-            <div className="grid grid-cols-3 gap-6">
-              {category.items.map((item) => (
-                <div
-                  key={item.name}
-                  className={`flex flex-col items-center justify-center transition-all duration-300 ${
-                    selectedCategory && selectedCategory !== category.name ? "opacity-30" : "opacity-100"
-                  } font-mono`}
-                >
-                  <div
-                    className={`relative w-12 h-12 mb-2 rounded-md overflow-hidden ${
-                      selectedCategory === category.name ? category.shadowColor : ""
-                    }`}
-                  >
-                    <Image src={item.icon || "/placeholder.svg"} alt={item.name} fill className="object-contain" />
-                  </div>
-                  <span
-                    className={`text-xs text-center ${selectedCategory === category.name ? category.color : ""} font-mono`}
-                  >
-                    {item.name}
-                  </span>
-                </div>
-              ))}
+    <div className="flex justify-center">
+      <div className="bg-cyber-dark/80 border border-neon-pink/30 rounded-lg p-8 max-w-xs w-full text-center backdrop-blur-sm relative overflow-hidden">
+        {/* Efecto de brillo de fondo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/5 via-transparent to-neon-purple/5"></div>
+
+        {/* Contenido principal */}
+        <div className="relative z-10">
+          {/* Logo de la tecnología */}
+          <div className="mb-6 flex justify-center">
+            <div className="w-16 h-16 rounded-full bg-cyber-light/20 flex items-center justify-center border border-neon-pink/20 shadow-lg">
+              <img
+                src={currentTech.icon || "/placeholder.svg"}
+                alt={currentTech.name}
+                className="w-10 h-10 object-contain transition-all duration-500"
+              />
             </div>
           </div>
+
+          {/* Nombre de la tecnología */}
+          <div className={`text-2xl font-bold font-mono ${currentTech.color} transition-all duration-500 mb-6`}>
+            {currentTech.name}
+          </div>
+
+          {/* Indicador de progreso */}
+          <div className="flex justify-center space-x-1 mb-4">
+            {technologies.map((_, index) => (
+              <div
+                key={index}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-neon-pink w-6"
+                    : index < currentIndex
+                      ? "bg-neon-pink/40 w-2"
+                      : "bg-muted-foreground/20 w-2"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Contador */}
+          <div className="text-xs text-muted-foreground font-mono">
+            {String(currentIndex + 1).padStart(2, "0")} / {String(technologies.length).padStart(2, "0")}
+          </div>
         </div>
-      ))}
+
+        {/* Efecto de scanline */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-pink/5 to-transparent animate-pulse pointer-events-none"></div>
+      </div>
     </div>
   )
 }

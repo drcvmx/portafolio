@@ -10,10 +10,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { TechStack } from "@/components/tech-stack";
 import { useToast } from "@/components/ui/use-toast";
+import Image from "next/image";
 
 const EMAIL_ADDRESS = "drcv.work.code@gmail.com";
 const CV_FILENAME = "cv_drcv.pdf";
 const GITHUB_URL = "https://github.com/drcvmx";
+const LinkedIn = "https://www.linkedin.com/in/dante-ricardo-chavez-verdeja-501388361/"
 const PORTFOLIO_URL = "/";
 
 const INTRO_TEXT = "Initializing personal profile... Access granted. Loading bio data...";
@@ -21,22 +23,22 @@ const BIO_TEXT = "Hello, my name is Dante Ricardo Chavez Verdeja, and I am a Com
 
 const EXPERIENCES = [
   {
-    title: "Frontend Developer",
-    company: "SVENSON",
+    title: "SVENSON",
+    company: "Frontend Developer",
     period: "2024 - 2025",
     description:
       "Developed and enhanced the main customer-facing web application using React.js and Next.js (App Router), building robust and interactive interfaces. Optimized frontend code modularity and efficiency with custom hooks, and connected the frontend to a WhatsApp chatbot, significantly improving customer interaction and query management.",
   },
   {
-    title: "Project Development",
-    company: "Freelance",
-    period: "2024 - Present",
+    title: "Freelance",
+    company: "Project Development",
+    period: "2023 - Present",
     description:
       "Developing web projects and applications to demonstrate my skills using React, Node.js, JavaScript, and CSS.",
   },
   {
-    title: "Professional Development",
-    company: "Universidad Autónoma del Estado de México",
+    title: "Universidad Autónoma del Estado de México",
+    company: "Professional Development",
     period: "2021 - Present",
     description:
       "My professional training in Computer Engineering, where I have worked on academic and social impact projects for my institution.",
@@ -88,27 +90,15 @@ export default function AboutPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-      variant: "default",
-      duration: 3000,
-    });
-    setMessage("");
-    setName("");
-    setUserEmail("");
-  };
 
   if (isLoading) {
-    return <div className="py-12 flex justify-center">Cargando...</div>;
+    return <div className="py-12 flex justify-center">Loading...</div>;
   }
 
   return (
     <div className="space-y-16">
       <section>
-        {skipAnimation ? (
+        {(skipAnimation || bioComplete) ? (
           <>
             <div className="terminal-window scanline max-w-3xl mx-auto">
               <div className="terminal-header">
@@ -144,7 +134,7 @@ export default function AboutPage() {
               typingSpeed={30}
               className="max-w-3xl mx-auto"
               onComplete={() => setIntroComplete(true)}
-              skipAnimation={false}
+              skipAnimation={skipAnimation || introComplete}
             />
 
             {introComplete && (
@@ -154,15 +144,49 @@ export default function AboutPage() {
                 className="max-w-3xl mx-auto mt-4"
                 showPrompt={false}
                 onComplete={handleBioComplete}
-                skipAnimation={false}
+                skipAnimation={skipAnimation || bioComplete}
               />
             )}
           </>
         )}
+        {/*
+        <div className="flex justify-center mt-12 animate-fade-in delay-200">
+          <div className="relative">
+            <div className="w-48 h-48 rounded-lg overflow-hidden border-2 border-neon-pink/30 shadow-neon-pink bg-cyber-dark/50 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/10 via-transparent to-neon-purple/10"></div>
+              <div className="relative w-full h-full flex items-center justify-center">
+                <Image
+                  src="/perfil2.webp"
+                  alt="Profile picture"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-2 text-xs text-muted-foreground font-mono bg-cyber-dark/70 px-2 py-1 rounded z-10"></div>
+              </div>
+              Efecto de scanline para la foto 
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-pink/5 to-transparent animate-pulse"></div>
+            </div>
 
-<div className="flex justify-center gap-4 mt-8">
+           
+            <div className="absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-neon-pink/50"></div>
+            <div className="absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-neon-pink/50"></div>
+            <div className="absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-neon-pink/50"></div>
+            <div className="absolute -bottom-2 -right-2 w-4 h-4 border-r-2 border-b-2 border-neon-pink/50"></div>
+
+           
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+              <div className="bg-cyber-dark border border-neon-pink/30 px-3 py-1 rounded text-xs font-mono text-neon-pink">
+                <span className="text-neon-pink">$</span> whoami
+              </div>
+            </div>
+          </div>
+        </div>
+        */}
+
+
+        <div className="flex justify-center gap-4 mt-12">
           <a
-            href="/placeholder.svg?height=600&width=800&text=CV"
+            href="/cv_drcv.pdf"
             download="cv_drcv.pdf"
             className="inline-flex items-center gap-2 bg-neon-pink/10 hover:bg-neon-pink/20 text-neon-pink px-6 py-3 rounded-md transition-colors border border-neon-pink/30 shadow-neon-pink font-mono"
           >
@@ -183,15 +207,15 @@ export default function AboutPage() {
 
       {bioComplete && (
         <>
-          <section>
+          <section className="section-reveal delay-200">
             <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">Experience Timeline</h2>
             <div className="space-y-6">
               {EXPERIENCES.map((exp, index) => (
-                <div key={index} className="terminal-window scanline">
+                <div key={index} className={`terminal-window scanline animate-fade-in-up delay-${300 + index * 200}`}>
                   <div className="terminal-header">
-                    <div className="terminal-button terminal-button-red" />
-                    <div className="terminal-button terminal-button-yellow" />
-                    <div className="terminal-button terminal-button-green" />
+                    <div className="terminal-button terminal-button-red"></div>
+                    <div className="terminal-button terminal-button-yellow"></div>
+                    <div className="terminal-button terminal-button-green"></div>
                     <div className="terminal-title">{exp.company || exp.title}.sh</div>
                   </div>
                   <div className="terminal-content">
@@ -201,9 +225,6 @@ export default function AboutPage() {
                     <div className="mb-2">
                       <p>
                         <span className="text-neon-pink">title:</span> {exp.title}
-                      </p>
-                      <p>
-                        <span className="text-neon-pink">company:</span> {exp.company}
                       </p>
                       <p>
                         <span className="text-neon-pink">period:</span> {exp.period}
@@ -220,19 +241,6 @@ export default function AboutPage() {
 
           <section className="tech-stack-section">
             <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">Tech Stack</h2>
-            <div className="terminal-window mb-6 scanline">
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red" />
-                <div className="terminal-button terminal-button-yellow" />
-                <div className="terminal-button terminal-button-green" />
-                <div className="terminal-title">tech_stack.sh</div>
-              </div>
-              <div className="terminal-content">
-                <p className="mb-4">
-                  <span className="text-neon-pink">$</span> cat /proc/technologies
-                </p>
-              </div>
-            </div>
             <TechStack />
           </section>
 
@@ -278,7 +286,7 @@ export default function AboutPage() {
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <p className="mb-1 text-neon-pink">github0:</p>
+                      <p className="mb-1 text-neon-pink">github:</p>
                       <Link
                         href={GITHUB_URL}
                         className="flex items-center gap-2 hover:text-neon-pink transition-colors font-mono"
@@ -287,15 +295,24 @@ export default function AboutPage() {
                         <Github size={16} />
                         github.com/drcvmx
                       </Link>
+                      <p className="mb-1 text-neon-pink">Linkedin:</p>
+                      <Link
+                        href={LinkedIn}
+                        className="flex items-center gap-2 hover:text-neon-pink transition-colors font-mono"
+                        target="_blank"
+                      >
+                        <Linkedin size={16}  />
+                        Linkedin.com/drcvmx
+                      </Link>
                     </div>
                     <div>
-                      <p className="mb-1 text-neon-pink">portfolio0:</p>
+                      <p className="mb-1 text-neon-pink">Portfolio:</p>
                       <Link
-                        href={PORTFOLIO_URL}
+                        href= "https://portafolio-drcv07.vercel.app/"
                         className="flex items-center gap-2 hover:text-neon-pink transition-colors font-mono"
                       >
                         <ExternalLink size={16} />
-                        DRCV
+                        https://portafolio-drcv07
                       </Link>
                     </div>
                   </div>

@@ -28,6 +28,14 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      id: "seprytec",
+      title: "seprytec",
+      description: "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
+      image: "project/seprytec/seprytec1.png",
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
+      category: "web",
+    },
+    {
       id: "drcv_note",
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
@@ -79,12 +87,12 @@ export default function ProjectsPage() {
     activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
 
   if (isLoading) {
-    return <div className="py-12 flex justify-center">Cargando...</div>
+    return <div className="py-12 flex justify-center">Loading...</div>
   }
 
   return (
     <div className="space-y-8">
-      {skipAnimation ? (
+      {(skipAnimation || introComplete) ? (
         <div className="terminal-window scanline">
           <div className="terminal-header">
             <div className="terminal-button terminal-button-red"></div>
@@ -105,18 +113,18 @@ export default function ProjectsPage() {
           typingSpeed={40}
           className="w-full"
           onComplete={handleIntroComplete}
-          skipAnimation={false}
+          skipAnimation={skipAnimation}
         />
       )}
 
-      {introComplete && (
+{introComplete && (
         <>
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
+          <div className="flex flex-wrap gap-2 animate-fade-in delay-100">
+            {categories.map((category, index) => (
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                className={`px-3 py-1 text-sm rounded-md transition-colors animate-fade-in-up delay-${200 + index * 50} ${
                   activeFilter === category.id
                     ? "bg-primary text-primary-foreground"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -126,7 +134,7 @@ export default function ProjectsPage() {
               </button>
             ))}
           </div>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <ProjectCard

@@ -257,3 +257,101 @@
 .terminal-content * {
   font-family: var(--font-mono), monospace !important;
 }
+
+/* Animaciones para despliegue gradual de contenido */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clases para animaciones escalonadas */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in {
+  animation: slideInFromBottom 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delays escalonados para crear efecto de cascada */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Transición suave para elementos que aparecen */
+.content-reveal {
+  transition: all 0.3s ease-out;
+}
+
+/* Animación específica para cards de proyectos */
+.project-card-reveal {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animación para secciones completas */
+.section-reveal {
+  animation: slideInFromBottom 0.8s ease-out forwards;
+  opacity: 0;
+}

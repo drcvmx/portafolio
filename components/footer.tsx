@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -20,6 +20,15 @@ export function Footer() {
             >
               <Github size={20} />
               <span className="sr-only">GitHub</span>
+            </Link>
+            <Link 
+              href="https://www.linkedin.com/in/dante-ricardo-chavez-verdeja-501388361/" 
+              className="text-muted-foreground hover:text-neon-cyan transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={20} />
+              <span className="sr-only">LinkedIn</span>
             </Link>
           </div>
         </div>

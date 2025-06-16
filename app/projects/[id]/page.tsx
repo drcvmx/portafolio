@@ -25,6 +25,17 @@ export default function ProjectPage() {
       longDescription:
         "This project offers a notes application designed to be your perfect ally in organizing information. With a simple and intuitive interface, you can quickly capture those fleeting ideas or develop extensive and well-structured notes. The goal is to provide you with a digital space where managing your notes feels natural and efficient.",
     },
+    "seprytec": {
+      title: "Seprytec",
+      description: "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
+      images: ["/project/seprytec/seprytec1.png", "/project/seprytec/seprytec2.png", "/project/seprytec/seprytec3.png"],
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
+      category: "web",
+      github: "https://github.com/drcvmx/seprytec_remaster",
+      demo: "https://seprytec-remaster.vercel.app/",            
+      longDescription:
+        "Built with React and Next.js, this interactive web platform is designed for visual appeal and ease of use, providing intuitive navigation and dynamic sections with interactive buttons that seamlessly guide users through the private security company's services and information.",
+    },
     "carpinteria_verdeja": {
       title: "carpinteria_verdeja",
       description: "Design focused on the experience.",
@@ -80,54 +91,76 @@ export default function ProjectPage() {
   const projectImages = project.images && project.images.length > 0 ? project.images : ["/placeholder.svg"]
 
   // Avanza a la siguiente imagen con efecto de transición
-  const nextImage = () => {
-    if (isTransitioning) return;
+   // CAMBIO 1: Función para avanzar a la siguiente imagen con tiempos reducidos
+   const nextImage = () => {
+    if (isTransitioning) return
 
-    setIsTransitioning(true);
+    setIsTransitioning(true)
+    // ANTES: 300ms - AHORA: 200ms (más rápido)
     setTimeout(() => {
-      setActiveImage((prev) => (prev + 1) % projectImages.length);
-      setTimeout(() => setIsTransitioning(false), 100);
-    }, 300);
-  };
+      setActiveImage((prev) => (prev + 1) % projectImages.length)
+      // ANTES: 100ms - AHORA: 50ms (más rápido)
+      setTimeout(() => {
+        setIsTransitioning(false)
+      }, 50)
+    }, 200)
+  }
 
-  // Navegación manual con pausa temporal del autoplay
-  const handleManualNavigation = (index: number) => {
-    if (index === activeImage || isTransitioning) return;
+  // CAMBIO 2: Función para ir a una imagen específica con tiempos reducidos
+  const goToImage = (index: number) => {
+    if (index === activeImage || isTransitioning) return
 
-    setIsTransitioning(true);
+    setIsTransitioning(true)
+    // ANTES: 300ms - AHORA: 200ms (más rápido)
     setTimeout(() => {
-      setActiveImage(index);
-      setTimeout(() => setIsTransitioning(false), 100);
-    }, 300);
+      setActiveImage(index)
+      // ANTES: 100ms - AHORA: 50ms (más rápido)
+      setTimeout(() => {
+        setIsTransitioning(false)
+      }, 50)
+    }, 200)
+  }
 
-    // Pausa el autoplay por 10 segundos después de una interacción manual
-    if (isAutoPlaying) {
-      setIsAutoPlaying(false);
-      setTimeout(() => setIsAutoPlaying(true), 10000);
-    }
-  };
-
-  // Alternar autoplay
+  // Función para alternar el autoplay
   const toggleAutoPlay = () => {
-    setIsAutoPlaying(!isAutoPlaying);
-  };
+    setIsAutoPlaying(!isAutoPlaying)
+  }
 
+  // Efecto para manejar el autoplay
   useEffect(() => {
     if (isAutoPlaying && projectImages.length > 1) {
-      intervalRef.current = setInterval(nextImage, 5000); // Cambia cada 5 segundos
-    } else if (intervalRef.current) {
-      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(() => {
+        nextImage()
+      }, 5000)
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
     }
 
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [isAutoPlaying, projectImages.length, isTransitioning]);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [isAutoPlaying, projectImages.length, isTransitioning])
+
+  // Pausar autoplay cuando el usuario interactúa manualmente
+  const handleManualNavigation = (index: number) => {
+    goToImage(index)
+    if (isAutoPlaying) {
+      setIsAutoPlaying(false)
+      setTimeout(() => {
+        setIsAutoPlaying(true)
+      }, 10000)
+    }
+  }
 
   return (
     <div className="space-y-8">
       <Link href="/projects" className="inline-flex items-center gap-2 text-primary hover:underline">
-        <ArrowLeft size={16} /> Volver a proyectos
+        <ArrowLeft size={16} /> Back to projects
       </Link>
 
       <div className="terminal-window">
@@ -160,6 +193,7 @@ export default function ProjectPage() {
         </div>
       </div>
 
+      {/* Galería de imágenes */}
       <div className="space-y-4">
         <div className="terminal-window p-0 overflow-hidden">
           <div className="terminal-header">
@@ -167,13 +201,13 @@ export default function ProjectPage() {
             <div className="terminal-button terminal-button-yellow"></div>
             <div className="terminal-button terminal-button-green"></div>
             <div className="terminal-title">project_screenshots.sh</div>
-            {/* Botón de autoplay */}
+            {/* Control de autoplay */}
             {projectImages.length > 1 && (
               <div className="ml-auto mr-2">
                 <button
                   onClick={toggleAutoPlay}
                   className="text-neon-pink hover:text-neon-purple transition-colors"
-                  title={isAutoPlaying ? "Pausar" : "Reproducir"}
+                  title={isAutoPlaying ? "Pause slideshow" : "Play slideshow"}
                 >
                   {isAutoPlaying ? <Pause size={16} /> : <Play size={16} />}
                 </button>
@@ -181,15 +215,28 @@ export default function ProjectPage() {
             )}
           </div>
           <div className="relative aspect-video w-full bg-[rgba(13,10,30,0.8)] overflow-hidden">
-            {/* Contenedor con efecto de transición */}
-            <div className={`page-flip-container ${isTransitioning ? "flipping" : ""}`}>
+            {/* CAMBIO 3: Reemplazo completo del contenedor de imagen */}
+            {/* ANTES: Efecto 3D complejo con rotación y múltiples efectos */}
+            {/* 
+            <div className="page-flip-container flipping">
+              <div className="page-flip-content">
+                <Image ... />
+              </div>
+            </div>
+            */}
+
+            {/* AHORA: Contenedor simple con fade y escala */}
+            <div className="image-container">
               <Image
                 src={projectImages[activeImage] || "/placeholder.svg"}
                 alt={`${project.title} screenshot ${activeImage + 1}`}
                 fill
-                className="object-contain"
+                className={`object-contain transition-all duration-300 ease-out ${
+                  isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
+                }`}
               />
             </div>
+
             {/* Contador de imágenes */}
             {projectImages.length > 1 && (
               <div className="absolute top-4 right-4 bg-cyber-dark/80 px-3 py-1 rounded-md text-sm text-neon-pink z-10">
@@ -199,7 +246,7 @@ export default function ProjectPage() {
           </div>
         </div>
 
-        {/* Miniaturas */}
+        {/* CAMBIO 4: Miniaturas con efectos más sutiles */}
         {projectImages.length > 1 && (
           <div className="flex justify-center gap-2 mt-2">
             {projectImages.map((img, index) => (
@@ -207,16 +254,30 @@ export default function ProjectPage() {
                 key={index}
                 onClick={() => handleManualNavigation(index)}
                 disabled={isTransitioning}
-                className={`w-16 h-12 relative rounded-md overflow-hidden border-2 transition-all ${
-                  activeImage === index
-                    ? "border-neon-pink shadow-neon-pink"
-                    : "border-transparent opacity-70 hover:opacity-100 hover:border-neon-pink/50"
-                } ${isTransitioning ? "pointer-events-none opacity-50" : ""}`}
+                className={`w-16 h-12 relative rounded-md overflow-hidden border-2 
+                  /* ANTES: Sin duración específica */
+                  /* AHORA: Con duración específica */
+                  transition-all duration-200 ${
+                    activeImage === index
+                      ? "border-neon-pink shadow-neon-pink scale-105" // AÑADIDO: scale-105
+                      : "border-transparent opacity-70 hover:opacity-100 hover:border-neon-pink/50 hover:scale-102" // AÑADIDO: hover:scale-102
+                  } ${isTransitioning ? "pointer-events-none opacity-50" : ""}`}
               >
-                <Image src={img} alt={`Thumbnail ${index + 1}`} fill className="object-cover" />
+                <Image src={img || "/placeholder.svg"} alt={`Thumbnail ${index + 1}`} fill className="object-cover" />
+                {/* CAMBIO 5: Indicador de imagen activa más sutil */}
                 {activeImage === index && (
-                  <div className="absolute inset-0 bg-neon-pink/20 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-neon-pink rounded-full"></div>
+                  <div
+                    className="absolute inset-0 
+                    /* ANTES: bg-neon-pink/20 */
+                    /* AHORA: bg-neon-pink/10 (menos opaco) */
+                    bg-neon-pink/10 flex items-center justify-center"
+                  >
+                    <div
+                      className="
+                      /* ANTES: w-2 h-2 */
+                      /* AHORA: w-1.5 h-1.5 opacity-80 (más pequeño y menos opaco) */
+                      w-1.5 h-1.5 bg-neon-pink rounded-full opacity-80"
+                    ></div>
                   </div>
                 )}
               </button>
@@ -245,46 +306,15 @@ export default function ProjectPage() {
       </div>
 
       <div className="prose prose-invert max-w-none">
-        <h2 className="text-2xl font-bold mb-4">Project Summary</h2>
+        <h2 className="text-2xl font-bold mb-4 text-neon-pink">Project Overview</h2>
         <p className="text-muted-foreground">{project.longDescription}</p>
       </div>
-
-      {/* Sección de estilos */}
+   
       <style jsx>{`
-        .page-flip-container {
+        .image-container {
           width: 100%;
           height: 100%;
           position: relative;
-          transform-style: preserve-3d;
-          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .page-flip-container.flipping {
-          transform: rotateY(-180deg);
-        }
-
-        .page-flip-container::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(255, 0, 255, 0.1) 45%,
-            rgba(255, 0, 255, 0.3) 50%,
-            rgba(255, 0, 255, 0.1) 55%,
-            transparent 100%
-          );
-          transform: translateX(-100%);
-          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 2;
-        }
-
-        .page-flip-container.flipping::before {
-          transform: translateX(100%);
         }
       `}</style>
     </div>

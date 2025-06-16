@@ -30,11 +30,11 @@ export default function Home() {
 
   const featuredProjects = [
     {
-      id: "drcv_note",
-      title: "drcv_note",
-      description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-      image: "project/app_note/note1.png",
-      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
+      id: "seprytec",
+      title: "seprytec",
+      description: "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
+      image: "project/seprytec/seprytec1.png",
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
     },
     {
       id: "carpinteria_verdeja",
@@ -53,13 +53,13 @@ export default function Home() {
   ]
 
   if (isLoading) {
-    return <div className="py-12 flex justify-center text-neon-pink">Cargando...</div>
+    return <div className="py-12 flex justify-center text-neon-pink">Loading...</div>
   }
 
   return (
     <div className="space-y-16">
       <section className="py-12">
-        {skipAnimation ? (
+        {(skipAnimation || introComplete) ? (
           <div className="terminal-window scanline max-w-3xl mx-auto">
             <div className="terminal-header">
               <div className="terminal-button terminal-button-red"></div>
@@ -81,7 +81,7 @@ export default function Home() {
             typingSpeed={40}
             className="max-w-3xl mx-auto"
             onComplete={handleIntroComplete}
-            skipAnimation={false}
+            skipAnimation={skipAnimation}
           />
         )}
 
@@ -111,27 +111,16 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.id} {...project} />
-              ))}
-            </div>
+                {featuredProjects.map((project, index) => (
+                  <div key={project.id} className={`project-card-reveal delay-${400 + index * 100}`}>
+                    <ProjectCard {...project} />
+                  </div>
+                ))}
+              </div>
           </section>
 
           <section className="tech-stack-section">
             <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">Tech Stack</h2>
-            <div className="terminal-window mb-6">
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
-                <div className="terminal-title">tech_stack.sh</div>
-              </div>
-              <div className="terminal-content">
-                <p className="mb-4">
-                  <span className="text-neon-pink">$</span> cat /proc/technologies
-                </p>
-              </div>
-            </div>
             <TechStack />
           </section>
         </>
