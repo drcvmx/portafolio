@@ -39,7 +39,7 @@ export default function ProjectsPage() {
       id: "drcv_note",
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-      image: "project/app_note/note1.png",
+      image: "project/app_note/note4.png",
       technologies: ["React", "Next.js", "JavaScript", "Supabase"],
       category: "app",
     },
@@ -66,6 +66,14 @@ export default function ProjectsPage() {
       image: "project/ludopatia/ludo1.png",
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
       category: "web",
+    },
+    {
+      id: "youtube_transcribe",
+      title: "youtube_transcribe",
+      description: "A web application that extracts and analyzes the content of YouTube videos (via their transcripts) using a Python backend and natural language processing capabilities",
+      image: "project/youtube_transcribe/transcribe1.png",
+      technologies: ["React", "Next.js", "JavaScript", "Python", "Flask"],
+      category: "app",
     },
     {
       id: "school_system",

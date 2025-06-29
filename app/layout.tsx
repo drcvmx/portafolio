@@ -13,9 +13,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "drcv-Portfolio",
-  description: "A neo-brutalist cyberpunk portfolio",
-    generator: 'v0.dev'
+  title: "drcv_portfolio",
+  description: "drcv_portfolio",
 }
 
 export default function RootLayout({

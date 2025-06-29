@@ -23,14 +23,14 @@ const BIO_TEXT = "Hello, my name is Dante Ricardo Chavez Verdeja, and I am a Com
 
 const EXPERIENCES = [
   {
-    title: "SVENSON",
+    title: "Svenson",
     company: "Frontend Developer",
     period: "2024 - 2025",
     description:
       "Developed and enhanced the main customer-facing web application using React.js and Next.js (App Router), building robust and interactive interfaces. Optimized frontend code modularity and efficiency with custom hooks, and connected the frontend to a WhatsApp chatbot, significantly improving customer interaction and query management.",
   },
   {
-    title: "Freelance",
+    title: "Web Development",
     company: "Project Development",
     period: "2023 - Present",
     description:
@@ -194,7 +194,7 @@ export default function AboutPage() {
             Download CV
           </a>
           <a
-            href="https://drive.google.com/file/d/14LjDT4z-2KxwNcra_zRZso_hBijjJN2o/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Xlg7lumtqVL73Y57Ry7--NsjY-Aesls3/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-neon-purple/10 hover:bg-neon-purple/20 text-neon-purple px-6 py-3 rounded-md transition-colors border border-neon-purple/30 shadow-neon-purple font-mono"

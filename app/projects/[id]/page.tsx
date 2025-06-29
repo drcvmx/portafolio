@@ -17,7 +17,7 @@ export default function ProjectPage() {
     "drcv_note": {
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-      images: ["/project/app_note/note1.png", "/project/app_note/note2.png", "/project/app_note/note3.png"],
+      images: [ "/project/app_note/note4.png", "/project/app_note/note1.png", "/project/app_note/note2.png", "/project/app_note/note3.png"],
       technologies: ["React", "Next.js", "JavaScript","TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/drcv_note",
@@ -50,7 +50,7 @@ export default function ProjectPage() {
     "crime_control": {
       title: "crime_control",
       description: "An advanced crime control system that centralizes the management and analysis of criminal data in real-time. It not only tracks incidents but also provides the exact location of offenders within cells and prisons, facilitating a faster and more strategic police response.",
-      images: ["/project/crimen/crimen1.png", "/project/crimen/crimen2.png", "/project/crimen/crimen3.png"],
+      images: ["/project/crimen/crimen4.png", "/project/crimen/crimen1.png", "/project/crimen/crimen2.png", "/project/crimen/crimen3.png"],
       technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/control_delincuencia_supabase",
@@ -69,11 +69,22 @@ export default function ProjectPage() {
       longDescription:
         "This is a supportive and informative web platform, inspired by government resources, with the strong aim of addressing and mitigating the issue of gambling addiction. The project will focus on providing users with clear and accessible information about gambling addiction, its risks and consequences, as well as offering practical tools and resources for prevention, early detection, and seeking professional help.",
     },
+    "youtube_transcribe": {
+      title: "youtube_transcribe",
+      description: "A web application that extracts and analyzes the content of YouTube videos (via their transcripts) using a Python backend and natural language processing capabilities",
+      images: ["/project/youtube_transcribe/transcribe1.png"],
+      technologies: ["Next.js", "React","Python", "Flask", "LLMs", "TailwindCSS", "JavaScript", "HTML", "CSS"],
+      category: "app",
+      github: "https://github.com/drcvmx/youtube-link-interface",
+      demo: "https://github.com/drcvmx/youtube-link-interface",
+      longDescription:
+        "This web application is designed to automate the process of analyzing YouTube video content. It operates in two main stages: first, a backend developed in Python uses the YouTube transcripts API to obtain the subtitles or transcripts of a video given a YouTube link. Subsequently, these transcripts are sent to a Next.js backend, where an Ollama language model processes and summarizes the text."  
+    },
     "school_system": {
       title: "school_system",
       description: "Real-time cryptocurrency tracking dashboard with customizable widgets and alerts.",
       images: ["/project/system/systemv1.png", "/project/system/systemv2.png"],
-      technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
+      technologies: ["React", "Next.js","JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/school_system",
       demo: "https://github.com/drcvmx/school_system",

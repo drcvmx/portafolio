@@ -44,10 +44,10 @@ export default function Home() {
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],      
     },
     {
-      id: "crime_control",
-      title: "crime_control",
-      description: "A real-time crime control system that centralizes criminal data, incident tracking, and provides precise offender location within correctional facilities, enabling rapid and strategic police response.",
-      image: "project/crimen/crimen1.png",
+      id: "drcv_note",
+      title: "drcv_note",
+      description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
+      image: "project/app_note/note4.png",
       technologies: ["React", "Next.js", "JavaScript", "Supabase"],
     },
   ]
