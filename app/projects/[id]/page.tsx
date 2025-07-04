@@ -14,6 +14,17 @@ export default function ProjectPage() {
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const projects = {
+    "drcv_company": {
+      title: "drcv_company",
+      description: "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
+      images: [ "/project/drcv_company/company1.png", "/project/drcv_company/company2.png", "/project/drcv_company/company3.png"],
+      technologies: ["Astro", "Vue.js", "Tailwind CSS", "SCSS", "Pinia", "TypeScript"],
+      category: "web",
+      github: "https://github.com/drcvmx/drcv_company",
+      demo: "https://drcv-company.vercel.app/",
+      longDescription:
+        "This project develops a comprehensive corporate website, optimized for efficiency and user experience. It leverages Astro for superior performance, Vue.js for interactivity, Tailwind CSS and SCSS for agile design, and Pinia for scalable data management, all built with TypeScript for enhanced robustness. The primary goal is to provide businesses with a solid, attractive, and functional digital platform that enables them to effectively connect with their audience and stand out in the market.",
+    },
     "drcv_note": {
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
@@ -237,58 +248,79 @@ export default function ProjectPage() {
             */}
 
             {/* AHORA: Contenedor simple con fade y escala */}
-            <div className="image-container">
+            <div className="relative aspect-video w-full bg-cyber-darker overflow-hidden border border-neon-pink/30">
               <Image
                 src={projectImages[activeImage] || "/placeholder.svg"}
                 alt={`${project.title} screenshot ${activeImage + 1}`}
                 fill
-                className={`object-contain transition-all duration-300 ease-out ${
+                className={`object-cover transition-all duration-300 ease-out filter brightness-95 contrast-110 saturate-110 ${
                   isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
                 }`}
               />
+
+              {/* Overlay gradient estandarizado */}
+              <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark/60 via-transparent to-cyber-dark/20"></div>
+
+              {/* Scanline effect sutil */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-pink/3 to-transparent"></div>
+
+              {/* Corner decorations */}
+              <div className="absolute top-3 left-3 w-4 h-4 border-l-2 border-t-2 border-neon-pink/70"></div>
+              <div className="absolute top-3 right-3 w-4 h-4 border-r-2 border-t-2 border-neon-pink/70"></div>
+              <div className="absolute bottom-3 left-3 w-4 h-4 border-l-2 border-b-2 border-neon-pink/70"></div>
+              <div className="absolute bottom-3 right-3 w-4 h-4 border-r-2 border-b-2 border-neon-pink/70"></div>
+
+              {/* Contador de imágenes */}
+              {projectImages.length > 1 && (
+                <div className="absolute top-4 right-4 bg-cyber-dark/90 backdrop-blur-sm px-3 py-1 rounded-md text-sm text-neon-pink font-mono border border-neon-pink/30 z-10">
+                  {activeImage + 1} / {projectImages.length}
+                </div>
+              )}
             </div>
 
             {/* Contador de imágenes */}
-            {projectImages.length > 1 && (
+            {/*projectImages.length > 1 && (
               <div className="absolute top-4 right-4 bg-cyber-dark/80 px-3 py-1 rounded-md text-sm text-neon-pink z-10">
                 {activeImage + 1} / {projectImages.length}
               </div>
-            )}
+            )*/}
           </div>
         </div>
 
         {/* CAMBIO 4: Miniaturas con efectos más sutiles */}
         {projectImages.length > 1 && (
-          <div className="flex justify-center gap-2 mt-2">
+          <div className="flex justify-center gap-3 mt-4">
             {projectImages.map((img, index) => (
               <button
                 key={index}
                 onClick={() => handleManualNavigation(index)}
                 disabled={isTransitioning}
-                className={`w-16 h-12 relative rounded-md overflow-hidden border-2 
-                  /* ANTES: Sin duración específica */
-                  /* AHORA: Con duración específica */
-                  transition-all duration-200 ${
-                    activeImage === index
-                      ? "border-neon-pink shadow-neon-pink scale-105" // AÑADIDO: scale-105
-                      : "border-transparent opacity-70 hover:opacity-100 hover:border-neon-pink/50 hover:scale-102" // AÑADIDO: hover:scale-102
-                  } ${isTransitioning ? "pointer-events-none opacity-50" : ""}`}
+                className={`relative w-20 h-12 rounded-md overflow-hidden border-2 transition-all duration-200 ${
+                  activeImage === index
+                    ? "border-neon-pink shadow-neon-pink scale-105"
+                    : "border-neon-pink/30 opacity-70 hover:opacity-100 hover:border-neon-pink/60 hover:scale-102"
+                } ${isTransitioning ? "pointer-events-none opacity-50" : ""}`}
               >
-                <Image src={img || "/placeholder.svg"} alt={`Thumbnail ${index + 1}`} fill className="object-cover" />
-                {/* CAMBIO 5: Indicador de imagen activa más sutil */}
+                <Image
+                  src={img || "/placeholder.svg"}
+                  alt={`Thumbnail ${index + 1}`}
+                  fill
+                  className="object-cover filter brightness-90 contrast-110"
+                />
+
+                {/* Overlay para miniaturas */}
+                <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark/40 to-transparent"></div>
+
+                {/* Corner decorations para miniaturas */}
+                <div className="absolute top-1 left-1 w-2 h-2 border-l border-t border-neon-pink/50"></div>
+                <div className="absolute top-1 right-1 w-2 h-2 border-r border-t border-neon-pink/50"></div>
+                <div className="absolute bottom-1 left-1 w-2 h-2 border-l border-b border-neon-pink/50"></div>
+                <div className="absolute bottom-1 right-1 w-2 h-2 border-r border-b border-neon-pink/50"></div>
+
+                {/* Indicador de imagen activa */}
                 {activeImage === index && (
-                  <div
-                    className="absolute inset-0 
-                    /* ANTES: bg-neon-pink/20 */
-                    /* AHORA: bg-neon-pink/10 (menos opaco) */
-                    bg-neon-pink/10 flex items-center justify-center"
-                  >
-                    <div
-                      className="
-                      /* ANTES: w-2 h-2 */
-                      /* AHORA: w-1.5 h-1.5 opacity-80 (más pequeño y menos opaco) */
-                      w-1.5 h-1.5 bg-neon-pink rounded-full opacity-80"
-                    ></div>
+                  <div className="absolute inset-0 bg-neon-pink/10 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 bg-neon-pink rounded-full shadow-neon-pink"></div>
                   </div>
                 )}
               </button>

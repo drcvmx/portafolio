@@ -30,18 +30,18 @@ export default function Home() {
 
   const featuredProjects = [
     {
+      id: "drcv_company",
+      title: "drcv_company",
+      description: "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
+      image: "project/drcv_company/company1.png",
+      technologies: ["Astro", "Vue.js", "SCSS", "TypeScript"],
+    },
+    {
       id: "seprytec",
       title: "seprytec",
       description: "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
       image: "project/seprytec/seprytec1.png",
-      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
-    },
-    {
-      id: "carpinteria_verdeja",
-      title: "carpinteria_verdeja",
-      description: "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
-      image: "project/carpinteria/carpinteria1.png",
-      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],      
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],   
     },
     {
       id: "drcv_note",

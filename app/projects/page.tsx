@@ -28,6 +28,14 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      id: "drcv_company",
+      title: "drcv_company",
+      description: "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
+      image: "project/drcv_company/company1.png",
+      technologies: ["Astro", "Vue.js", "SCSS", "TypeScript"],
+      category: "web",
+    },
+    {
       id: "seprytec",
       title: "seprytec",
       description: "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
