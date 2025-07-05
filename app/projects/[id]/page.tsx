@@ -17,7 +17,7 @@ export default function ProjectPage() {
     "drcv_company": {
       title: "drcv_company",
       description: "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
-      images: [ "/project/drcv_company/company1.png", "/project/drcv_company/company2.png", "/project/drcv_company/company3.png"],
+      images: [ "/project_webp/drcv_company/company1.webp", "/project_webp/drcv_company/company2.webp", "/project_webp/drcv_company/company3.webp"],
       technologies: ["Astro", "Vue.js", "Tailwind CSS", "SCSS", "Pinia", "TypeScript"],
       category: "web",
       github: "https://github.com/drcvmx/drcv_company",
@@ -28,7 +28,7 @@ export default function ProjectPage() {
     "drcv_note": {
       title: "drcv_note",
       description: "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-      images: [ "/project/app_note/note4.png", "/project/app_note/note1.png", "/project/app_note/note2.png", "/project/app_note/note3.png"],
+      images: [ "/project_webp/app_note/note4.webp", "/project_webp/app_note/note1.webp", "/project_webp/app_note/note2.webp", "/project_webp/app_note/note3.webp"],
       technologies: ["React", "Next.js", "JavaScript","TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/drcv_note",
@@ -39,7 +39,7 @@ export default function ProjectPage() {
     "seprytec": {
       title: "Seprytec",
       description: "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
-      images: ["/project/seprytec/seprytec1.png", "/project/seprytec/seprytec2.png", "/project/seprytec/seprytec3.png"],
+      images: ["/project_webp/seprytec/seprytec1.webp", "/project_webp/seprytec/seprytec2.webp", "/project_webp/seprytec/seprytec3.webp"],
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
       category: "web",
       github: "https://github.com/drcvmx/seprytec_remaster",
@@ -50,7 +50,7 @@ export default function ProjectPage() {
     "carpinteria_verdeja": {
       title: "carpinteria_verdeja",
       description: "Design focused on the experience.",
-      images: ["/project/carpinteria/carpinteria1.png", "/project/carpinteria/carpinteria2.png", "/project/carpinteria/carpinteria3.png"],
+      images: ["/project_webp/carpinteria/carpinteria1.webp", "/project_webp/carpinteria/carpinteria2.webp", "/project_webp/carpinteria/carpinteria3.webp"],
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
       category: "web",
       github: "https://github.com/drcvmx/carpinteria_verdeja",
@@ -61,7 +61,7 @@ export default function ProjectPage() {
     "crime_control": {
       title: "crime_control",
       description: "An advanced crime control system that centralizes the management and analysis of criminal data in real-time. It not only tracks incidents but also provides the exact location of offenders within cells and prisons, facilitating a faster and more strategic police response.",
-      images: ["/project/crimen/crimen4.png", "/project/crimen/crimen1.png", "/project/crimen/crimen2.png", "/project/crimen/crimen3.png"],
+      images: ["/project_webp/crimen/crimen4.webp", "/project_webp/crimen/crimen1.webp", "/project_webp/crimen/crimen2.webp", "/project_webp/crimen/crimen3.webp"],
       technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/control_delincuencia_supabase",
@@ -72,7 +72,7 @@ export default function ProjectPage() {
     "luchavsludopatia": {
       title: "luchavsludopatia",
       description: "A supportive and informative website dedicated to combating gambling addiction, drawing inspiration from government resources to offer information, tools, and resources for prevention and seeking help.",
-      images: ["/project/ludopatia/ludo1.png", "/project/ludopatia/ludo2.png", "/project/ludopatia/ludo3.png"],
+      images: ["/project_webp/ludopatia/ludo1.webp", "/project_webp/ludopatia/ludo2.webp", "/project_webp/ludopatia/ludo3.webp"],
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
       category: "web",
       github: "https://github.com/drcvmx/luchavsludopatia",
@@ -83,7 +83,7 @@ export default function ProjectPage() {
     "youtube_transcribe": {
       title: "youtube_transcribe",
       description: "A web application that extracts and analyzes the content of YouTube videos (via their transcripts) using a Python backend and natural language processing capabilities",
-      images: ["/project/youtube_transcribe/transcribe1.png"],
+      images: ["/project_webp/youtube_transcribe/transcribe1.webp"],
       technologies: ["Next.js", "React","Python", "Flask", "LLMs", "TailwindCSS", "JavaScript", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/youtube-link-interface",
@@ -94,7 +94,7 @@ export default function ProjectPage() {
     "school_system": {
       title: "school_system",
       description: "Real-time cryptocurrency tracking dashboard with customizable widgets and alerts.",
-      images: ["/project/system/systemv1.png", "/project/system/systemv2.png"],
+      images: ["/project_webp/system/systemv1.webp", "/project_webp/system/systemv2.webp"],
       technologies: ["React", "Next.js","JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/school_system",
@@ -250,12 +250,10 @@ export default function ProjectPage() {
             {/* AHORA: Contenedor simple con fade y escala */}
             <div className="relative aspect-video w-full bg-cyber-darker overflow-hidden border border-neon-pink/30">
               <Image
-                src={projectImages[activeImage] || "/placeholder.svg"}
-                alt={`${project.title} screenshot ${activeImage + 1}`}
+                src={projectImages[activeImage]}
+                alt={`Screenshot ${activeImage + 1} of ${project.title}`}
                 fill
-                className={`object-cover transition-all duration-300 ease-out filter brightness-95 contrast-110 saturate-110 ${
-                  isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
-                }`}
+                className={`object-contain transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
               />
 
               {/* Overlay gradient estandarizado */}

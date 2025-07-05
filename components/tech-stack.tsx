@@ -12,18 +12,18 @@ export function TechStack() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const technologies: TechItem[] = [
-    { name: "React", icon: "skills/react.png", color: "text-neon-pink" },
-    { name: "Next.js", icon: "skills/nextjs.png", color: "text-neon-pink" },
-    { name: "Vue", icon: "skills/vue.png", color: "text-neon-cyan" },
-    { name: "TailwindCSS", icon: "skills/tailwild.png", color: "text-neon-pink" },
-    { name: "JavaScript", icon: "skills/javascript.png", color: "text-neon-pink" },
-    { name: "TypeScript", icon: "skills/typescript.png", color: "text-neon-pink" },
-    { name: "SQL", icon: "skills/sql.png", color: "text-neon-purple" },
-    { name: "Supabase", icon: "skills/supabase.png", color: "text-neon-purple" },
-    { name: "Python", icon: "skills/python.png", color: "text-neon-purple" },
-    { name: "Java", icon: "skills/java.png", color: "text-neon-purple" },
-    { name: "Git", icon: "skills/git.png", color: "text-neon-pink" },
-    { name: "GitHub", icon:"skills/github.png", color: "text-neon-pink" },
+    { name: "React", icon: "skills_webp/react.webp", color: "text-neon-pink" },
+    { name: "Next.js", icon: "skills_webp/nextjs.webp", color: "text-neon-pink" },
+    { name: "Vue", icon: "skills_webp/vue.webp", color: "text-neon-cyan" },
+    { name: "TailwindCSS", icon: "skills_webp/tailwild.webp", color: "text-neon-pink" },
+    { name: "JavaScript", icon: "skills_webp/javascript.webp", color: "text-neon-pink" },
+    { name: "TypeScript", icon: "skills_webp/typescript.webp", color: "text-neon-pink" },
+    { name: "SQL", icon: "skills_webp/sql.webp", color: "text-neon-purple" },
+    { name: "Supabase", icon: "skills_webp/supabase.webp", color: "text-neon-purple" },
+    { name: "Python", icon: "skills_webp/python.webp", color: "text-neon-purple" },
+    { name: "Java", icon: "skills_webp/java.webp", color: "text-neon-purple" },
+    { name: "Git", icon: "skills_webp/git.webp", color: "text-neon-pink" },
+    { name: "GitHub", icon:"skills_webp/github.webp", color: "text-neon-pink" },
   ]
 
 
