@@ -15,6 +15,7 @@ export function TechStack() {
     { name: "React", icon: "skills_webp/react.webp", color: "text-neon-pink" },
     { name: "Next.js", icon: "skills_webp/nextjs.webp", color: "text-neon-pink" },
     { name: "Vue", icon: "skills_webp/vue.webp", color: "text-neon-cyan" },
+    { name: "Astro", icon: "skills_webp/astro.webp", color: "text-neon-cyan" },
     { name: "TailwindCSS", icon: "skills_webp/tailwild.webp", color: "text-neon-pink" },
     { name: "JavaScript", icon: "skills_webp/javascript.webp", color: "text-neon-pink" },
     { name: "TypeScript", icon: "skills_webp/typescript.webp", color: "text-neon-pink" },
