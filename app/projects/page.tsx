@@ -85,11 +85,7 @@ export default function ProjectsPage() {
     {
       id: "carpinteria_verdeja",
       title: "carpinteria_verdeja",
-<<<<<<< HEAD
       description: "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
-=======
-      description: t("projects.carpinteriaVerdeja.desc"),
->>>>>>> v2
       image: "project_webp/carpinteria/carpinteria1.webp",
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
       category: "web",
@@ -170,7 +166,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="space-y-8">
-<<<<<<< HEAD
+      {(skipAnimation || introComplete) ? (
       {(skipAnimation || introComplete) ? (
 =======
       {skipAnimation || introComplete ? (
@@ -228,11 +224,7 @@ export default function ProjectsPage() {
               </button>
             ))}
           </div>
-<<<<<<< HEAD
           
-=======
-
->>>>>>> v2
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <ProjectCard
