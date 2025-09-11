@@ -49,6 +49,14 @@ export default function ProjectsPage() {
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
       category: "web",
     },
+        {
+      id: "sozu",
+      title: "sozu",
+      description: t("projects.sozu.desc"),
+      image: "project_webp/sozu/sozu3.webp",
+      technologies: ["n8n", "Next.js", "JavaScript", "PostgreSQL"],
+      category: "app",
+    },
     {
       id: "drcv_note",
       title: "drcv_note",
@@ -87,14 +95,6 @@ export default function ProjectsPage() {
       description: t("projects.youtubeTranscribe.desc"),
       image: "project_webp/youtube_transcribe/transcribe1.webp",
       technologies: ["React", "Next.js", "JavaScript", "Python", "Flask"],
-      category: "app",
-    },
-    {
-      id: "school_system",
-      title: "school_system",
-      description: t("projects.schoolSystem.desc"),
-      image: "project_webp/system/systemv1.webp",
-      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
       category: "app",
     },
   ]

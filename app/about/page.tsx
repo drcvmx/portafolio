@@ -173,7 +173,7 @@ export default function AboutPage() {
             {t("about.downloadCV")}
           </a>
           <a
-            href="https://drive.google.com/file/d/1Xlg7lumtqVL73Y57Ry7--NsjY-Aesls3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1o57CZwy56e-hpwvckCEYCRYAYAMnDDn9/view"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-neon-purple/10 hover:bg-neon-purple/20 text-neon-purple px-6 py-3 rounded-md transition-colors border border-neon-purple/30 shadow-neon-purple font-mono hover:shadow-neon-purple"

@@ -22,7 +22,8 @@ const translations = {
     "nav.about": "about",
 
     // Home page
-    "home.intro": "Hello, my name is Dante. I am a Frontend developer passionate about web design and programming",
+    "home.intro": "Hello, my name is Dante. I'm a passionate Fullstack Developer with a love for web design and programming. I leverage AI tools to enhance my productivity, streamline my workflow, and amplify my design and coding abilities.",
+    "home.terminal.intro": "Hello, my name is Dante. I am a Fullstack Developer passionate about web design and programming",
     "home.learnMore": "Learn more about me",
     "home.featuredProjects": "Featured Projects",
     "home.viewAll": "View all",
@@ -131,10 +132,10 @@ const translations = {
     "projects.youtubeTranscribe.longDesc":
       "This web application is designed to automate the process of analyzing YouTube video content. It operates in two main stages: first, a backend developed in Python uses the YouTube transcripts API to obtain the subtitles or transcripts of a video given a YouTube link. Subsequently, these transcripts are sent to a Next.js backend, where an Ollama language model processes and summarizes the text.",
 
-    "projects.schoolSystem.desc":
-      "This project develops a school management system to efficiently digitize academic and administrative data, allowing secure and remote access for authorized users.",
-    "projects.schoolSystem.longDesc":
-      "This project develops a comprehensive school management system designed to efficiently digitize a wide range of academic and administrative data. By centralizing this information, the system allows secure and remote access for authorized users, including administrators, teachers, and potentially parents, fostering better communication and streamlined workflows within the educational institution.",
+    "projects.sozu.desc":
+      "Comprehensive real estate management system with PostgreSQL database featuring 50+ tables, developed for one of Guadalajara's largest real estate companies.",
+    "projects.sozu.longDesc":
+      "Complete real estate management system handling projects, administrative documents, and complex data relationships. Built with PostgreSQL, collaborative development, and AI implementation to optimize operational processes.",
 
     // Common
     "common.loading": "Loading...",
@@ -152,7 +153,8 @@ const translations = {
 
     // Home page
     "home.intro":
-      "Hola, mi nombre es Dante. Soy un desarrollador Frontend apasionado por el diseño web y la programación",
+      "Hola, mi nombre es Dante. Soy un desarrollador Fullstack apasionado por el diseño web y la programación. Utilizo herramientas de IA para mejorar mi productividad, optimizar mi flujo de trabajo y amplificar mis habilidades de diseño y programación.",
+    "home.terminal.intro": "Hola, mi nombre es Dante. Soy un desarrollador Fullstack apasionado por el diseño web y la programación",
     "home.learnMore": "Conoce más sobre mí",
     "home.featuredProjects": "Proyectos Destacados",
     "home.viewAll": "Ver todos",
@@ -261,10 +263,10 @@ const translations = {
     "projects.youtubeTranscribe.longDesc":
       "Esta aplicación web está diseñada para automatizar el proceso de análisis de contenido de videos de YouTube. Opera en dos etapas principales: primero, un backend desarrollado en Python utiliza la API de transcripciones de YouTube para obtener los subtítulos o transcripciones de un video dado un enlace de YouTube. Posteriormente, estas transcripciones se envían a un backend de Next.js, donde un modelo de lenguaje Ollama procesa y resume el texto.",
 
-    "projects.schoolSystem.desc":
-      "Este proyecto desarrolla un sistema de gestión escolar para digitalizar eficientemente datos académicos y administrativos, permitiendo acceso seguro y remoto para usuarios autorizados.",
-    "projects.schoolSystem.longDesc":
-      "Este proyecto desarrolla un sistema integral de gestión escolar diseñado para digitalizar eficientemente una amplia gama de datos académicos y administrativos. Al centralizar esta información, el sistema permite un acceso seguro y remoto para usuarios autorizados, incluidos administradores, profesores y potencialmente padres, fomentando una mejor comunicación y flujos de trabajo optimizados dentro de la institución educativa.",
+    "projects.sozu.desc":
+      "Sistema integral de gestión inmobiliaria con base de datos PostgreSQL de más de 50 tablas, desarrollado para una de las inmobiliarias más grandes de Guadalajara.",
+    "projects.sozu.longDesc":
+      "Sistema completo de gestión inmobiliaria que maneja proyectos, documentos administrativos y múltiples relaciones de datos. Desarrollado con PostgreSQL, trabajo colaborativo e implementación de IA para optimizar procesos operacionales.",
 
     // Common
     "common.loading": "Cargando...",

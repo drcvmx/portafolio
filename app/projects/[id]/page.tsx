@@ -113,15 +113,15 @@ export default function ProjectPage() {
       demo: "https://github.com/drcvmx/youtube-link-interface",
       longDescription: t("projects.youtubeTranscribe.longDesc"),
     },
-    school_system: {
-      title: "school_system",
-      description: t("projects.schoolSystem.desc"),
-      images: ["/project_webp/system/systemv1.webp", "/project_webp/system/systemv2.webp"],
-      technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
+    sozu: {
+      title: "sozu",
+      description: t("projects.sozu.desc"),
+      images: ["/project_webp/sozu/sozu2.webp",, "/project_webp/sozu/sozu5.webp", "/project_webp/sozu/sozu6.webp", "/project_webp/sozu/sozu1.webp", "/project_webp/sozu/sozu3.webp", "/project_webp/sozu/sozu4.webp"],
+      technologies: ["n8n", "React", "Next.js", "JavaScript", "TypeScript", "PostgreSQL", "HTML", "CSS"],
       category: "app",
-      github: "https://github.com/drcvmx/school_system",
-      demo: "https://github.com/drcvmx/school_system",
-      longDescription: t("projects.schoolSystem.longDesc"),
+      github: "https://github.com/drcvmx/login-con-validacion-sozu-nextjs",
+      demo: "https://login-con-validacion-sozu-nextjs.vercel.app/login",
+      longDescription: t("projects.sozu.longDesc"),
     },
   }
 
