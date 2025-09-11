@@ -54,4 +54,8 @@ export function ProjectCard({ id, title, description, image, technologies }: Pro
       </div>
     </Link>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> v2

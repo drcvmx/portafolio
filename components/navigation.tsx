@@ -4,29 +4,70 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
+<<<<<<< HEAD
+=======
+import { LanguageSelector } from "./language-selector"
+import { useLanguage } from "@/contexts/language-context"
+>>>>>>> v2
 
 export function Navigation() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+<<<<<<< HEAD
 
   const navItems = [
     { name: "home", path: "/" },
     { name: "projects", path: "/projects" },
     { name: "about", path: "/about" },
+=======
+  const { t } = useLanguage()
+
+  const navItems = [
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.projects"), path: "/projects" },
+    { name: t("nav.about"), path: "/about" },
+>>>>>>> v2
   ]
 
   return (
     <header className="border-b border-neon-pink/30 backdrop-blur-sm sticky top-0 z-50 bg-cyber-dark/80">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
+<<<<<<< HEAD
           <Link href="/" className="text-xl font-bold text-neon-pink glitch" data-text="DRCV">
             DRCV
           </Link>
 
+=======
+          <Link href="/" className="text-xl font-bold text-neon-pink glitch" data-text="CYBER_DEV">
+            DRCV
+          </Link>
+
+          {/* Desktop navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <ul className="flex items-center space-x-8">
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    href={item.path}
+                    className={`command-prompt hover:text-neon-pink transition-colors ${
+                      pathname === item.path ? "text-neon-pink neon-text-pink" : "text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <LanguageSelector />
+          </div>
+
+>>>>>>> v2
           {/* Mobile menu button */}
           <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+<<<<<<< HEAD
 
           {/* Desktop navigation */}
           <ul className="hidden md:flex items-center space-x-8">
@@ -43,6 +84,8 @@ export function Navigation() {
               </li>
             ))}
           </ul>
+=======
+>>>>>>> v2
         </nav>
 
         {/* Mobile navigation */}
@@ -63,6 +106,12 @@ export function Navigation() {
                 </li>
               ))}
             </ul>
+<<<<<<< HEAD
+=======
+            <div className="mt-4 flex justify-center">
+              <LanguageSelector />
+            </div>
+>>>>>>> v2
           </div>
         )}
       </div>

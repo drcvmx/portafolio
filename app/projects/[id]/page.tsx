@@ -5,23 +5,45 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Github, ExternalLink, Play, Pause } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+<<<<<<< HEAD
 
 export default function ProjectPage() {
   const { id } = useParams<{ id: string }>()
+=======
+import { useLanguage } from "@/contexts/language-context"
+
+export default function ProjectPage() {
+  const { id } = useParams<{ id: string }>()
+  const { t } = useLanguage()
+>>>>>>> v2
   const [activeImage, setActiveImage] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
+<<<<<<< HEAD
   const projects = {
     "drcv_company": {
       title: "drcv_company",
       description: "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
       images: [ "/project_webp/drcv_company/company1.webp", "/project_webp/drcv_company/company2.webp", "/project_webp/drcv_company/company3.webp"],
+=======
+  // This would typically come from an API or database
+  const projects = {
+    drcv_company: {
+      title: "drcv_company",
+      description: t("projects.drcvCompany.desc"),
+      images: [
+        "/project_webp/drcv_company/company1.webp",
+        "/project_webp/drcv_company/company2.webp",
+        "/project_webp/drcv_company/company3.webp",
+      ],
+>>>>>>> v2
       technologies: ["Astro", "Vue.js", "Tailwind CSS", "SCSS", "Pinia", "TypeScript"],
       category: "web",
       github: "https://github.com/drcvmx/drcv_company",
       demo: "https://drcv-company.vercel.app/",
+<<<<<<< HEAD
       longDescription:
         "This project develops a comprehensive corporate website, optimized for efficiency and user experience. It leverages Astro for superior performance, Vue.js for interactivity, Tailwind CSS and SCSS for agile design, and Pinia for scalable data management, all built with TypeScript for enhanced robustness. The primary goal is to provide businesses with a solid, attractive, and functional digital platform that enables them to effectively connect with their audience and stand out in the market.",
     },
@@ -51,10 +73,52 @@ export default function ProjectPage() {
       title: "carpinteria_verdeja",
       description: "Design focused on the experience.",
       images: ["/project_webp/carpinteria/carpinteria1.webp", "/project_webp/carpinteria/carpinteria2.webp", "/project_webp/carpinteria/carpinteria3.webp"],
+=======
+      longDescription: t("projects.drcvCompany.longDesc"),
+    },
+    drcv_note: {
+      title: "drcv_note",
+      description: t("projects.drcvNote.desc"),
+      images: [
+        "/project_webp/app_note/note4.webp",
+        "/project_webp/app_note/note1.webp",
+        "/project_webp/app_note/note2.webp",
+        "/project_webp/app_note/note3.webp",
+      ],
+      technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
+      category: "app",
+      github: "https://github.com/drcvmx/drcv_note",
+      demo: "https://drcv-note.vercel.app/",
+      longDescription: t("projects.drcvNote.longDesc"),
+    },
+    seprytec: {
+      title: "Seprytec",
+      description: t("projects.seprytec.desc"),
+      images: [
+        "/project_webp/seprytec/seprytec1.webp",
+        "/project_webp/seprytec/seprytec2.webp",
+        "/project_webp/seprytec/seprytec3.webp",
+      ],
+      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
+      category: "web",
+      github: "https://github.com/drcvmx/seprytec_remaster",
+      demo: "https://seprytec-remaster.vercel.app/",
+      longDescription: t("projects.seprytec.longDesc"),
+    },
+    carpinteria_verdeja: {
+      title: "carpinteria_verdeja",
+      description: t("projects.carpinteriaVerdeja.desc"),
+      images: [
+        "/project_webp/carpinteria/carpinteria1.webp",
+        "/project_webp/carpinteria/carpinteria2.webp",
+        "/project_webp/carpinteria/carpinteria3.webp",
+      ],
+>>>>>>> v2
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
       category: "web",
       github: "https://github.com/drcvmx/carpinteria_verdeja",
       demo: "https://carpinteria-verdeja.vercel.app/",
+<<<<<<< HEAD
       longDescription:
         "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
     },
@@ -62,10 +126,24 @@ export default function ProjectPage() {
       title: "crime_control",
       description: "An advanced crime control system that centralizes the management and analysis of criminal data in real-time. It not only tracks incidents but also provides the exact location of offenders within cells and prisons, facilitating a faster and more strategic police response.",
       images: ["/project_webp/crimen/crimen4.webp", "/project_webp/crimen/crimen1.webp", "/project_webp/crimen/crimen2.webp", "/project_webp/crimen/crimen3.webp"],
+=======
+      longDescription: t("projects.carpinteriaVerdeja.longDesc"),
+    },
+    crime_control: {
+      title: "crime_control",
+      description: t("projects.crimeControl.desc"),
+      images: [
+        "/project_webp/crimen/crimen4.webp",
+        "/project_webp/crimen/crimen1.webp",
+        "/project_webp/crimen/crimen2.webp",
+        "/project_webp/crimen/crimen3.webp",
+      ],
+>>>>>>> v2
       technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/control_delincuencia_supabase",
       demo: "https://control-delincuencia-supabase-8zfs.vercel.app",
+<<<<<<< HEAD
       longDescription:
         "This project develops a comprehensive platform for the administration and predictive analysis of criminal activity, integrating diverse data sources such as incident reports and suspect profiles. Its capability extends to clearly differentiating between civilians and offenders, and crucially, it manages and displays in real-time the location of individuals deprived of liberty within specific cells and prisons. The system aims to optimize resource allocation, enhance coordination among law enforcement agencies, and strengthen crime prevention strategies, all through a robust, accessible, and detailed database.",
     },  
@@ -73,10 +151,23 @@ export default function ProjectPage() {
       title: "luchavsludopatia",
       description: "A supportive and informative website dedicated to combating gambling addiction, drawing inspiration from government resources to offer information, tools, and resources for prevention and seeking help.",
       images: ["/project_webp/ludopatia/ludo1.webp", "/project_webp/ludopatia/ludo2.webp", "/project_webp/ludopatia/ludo3.webp"],
+=======
+      longDescription: t("projects.crimeControl.longDesc"),
+    },
+    luchavsludopatia: {
+      title: "luchavsludopatia",
+      description: t("projects.luchavsludopatia.desc"),
+      images: [
+        "/project_webp/ludopatia/ludo1.webp",
+        "/project_webp/ludopatia/ludo2.webp",
+        "/project_webp/ludopatia/ludo3.webp",
+      ],
+>>>>>>> v2
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript", "HTML", "CSS"],
       category: "web",
       github: "https://github.com/drcvmx/luchavsludopatia",
       demo: "https://luchavsludopatia.vercel.app/",
+<<<<<<< HEAD
       longDescription:
         "This is a supportive and informative web platform, inspired by government resources, with the strong aim of addressing and mitigating the issue of gambling addiction. The project will focus on providing users with clear and accessible information about gambling addiction, its risks and consequences, as well as offering practical tools and resources for prevention, early detection, and seeking professional help.",
     },
@@ -101,6 +192,29 @@ export default function ProjectPage() {
       demo: "https://github.com/drcvmx/school_system",
       longDescription:
         "This project develops a comprehensive school management system designed to efficiently digitize a wide range of academic and administrative data. By centralizing this information, the system allows secure and remote access for authorized users, including administrators, teachers, and potentially parents, fostering better communication and streamlined workflows within the educational institution.",
+=======
+      longDescription: t("projects.luchavsludopatia.longDesc"),
+    },
+    youtube_transcribe: {
+      title: "youtube_transcribe",
+      description: t("projects.youtubeTranscribe.desc"),
+      images: ["/project_webp/youtube_transcribe/transcribe1.webp"],
+      technologies: ["Next.js", "React", "Python", "Flask", "LLMs", "TailwindCSS", "JavaScript", "HTML", "CSS"],
+      category: "app",
+      github: "https://github.com/drcvmx/youtube-link-interface",
+      demo: "https://github.com/drcvmx/youtube-link-interface",
+      longDescription: t("projects.youtubeTranscribe.longDesc"),
+    },
+    sozu: {
+      title: "sozu",
+      description: t("projects.sozu.desc"),
+      images: ["/project_webp/sozu/sozu2.webp",, "/project_webp/sozu/sozu5.webp", "/project_webp/sozu/sozu6.webp", "/project_webp/sozu/sozu1.webp", "/project_webp/sozu/sozu3.webp", "/project_webp/sozu/sozu4.webp"],
+      technologies: ["n8n", "React", "Next.js", "JavaScript", "TypeScript", "PostgreSQL", "HTML", "CSS"],
+      category: "app",
+      github: "https://github.com/drcvmx/login-con-validacion-sozu-nextjs",
+      demo: "https://login-con-validacion-sozu-nextjs.vercel.app/login",
+      longDescription: t("projects.sozu.longDesc"),
+>>>>>>> v2
     },
   }
 
@@ -112,6 +226,7 @@ export default function ProjectPage() {
 
   const projectImages = project.images && project.images.length > 0 ? project.images : ["/placeholder.svg"]
 
+<<<<<<< HEAD
   // Avanza a la siguiente imagen con efecto de transición
    // CAMBIO 1: Función para avanzar a la siguiente imagen con tiempos reducidos
    const nextImage = () => {
@@ -122,21 +237,39 @@ export default function ProjectPage() {
     setTimeout(() => {
       setActiveImage((prev) => (prev + 1) % projectImages.length)
       // ANTES: 100ms - AHORA: 50ms (más rápido)
+=======
+  // Función para avanzar a la siguiente imagen con tiempos reducidos
+  const nextImage = () => {
+    if (isTransitioning) return
+
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setActiveImage((prev) => (prev + 1) % projectImages.length)
+>>>>>>> v2
       setTimeout(() => {
         setIsTransitioning(false)
       }, 50)
     }, 200)
   }
 
+<<<<<<< HEAD
   // CAMBIO 2: Función para ir a una imagen específica con tiempos reducidos
+=======
+  // Función para ir a una imagen específica con tiempos reducidos
+>>>>>>> v2
   const goToImage = (index: number) => {
     if (index === activeImage || isTransitioning) return
 
     setIsTransitioning(true)
+<<<<<<< HEAD
     // ANTES: 300ms - AHORA: 200ms (más rápido)
     setTimeout(() => {
       setActiveImage(index)
       // ANTES: 100ms - AHORA: 50ms (más rápido)
+=======
+    setTimeout(() => {
+      setActiveImage(index)
+>>>>>>> v2
       setTimeout(() => {
         setIsTransitioning(false)
       }, 50)
@@ -182,7 +315,11 @@ export default function ProjectPage() {
   return (
     <div className="space-y-8">
       <Link href="/projects" className="inline-flex items-center gap-2 text-primary hover:underline">
+<<<<<<< HEAD
         <ArrowLeft size={16} /> Back to projects
+=======
+        <ArrowLeft size={16} /> {t("project.backToProjects")}
+>>>>>>> v2
       </Link>
 
       <div className="terminal-window">
@@ -198,6 +335,7 @@ export default function ProjectPage() {
           </p>
           <div className="mb-4">
             <p>
+<<<<<<< HEAD
               <span className="text-primary">title:</span> {project.title}
             </p>
             <p>
@@ -205,6 +343,15 @@ export default function ProjectPage() {
             </p>
             <p className="flex flex-wrap gap-2 mt-2">
               <span className="text-primary">stack:</span>
+=======
+              <span className="text-primary">{t("common.title")}:</span> {project.title}
+            </p>
+            <p>
+              <span className="text-primary">{t("common.category")}:</span> {project.category}
+            </p>
+            <p className="flex flex-wrap gap-2 mt-2">
+              <span className="text-primary">{t("common.stack")}:</span>
+>>>>>>> v2
               {project.technologies.map((tech, index) => (
                 <span key={index} className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded">
                   {tech}
@@ -229,7 +376,11 @@ export default function ProjectPage() {
                 <button
                   onClick={toggleAutoPlay}
                   className="text-neon-pink hover:text-neon-purple transition-colors"
+<<<<<<< HEAD
                   title={isAutoPlaying ? "Pause slideshow" : "Play slideshow"}
+=======
+                  title={isAutoPlaying ? t("project.pauseSlideshow") : t("project.playSlideshow")}
+>>>>>>> v2
                 >
                   {isAutoPlaying ? <Pause size={16} /> : <Play size={16} />}
                 </button>
@@ -237,6 +388,7 @@ export default function ProjectPage() {
             )}
           </div>
           <div className="relative aspect-video w-full bg-[rgba(13,10,30,0.8)] overflow-hidden">
+<<<<<<< HEAD
             {/* CAMBIO 3: Reemplazo completo del contenedor de imagen */}
             {/* ANTES: Efecto 3D complejo con rotación y múltiples efectos */}
             {/* 
@@ -251,6 +403,11 @@ export default function ProjectPage() {
             <div className="relative aspect-video w-full bg-cyber-darker overflow-hidden border border-neon-pink/30">
               <Image
                 src={projectImages[activeImage]}
+=======
+            <div className="relative aspect-video w-full bg-cyber-darker overflow-hidden border border-neon-pink/30">
+              <Image
+                src={projectImages[activeImage] || "/placeholder.svg"}
+>>>>>>> v2
                 alt={`Screenshot ${activeImage + 1} of ${project.title}`}
                 fill
                 className={`object-contain transition-opacity duration-300 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
@@ -275,6 +432,7 @@ export default function ProjectPage() {
                 </div>
               )}
             </div>
+<<<<<<< HEAD
 
             {/* Contador de imágenes */}
             {/*projectImages.length > 1 && (
@@ -286,6 +444,12 @@ export default function ProjectPage() {
         </div>
 
         {/* CAMBIO 4: Miniaturas con efectos más sutiles */}
+=======
+          </div>
+        </div>
+
+        {/* Miniaturas con efectos más sutiles */}
+>>>>>>> v2
         {projectImages.length > 1 && (
           <div className="flex justify-center gap-3 mt-4">
             {projectImages.map((img, index) => (
@@ -334,7 +498,11 @@ export default function ProjectPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-4 py-2 rounded-md transition-colors"
         >
+<<<<<<< HEAD
           <Github size={16} /> View on GitHub
+=======
+          <Github size={16} /> {t("project.viewOnGithub")}
+>>>>>>> v2
         </a>
         <a
           href={project.demo}
@@ -342,15 +510,26 @@ export default function ProjectPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-md transition-colors border border-primary/30"
         >
+<<<<<<< HEAD
           <ExternalLink size={16} /> Live Demo
+=======
+          <ExternalLink size={16} /> {t("project.liveDemo")}
+>>>>>>> v2
         </a>
       </div>
 
       <div className="prose prose-invert max-w-none">
+<<<<<<< HEAD
         <h2 className="text-2xl font-bold mb-4 text-neon-pink">Project Overview</h2>
         <p className="text-muted-foreground">{project.longDescription}</p>
       </div>
    
+=======
+        <h2 className="text-2xl font-bold mb-4 text-neon-pink">{t("project.overview")}</h2>
+        <p className="text-muted-foreground">{project.longDescription}</p>
+      </div>
+
+>>>>>>> v2
       <style jsx>{`
         .image-container {
           width: 100%;
@@ -360,4 +539,8 @@ export default function ProjectPage() {
       `}</style>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> v2

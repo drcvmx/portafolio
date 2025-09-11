@@ -14,6 +14,10 @@ export function TechStack() {
   const technologies: TechItem[] = [
     { name: "React", icon: "skills_webp/react.webp", color: "text-neon-pink" },
     { name: "Next.js", icon: "skills_webp/nextjs.webp", color: "text-neon-pink" },
+<<<<<<< HEAD
+=======
+    { name: "n8n", icon: "skills_webp/n8n.webp", color: "text-neon-pink" },
+>>>>>>> v2
     { name: "Vue", icon: "skills_webp/vue.webp", color: "text-neon-cyan" },
     { name: "Astro", icon: "skills_webp/astro.webp", color: "text-neon-cyan" },
     { name: "TailwindCSS", icon: "skills_webp/tailwild.webp", color: "text-neon-pink" },
