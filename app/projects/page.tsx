@@ -3,16 +3,8 @@
 import { useState, useEffect } from "react"
 import { ProjectCard } from "@/components/project-card"
 import { Terminal } from "@/components/terminal"
-<<<<<<< HEAD
 
 export default function ProjectsPage() {
-=======
-import { useLanguage } from "@/contexts/language-context"
-
-export default function ProjectsPage() {
-  const { t } = useLanguage()
-  // Inicializar estados con valores de localStorage si están disponibles
->>>>>>> v2
   const [isLoading, setIsLoading] = useState(true)
   const [activeFilter, setActiveFilter] = useState<string>("all")
   const [introComplete, setIntroComplete] = useState(false)
@@ -50,11 +42,7 @@ export default function ProjectsPage() {
     {
       id: "drcv_company",
       title: "drcv_company",
-<<<<<<< HEAD
       description: "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
-=======
-      description: t("projects.drcvCompany.desc"),
->>>>>>> v2
       image: "project_webp/drcv_company/company1.webp",
       technologies: ["Astro", "Vue.js", "SCSS", "TypeScript"],
       category: "web",
