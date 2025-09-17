@@ -22,7 +22,7 @@ export function Navigation() {
     <header className="border-b border-neon-pink/30 backdrop-blur-sm sticky top-0 z-50 bg-cyber-dark/80">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-neon-pink glitch" data-text="CYBER_DEV">
+          <Link href="/" className="text-xl font-bold text-neon-pink glitch" data-text="DRCV">
             DRCV
           </Link>
 
