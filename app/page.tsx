@@ -68,11 +68,11 @@ export default function Home() {
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
     },
     {
-      id: "drcv_note",
-      title: "drcv_note",
-      description: t("projects.drcvNote.desc"),
-      image: "project_webp/app_note/note4.webp",
-      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
+      id: "sozu",
+      title: "sozu",
+      description: t("projects.sozu.desc"),
+      image: "/project_webp/sozu/sozu3.webp",
+      technologies: ["n8n", "Next.js", "JavaScript", "Supabase"],
     },
   ]
 

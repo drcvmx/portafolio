@@ -116,7 +116,7 @@ export default function ProjectPage() {
     sozu: {
       title: "sozu",
       description: t("projects.sozu.desc"),
-      images: ["/project_webp/sozu/sozu2.webp",, "/project_webp/sozu/sozu5.webp", "/project_webp/sozu/sozu6.webp", "/project_webp/sozu/sozu1.webp", "/project_webp/sozu/sozu3.webp", "/project_webp/sozu/sozu4.webp"],
+      images: ["/project_webp/sozu/sozu2.webp", "/project_webp/sozu/sozu5.webp", "/project_webp/sozu/sozu6.webp", "/project_webp/sozu/sozu1.webp", "/project_webp/sozu/sozu3.webp", "/project_webp/sozu/sozu4.webp"],
       technologies: ["n8n", "React", "Next.js", "JavaScript", "TypeScript", "PostgreSQL", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/login-con-validacion-sozu-nextjs",
