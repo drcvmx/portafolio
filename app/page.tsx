@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Terminal } from "@/components/terminal"
-import { ProjectCard } from "@/components/project-card"
+import ProjectCardFlip from "@/components/new-card-version"
 import { TechStack } from "@/components/tech-stack"
 import { ArrowRight } from "lucide-react"
 import { Github, Linkedin, Send, Copy, ExternalLink } from "lucide-react"
@@ -42,11 +42,22 @@ export default function Home() {
     setIntroComplete(true)
     localStorage.setItem("introAnimationCompleted", "true")
   }
-    const sendEmail = () => {
+
+  const sendEmail = () => {
     window.open(`mailto:${EMAIL_ADDRESS}?subject=Contact from Portfolio&body=${encodeURIComponent(message)}`)
     toast({
       title: t("about.emailOpened"),
       description: t("about.emailDesc"),
+      variant: "default",
+      duration: 3000,
+    })
+  }
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+    toast({
+      title: t("about.copiedToClipboard"),
+      description: `${text} ${t("about.clipboardDesc")}`,
       variant: "default",
       duration: 3000,
     })
@@ -136,7 +147,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProjects.map((project, index) => (
                 <div key={project.id} className={`project-card-reveal delay-${400 + index * 100}`}>
-                  <ProjectCard {...project} />
+                  <ProjectCardFlip {...project} />
                 </div>
               ))}
             </div>

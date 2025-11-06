@@ -48,6 +48,7 @@ const translations = {
     "project.keyFeatures": "Key Features",
     "project.pauseSlideshow": "Pause slideshow",
     "project.playSlideshow": "Play slideshow",
+    "project.viewProject": "View project",
 
     // About page
     "about.initProfile": "Initializing personal profile... Access granted. Loading bio data...",
@@ -179,6 +180,7 @@ const translations = {
     "project.keyFeatures": "Características Principales",
     "project.pauseSlideshow": "Pausar presentación",
     "project.playSlideshow": "Reproducir presentación",
+    "project.viewProject": "Ver proyecto",
 
     // About page
     "about.initProfile": "Inicializando perfil personal... Acceso concedido. Cargando datos biográficos...",

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ProjectCard } from "@/components/project-card"
+import ProjectCardFlip from "@/components/new-card-version"
 import { Terminal } from "@/components/terminal"
 import { useLanguage } from "@/contexts/language-context"
 
@@ -160,7 +160,7 @@ export default function ProjectsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
-              <ProjectCard
+              <ProjectCardFlip
                 key={project.id}
                 id={project.id}
                 title={project.title}
