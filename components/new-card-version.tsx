@@ -128,7 +128,7 @@ export default function ProjectCardFlip({
             <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-neon-cyan/60"></div>
             <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-neon-cyan/60"></div>
 
-            <div className="flex-1 space-y-3 relative z-10 overflow-y-auto">
+            <div className="flex-1 space-y-3 relative z-10 overflow-y-auto cyber-scrollbar">
               <div className="space-y-2">
                 <h3 className="text-base font-bold text-white font-mono neon-text-pink">
                   {title}
