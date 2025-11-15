@@ -71,19 +71,19 @@ export default function Home() {
       image: "project_webp/drcv_company/company1.webp",
       technologies: ["Astro", "Vue.js", "SCSS", "TypeScript"],
     },
+      {
+      id: "drcv_note",
+      title: "NOTE DRCV",
+      description: t("projects.drcvNote.desc"),
+      image: "project_webp/app_note/note1.png",
+      technologies: ["React", "FastAPI", "JavaScript", "PostgreSQL"],
+    },
     {
       id: "seprytec",
       title: "seprytec",
       description: t("projects.seprytec.desc"),
-      image: "project_webp/seprytec/seprytec1.webp",
+      image: "project_webp/seprytec/seprytec1.png",
       technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
-    },
-    {
-      id: "sozu",
-      title: "sozu",
-      description: t("projects.sozu.desc"),
-      image: "/project_webp/sozu/sozu3.webp",
-      technologies: ["n8n", "Next.js", "JavaScript", "Supabase"],
     },
   ]
 

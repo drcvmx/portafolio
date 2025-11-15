@@ -32,18 +32,18 @@ export default function ProjectPage() {
       longDescription: t("projects.drcvCompany.longDesc"),
     },
     drcv_note: {
-      title: "drcv_note",
+      title: "NOTE DRCV",
       description: t("projects.drcvNote.desc"),
       images: [
-        "/project_webp/app_note/note4.webp",
+        "/project_webp/app_note/note1.png",
         "/project_webp/app_note/note1.webp",
         "/project_webp/app_note/note2.webp",
         "/project_webp/app_note/note3.webp",
       ],
-      technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
+      technologies: ["React", "FastAPI", "JavaScript", "TypeScript", "FastAPI", "Tailwind CSS", "Linux"],
       category: "app",
       github: "https://github.com/drcvmx/drcv_note",
-      demo: "https://drcv-note.vercel.app/",
+      demo: "https://app.note.drcv.online/landing",
       longDescription: t("projects.drcvNote.longDesc"),
     },
     seprytec: {
@@ -86,7 +86,7 @@ export default function ProjectPage() {
       technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Supabase", "HTML", "CSS"],
       category: "app",
       github: "https://github.com/drcvmx/control_delincuencia_supabase",
-      demo: "https://control-delincuencia-supabase-8zfs.vercel.app",
+      demo: "https://control-delincuencia-con-backend-v1punto5.vercel.app/delincuentes",
       longDescription: t("projects.crimeControl.longDesc"),
     },
     luchavsludopatia: {
