@@ -22,7 +22,7 @@ const translations = {
     "nav.about": "about",
 
     // Home page
-    "home.intro": "Hello, my name is Dante. I'm a passionate Fullstack Developer with a love for web design and programming. I leverage AI tools to enhance my productivity, streamline my workflow, and amplify my design and coding abilities.",
+    "home.intro": "Hello, my name is Dante. I'm a Full-stack developer, I'm passionate about soccer, and I enjoy imagining things before creating them. I believe that if you imagine it correctly, anything is possible.",
     "home.terminal.intro": "Hello, my name is Dante. I am a Fullstack Developer passionate about web design and programming",
     "home.learnMore": "Learn more about me",
     "home.featuredProjects": "Featured Projects",
@@ -154,7 +154,7 @@ const translations = {
 
     // Home page
     "home.intro":
-      "Hola, mi nombre es Dante. Soy un desarrollador Fullstack apasionado por el diseño web y la programación. Utilizo herramientas de IA para mejorar mi productividad, optimizar mi flujo de trabajo y amplificar mis habilidades de diseño y programación.",
+      "Hola, mi nombre es Dante. Soy un desarrollador Fullstack, soy apasionado del futbol, me gusta imaginar para despues crear, creo que si lo imaginas de la manera correcta todo se puede hacer.",
     "home.terminal.intro": "Hola, mi nombre es Dante. Soy un desarrollador Fullstack apasionado por el diseño web y la programación",
     "home.learnMore": "Conoce más sobre mí",
     "home.featuredProjects": "Proyectos Destacados",
