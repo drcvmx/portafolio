@@ -25,12 +25,35 @@ export default function ProjectCardFlip({
   const [isFlipped, setIsFlipped] = useState(false)
   const { t } = useLanguage()
 
+  const handleClick = (e: React.MouseEvent) => {
+    // En móvil/tablet: primer click voltea, segundo navega
+    if (!isFlipped && window.innerWidth < 1024) {
+      e.preventDefault()
+      setIsFlipped(true)
+    }
+    // En desktop: click navega directamente (el hover ya mostró el flip)
+  }
+
+  const handleMouseEnter = () => {
+    // Solo en desktop (>= 1024px)
+    if (window.innerWidth >= 1024) {
+      setIsFlipped(true)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    // Solo en desktop
+    if (window.innerWidth >= 1024) {
+      setIsFlipped(false)
+    }
+  }
+
   return (
-    <Link href={`/projects/${id}`}>
+    <Link href={`/projects/${id}`} onClick={handleClick}>
       <div
         className="relative w-full aspect-[5/4] group [perspective:2000px]"
-        onMouseEnter={() => setIsFlipped(true)}
-        onMouseLeave={() => setIsFlipped(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div
           className={cn(
