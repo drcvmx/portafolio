@@ -19,10 +19,10 @@ export function Navigation() {
   ]
 
   return (
-    <header className="border-b border-neon-pink/30 backdrop-blur-sm sticky top-0 z-50 bg-cyber-dark/80">
+    <header className="border-b border-accent-500/30 backdrop-blur-sm sticky top-0 z-50 bg-drcv-primary/80">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-neon-pink glitch" data-text="DRCV">
+          <Link href="/" className="text-xl font-bold text-accent-500 glitch" data-text="DRCV">
             DRCV
           </Link>
 
@@ -33,8 +33,8 @@ export function Navigation() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`command-prompt hover:text-neon-pink transition-colors ${
-                      pathname === item.path ? "text-neon-pink neon-text-pink" : "text-white"
+                    className={`command-prompt hover:text-accent-500 transition-colors ${
+                      pathname === item.path ? "text-accent-500 neon-text-purple" : "text-white"
                     }`}
                   >
                     {item.name}
@@ -59,8 +59,8 @@ export function Navigation() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`command-prompt block hover:text-neon-pink transition-colors ${
-                      pathname === item.path ? "text-neon-pink neon-text-pink" : "text-white"
+                    className={`command-prompt block hover:text-accent-500 transition-colors ${
+                      pathname === item.path ? "text-accent-500 neon-text-purple" : "text-white"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

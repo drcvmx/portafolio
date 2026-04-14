@@ -8,7 +8,7 @@ export function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="border-t border-neon-pink/30 py-6 bg-cyber-dark/80 backdrop-blur-sm">
+    <footer className="border-t border-accent-500/30 py-6 bg-drcv-primary/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
@@ -19,7 +19,7 @@ export function Footer() {
           <div className="flex space-x-4">
             <Link
               href="https://github.com/drcvmx"
-              className="text-muted-foreground hover:text-neon-pink transition-colors group"
+              className="text-muted-foreground hover:text-accent-500 transition-colors group"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -28,7 +28,7 @@ export function Footer() {
             </Link>
             <Link
               href="https://www.linkedin.com/in/dante-ricardo-chavez-verdeja-501388361/"
-              className="text-muted-foreground hover:text-neon-cyan transition-colors group"
+              className="text-muted-foreground hover:text-accent-500 transition-colors group"
               target="_blank"
               rel="noopener noreferrer"
             >

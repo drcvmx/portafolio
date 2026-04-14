@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    --background: 260 35% 7%;
+    --background: 236 100% 6%;
     --foreground: 0 0% 100%;
     --card: 260 35% 10%;
     --card-foreground: 0 0% 100%;
     --popover: 260 35% 10%;
     --popover-foreground: 0 0% 100%;
-    --primary: 320 100% 65%;
+    --primary: 271 91% 65%;
     --primary-foreground: 0 0% 100%;
     --secondary: 280 70% 60%;
     --secondary-foreground: 0 0% 100%;
     --muted: 260 35% 15%;
     --muted-foreground: 240 5% 65%;
-    --accent: 190 100% 65%;
+    --accent: 271 81% 56%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -27,19 +27,19 @@
   }
 
   .dark {
-    --background: 260 35% 7%;
+    --background: 236 100% 6%;
     --foreground: 0 0% 100%;
     --card: 260 35% 10%;
     --card-foreground: 0 0% 100%;
     --popover: 260 35% 10%;
     --popover-foreground: 0 0% 100%;
-    --primary: 320 100% 65%;
+    --primary: 271 91% 65%;
     --primary-foreground: 0 0% 100%;
     --secondary: 280 70% 60%;
     --secondary-foreground: 0 0% 100%;
     --muted: 260 35% 15%;
     --muted-foreground: 240 5% 65%;
-    --accent: 190 100% 65%;
+    --accent: 271 81% 56%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -156,7 +156,7 @@
 
 .terminal-window {
   border: 1px solid rgba(255, 0, 255, 0.5);
-  background-color: rgba(13, 10, 30, 0.8);
+  background-color: rgba(0, 2, 29, 0.8);
   border-radius: 4px;
   padding: 1rem;
   position: relative;
@@ -199,6 +199,7 @@
 .terminal-content {
   font-family: var(--font-mono);
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 .command-prompt::before {
@@ -208,24 +209,25 @@
 
 /* Añadir efecto de neón a los bordes */
 .neon-border {
-  box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 24px #ff00ff, 0 0 35px #ff00ff;
 }
 
 .neon-text-pink {
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+  text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 25px #ff00ff;
 }
 
 .neon-text-purple {
-  text-shadow: 0 0 5px #9d4edd, 0 0 10px #9d4edd;
+  text-shadow: 0 0 8px #9d4edd, 0 0 16px #9d4edd, 0 0 25px #9d4edd;
 }
 
 .neon-text-cyan {
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff, 0 0 25px #00ffff;
 }
 
 /* Añadir efecto de gradiente para fondos */
 .cyberpunk-gradient {
-  background: linear-gradient(135deg, rgba(13, 10, 30, 0.8) 0%, rgba(45, 10, 80, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(0, 2, 29, 0.8) 0%, rgba(0, 1, 24, 0.8) 100%);
 }
 
 /* Efecto de scanline para un look más retro */
@@ -386,12 +388,13 @@
 
 /* Corner decorations estandarizadas */
 .cyber-corners::before,
-.cyber-corners::after {
+.cyber-corners::before {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 2px solid rgba(255, 0, 255, 0.6);
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 0, 255, 0.8);
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
 }
 
 .cyber-corners::before {
@@ -410,7 +413,7 @@
 
 /* Overlay gradients estandarizados */
 .cyber-overlay {
-  background: linear-gradient(to top, rgba(13, 10, 30, 0.8) 0%, rgba(13, 10, 30, 0.2) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 2, 29, 0.8) 0%, rgba(0, 2, 29, 0.2) 50%, transparent 100%);
 }
 
 /* Efectos de hover sutiles */
@@ -424,15 +427,15 @@
 }
 
 /* Bordes neón estandarizados */
-.neon-border-standard {
-  border: 1px solid rgba(255, 0, 255, 0.3);
-  box-shadow: 0 0 10px rgba(255, 0, 255, 0.1);
+.neon-border-subtle {
+  border: 1px solid rgba(255, 0, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
   transition: all 0.3s ease;
 }
 
-.neon-border-standard:hover {
-  border-color: rgba(255, 0, 255, 0.6);
-  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+.neon-border-subtle:hover {
+  border-color: rgba(255, 0, 255, 0.8);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.5);
 }
 
 /* Aspect ratios consistentes */
@@ -454,7 +457,7 @@
 }
 
 .cyber-scrollbar::-webkit-scrollbar-track {
-  background: rgba(13, 10, 30, 0.5);
+  background: rgba(0, 2, 29, 0.5);
   border-radius: 4px;
 }
 
@@ -472,5 +475,20 @@
 /* Scrollbar para Firefox */
 .cyber-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #ff00ff rgba(13, 10, 30, 0.5);
+  scrollbar-color: #ff00ff rgba(0, 2, 29, 0.5);
+}
+
+/* Google Drive Video Preview en Cards */
+.project-card-video-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #0a0a0a;
+}
+
+.project-card-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
 }

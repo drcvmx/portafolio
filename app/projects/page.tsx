@@ -34,68 +34,86 @@ export default function ProjectsPage() {
 
   const projects = [
     {
-      id: "drcv_company",
-      title: "drcv_company",
-      description: t("projects.drcvCompany.desc"),
-      image: "project_webp/drcv_company/company1.webp",
-      technologies: ["Astro", "Vue.js", "SCSS", "TypeScript"],
+      id: "aisuite",
+      title: "AISUITE",
+      description: t("projects.aisuite.desc"),
+      image: "",
+      technologies: ["Next.js 14", "React", "Python", "LLMs"],
+      category: "app",
+      videoUrl: "https://drive.google.com/file/d/1DZ5351TBt1G-I5S1wP7P4Zc9OtpdNNCQ/preview",
+    },
+    {
+      id: "pos",
+      title: "DRCV Store",
+      description: t("projects.pos.desc"),
+      image: "",
+      technologies: ["Next.js", "NestJS", "Ollama", "PostgreSQL", "Tailwind CSS"],
+      category: "app",
+      videoUrl: "https://drive.google.com/file/d/1rLSisYiO335UJWL0QzKvIt5isaooHU9N/preview",
+    },
+    {
+      id: "battlekart",
+      title: "Go-Kart Zen Loyalty",
+      description: t("projects.battlekart.desc"),
+      image: "project_webp/battlekart/bk7.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+      category: "app",
+    },
+    {
+      id: "catalogo",
+      title: "Green Alchemy — Catálogo",
+      description: t("projects.catalogo.desc"),
+      image: "project_webp/catalogo/catalogo1.png",
+      technologies: ["React", "TypeScript", "Vite", "Supabase"],
+      category: "app",
+    },
+    {
+      id: "balazhi",
+      title: "Balazhi Stone",
+      description: t("projects.balazhi.desc"),
+      image: "project_webp/balazhi/balazhi1.png",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
       category: "web",
+    },
+    {
+      id: "green_alchemy_sgl",
+      title: "Green Alchemy SGL",
+      description: t("projects.greenAlchemy.desc"),
+      image: "project_webp/greensystem/green1.png",
+      technologies: ["React", "TypeScript", "Vite", "Supabase"],
+      category: "app",
+    },
+    {
+      id: "one_soul",
+      title: "ONE · Soul Essence",
+      description: t("projects.one.desc"),
+      image: "project_webp/one/one1.png",
+      technologies: ["React", "TypeScript", "Vite", "Supabase"],
+      category: "web",
+    },
+    {
+      id: "probin",
+      title: "Probin Real Estate CMS",
+      description: t("projects.probin.desc"),
+      image: "project_webp/probin/probin1.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+      category: "app",
+    },
+    {
+      id: "winpot",
+      title: "Winpot CMS & Multi-Tenant",
+      description: t("projects.winpot.desc"),
+      image: "project_webp/winpot/winpot1.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+      category: "app",
     },
     {
       id: "seprytec",
-      title: "seprytec",
+      title: "Seprytec",
       description: t("projects.seprytec.desc"),
-      image: "project_webp/seprytec/seprytec1.png",
-      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
+      image: "project_webp/seprytec/seprytec1.webp",
+      technologies: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
       category: "web",
-    },
-     {
-      id: "drcv_note",
-      title: "NOTE DRCV",
-      description: t("projects.drcvNote.desc"),
-      image: "project_webp/app_note/note1.png",
-      technologies: ["React", "FastAPI", "JavaScript", "PostgreSQL"],
-      category: "app",
-    },
-        {
-      id: "sozu",
-      title: "sozu",
-      description: t("projects.sozu.desc"),
-      image: "project_webp/sozu/sozu3.webp",
-      technologies: ["n8n", "Next.js", "JavaScript", "PostgreSQL"],
-      category: "app",
-    },
-    {
-      id: "carpinteria_verdeja",
-      title: "carpinteria_verdeja",
-      description: t("projects.carpinteriaVerdeja.desc"),
-      image: "project_webp/carpinteria/carpinteria1.webp",
-      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
-      category: "web",
-    },
-    {
-      id: "crime_control",
-      title: "crime_control",
-      description: t("projects.crimeControl.desc"),
-      image: "project_webp/crimen/crimen1.png",
-      technologies: ["React", "Next.js", "JavaScript", "Supabase"],
-      category: "app",
-    },
-    {
-      id: "luchavsludopatia",
-      title: "luchavsludopatia",
-      description: t("projects.luchavsludopatia.desc"),
-      image: "project_webp/ludopatia/ludo1.webp",
-      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
-      category: "web",
-    },
-    {
-      id: "youtube_transcribe",
-      title: "youtube_transcribe",
-      description: t("projects.youtubeTranscribe.desc"),
-      image: "project_webp/youtube_transcribe/transcribe1.webp",
-      technologies: ["React", "Next.js", "JavaScript", "Python", "Flask"],
-      category: "app",
     },
   ]
 
@@ -125,7 +143,7 @@ export default function ProjectsPage() {
           </div>
           <div className="terminal-content">
             <p className="mb-4">
-              <span className="text-primary">$</span> {t("projects.title")}
+              <span className="neon-text-purple">$</span> {t("projects.title")}
               <span className="terminal-cursor"></span>
             </p>
           </div>
@@ -167,6 +185,7 @@ export default function ProjectsPage() {
                 description={project.description}
                 image={project.image}
                 technologies={project.technologies}
+                videoUrl={'videoUrl' in project ? (project as any).videoUrl : undefined}
               />
             ))}
           </div>

@@ -18,7 +18,7 @@ const PORTFOLIO_URL = "https://portafolio-drcv07.vercel.app/"
 
 export default function Home() {
   const { t } = useLanguage()
-   const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("")
   // Inicializar estados con valores de localStorage si están disponibles
   const [isLoading, setIsLoading] = useState(true)
   const [introComplete, setIntroComplete] = useState(false)
@@ -65,31 +65,32 @@ export default function Home() {
 
   const featuredProjects = [
     {
-      id: "drcv_company",
-      title: "drcv_company",
-      description: t("projects.drcvCompany.desc"),
-      image: "project_webp/drcv_company/company1.webp",
-      technologies: ["Astro", "Vue.js", "SCSS", "TypeScript"],
-    },
-      {
-      id: "drcv_note",
-      title: "NOTE DRCV",
-      description: t("projects.drcvNote.desc"),
-      image: "project_webp/app_note/note1.png",
-      technologies: ["React", "FastAPI", "JavaScript", "PostgreSQL"],
+      id: "aisuite",
+      title: "AISUITE",
+      description: t("projects.aisuite.desc"),
+      image: "",
+      technologies: ["Next.js 14", "React", "Python", "LLMs"],
+      videoUrl: "https://drive.google.com/file/d/1DZ5351TBt1G-I5S1wP7P4Zc9OtpdNNCQ/preview",
     },
     {
-      id: "seprytec",
-      title: "seprytec",
-      description: t("projects.seprytec.desc"),
-      image: "project_webp/seprytec/seprytec1.png",
-      technologies: ["Next.js", "React", "TailwindCSS", "JavaScript"],
+      id: "battlekart",
+      title: "Go-Kart Zen Loyalty",
+      description: t("projects.battlekart.desc"),
+      image: "project_webp/battlekart/bk7.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    },
+    {
+      id: "catalogo",
+      title: "Green Alchemy — Catálogo",
+      description: t("projects.catalogo.desc"),
+      image: "project_webp/catalogo/catalogo1.png",
+      technologies: ["React", "TypeScript", "Vite", "Supabase"],
     },
   ]
 
   // Mostrar un estado de carga mientras se verifica localStorage
   if (isLoading) {
-    return <div className="py-12 flex justify-center text-neon-pink">{t("common.loading")}</div>
+    return <div className="py-12 flex justify-center text-accent-500">{t("common.loading")}</div>
   }
 
   return (
@@ -104,8 +105,22 @@ export default function Home() {
               <div className="terminal-title">terminal</div>
             </div>
             <div className="terminal-content">
-              <span className="text-neon-pink">$ </span>
-              <span>{t("home.intro")}</span>
+              <span className="text-accent-500">$ </span>
+              {(() => {
+                const text = t("home.intro")
+                const mottoEndEN = text.indexOf("built.")
+                const mottoEndES = text.indexOf("hacer.")
+                const mottoEnd = mottoEndEN !== -1 ? mottoEndEN + 6 : mottoEndES !== -1 ? mottoEndES + 6 : -1
+                if (mottoEnd !== -1) {
+                  return (
+                    <>
+                      <span className="neon-text-purple font-bold">{text.slice(0, mottoEnd)}</span>
+                      <span>{text.slice(mottoEnd)}</span>
+                    </>
+                  )
+                }
+                return <span>{text}</span>
+              })()}
               <span className="terminal-cursor"></span>
             </div>
           </div>
@@ -123,7 +138,7 @@ export default function Home() {
           <div className="mt-8 flex justify-center">
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 bg-neon-pink/10 hover:bg-neon-pink/20 text-neon-pink px-4 py-2 rounded-md transition-colors border border-neon-pink/30 shadow-neon-pink"
+              className="inline-flex items-center gap-2 bg-accent-500/10 hover:bg-accent-500/20 text-accent-500 px-4 py-2 rounded-md transition-colors border border-accent-500/30 shadow-accent-purple"
             >
               {t("home.learnMore")} <ArrowRight size={16} />
             </Link>
@@ -135,10 +150,10 @@ export default function Home() {
         <>
           <section>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-white neon-text-pink">{t("home.featuredProjects")}</h2>
+              <h2 className="text-2xl font-bold text-white neon-text-purple">{t("home.featuredProjects")}</h2>
               <Link
                 href="/projects"
-                className="text-neon-pink hover:underline inline-flex items-center gap-1 neon-text-pink"
+                className="text-accent-500 hover:underline inline-flex items-center gap-1 neon-text-purple"
               >
                 {t("home.viewAll")} <ArrowRight size={16} />
               </Link>
@@ -154,16 +169,16 @@ export default function Home() {
           </section>
 
           <section className="tech-stack-section">
-            <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">{t("home.technologies")}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">{t("home.technologies")}</h2>
             <TechStack />
           </section>
-           <section className="section-reveal delay-800">
-            <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">{t("about.contact")}</h2>
+          <section className="section-reveal delay-800">
+            <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">{t("about.contact")}</h2>
 
             <div className="grid md:grid-cols-1 gap-8">
               {/* Email contact */}
               <div className="relative animate-fade-in-up delay-900">
-                <div className="bg-cyber-dark border border-neon-pink/20 rounded-md p-1 flex items-center hover:border-neon-pink/40 transition-colors">
+                <div className="bg-drcv-600 border border-accent-500/20 rounded-md p-1 flex items-center hover:border-accent-500/40 transition-colors">
                   <input
                     type="text"
                     value={EMAIL_ADDRESS}
@@ -173,14 +188,14 @@ export default function Home() {
                   <div className="flex space-x-2 mr-2">
                     <button
                       onClick={sendEmail}
-                      className="bg-neon-pink/20 hover:bg-neon-pink/30 text-neon-pink p-2 rounded-md transition-colors hover:shadow-neon-pink"
+                      className="bg-accent-500/20 hover:bg-accent-500/30 text-accent-500 p-2 rounded-md transition-colors hover:shadow-accent-purple"
                       title={t("about.sendEmail")}
                     >
                       <Send size={20} />
                     </button>
                     <button
                       onClick={() => copyToClipboard(EMAIL_ADDRESS)}
-                      className="bg-neon-pink/20 hover:bg-neon-pink/30 text-neon-pink p-2 rounded-md transition-colors hover:shadow-neon-pink"
+                      className="bg-accent-500/20 hover:bg-accent-500/30 text-accent-500 p-2 rounded-md transition-colors hover:shadow-accent-purple"
                       title={t("about.copyEmail")}
                     >
                       <Copy size={20} />
@@ -199,15 +214,15 @@ export default function Home() {
                 </div>
                 <div className="terminal-content">
                   <p className="mb-4">
-                    <span className="text-neon-pink">$</span> ifconfig
+                    <span className="text-accent-500">$</span> ifconfig
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-3">
                       <div>
-                        <p className="mb-1 text-neon-pink">github:</p>
+                        <p className="mb-1 text-accent-500">github:</p>
                         <Link
                           href={GITHUB_URL}
-                          className="flex items-center gap-2 hover:text-neon-pink transition-colors font-mono group"
+                          className="flex items-center gap-2 hover:text-accent-500 transition-colors font-mono group"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -216,10 +231,10 @@ export default function Home() {
                         </Link>
                       </div>
                       <div>
-                        <p className="mb-1 text-neon-cyan">linkedin:</p>
+                        <p className="mb-1 text-accent-400">linkedin:</p>
                         <Link
                           href={LINKEDIN_URL}
-                          className="flex items-center gap-2 hover:text-neon-cyan transition-colors font-mono group"
+                          className="flex items-center gap-2 hover:text-accent-400 transition-colors font-mono group"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -229,10 +244,10 @@ export default function Home() {
                       </div>
                     </div>
                     <div>
-                      <p className="mb-1 text-neon-purple">portfolio:</p>
+                      <p className="mb-1 text-accent-600">portfolio:</p>
                       <Link
                         href={PORTFOLIO_URL}
-                        className="flex items-center gap-2 hover:text-neon-purple transition-colors font-mono group"
+                        className="flex items-center gap-2 hover:text-accent-600 transition-colors font-mono group"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

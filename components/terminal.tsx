@@ -84,7 +84,7 @@ export function Terminal({
         <div className="terminal-title">terminal</div>
       </div>
       <div className="terminal-content">
-        {showPrompt && <span className="text-neon-pink">$ </span>}
+        {showPrompt && <span className="text-accent-500">$ </span>}
         <span>{displayedText}</span>
         {(isTyping || cursorVisible) && <span className="terminal-cursor">|</span>}
       </div>

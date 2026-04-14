@@ -84,16 +84,28 @@ export default function AboutPage() {
 
   const experiences = [
     {
-      title: "Svenson",
-      company: t("exp.svenson.company"),
-      period: t("exp.svenson.period"),
-      description: t("exp.svenson.desc"),
+      title: t("exp.digimex.title"),
+      company: t("exp.digimex.company"),
+      period: t("exp.digimex.period"),
+      description: t("exp.digimex.desc"),
     },
     {
-      title: t("exp.webDevelopment.title"),
-      company: t("exp.webDevelopment.company"),
-      period: t("exp.webDevelopment.period"),
-      description: t("exp.webDevelopment.desc"),
+      title: t("exp.fyttsa.title"),
+      company: t("exp.fyttsa.company"),
+      period: t("exp.fyttsa.period"),
+      description: t("exp.fyttsa.desc"),
+    },
+    {
+      title: t("exp.sozu.title"),
+      company: t("exp.sozu.company"),
+      period: t("exp.sozu.period"),
+      description: t("exp.sozu.desc"),
+    },
+    {
+      title: t("exp.freelance.title"),
+      company: t("exp.freelance.company"),
+      period: t("exp.freelance.period"),
+      description: t("exp.freelance.desc"),
     },
     {
       title: t("exp.university.title"),
@@ -121,7 +133,7 @@ export default function AboutPage() {
                 <div className="terminal-title">terminal</div>
               </div>
               <div className="terminal-content">
-                <span className="text-neon-pink">$ </span>
+                <span className="text-accent-500">$ </span>
                 <span>{t("about.initProfile")}</span>
                 <span className="terminal-cursor"></span>
               </div>
@@ -135,7 +147,23 @@ export default function AboutPage() {
                 <div className="terminal-title">terminal</div>
               </div>
               <div className="terminal-content">
-                <span>{t("about.bio")}</span>
+                {(() => {
+                  const text = t("about.bio")
+                  const phrases = ["si lo imaginas, lo puedo desarrollar.", "if you can imagine it, I can build it."]
+                  for (const phrase of phrases) {
+                    const idx = text.toLowerCase().indexOf(phrase)
+                    if (idx !== -1) {
+                      return (
+                        <>
+                          <span>{text.slice(0, idx)}</span>
+                          <span className="neon-text-purple font-bold">{text.slice(idx, idx + phrase.length)}</span>
+                          <span>{text.slice(idx + phrase.length)}</span>
+                        </>
+                      )
+                    }
+                  }
+                  return <span>{text}</span>
+                })()}
                 <span className="terminal-cursor"></span>
               </div>
             </div>
@@ -167,7 +195,7 @@ export default function AboutPage() {
           <a
             href="/cv_drcv.pdf"
             download="cv_drcv.pdf"
-            className="inline-flex items-center gap-2 bg-neon-pink/10 hover:bg-neon-pink/20 text-neon-pink px-6 py-3 rounded-md transition-colors border border-neon-pink/30 shadow-neon-pink font-mono hover:shadow-neon-pink"
+            className="inline-flex items-center gap-2 bg-accent-500/10 hover:bg-accent-500/20 text-accent-500 px-6 py-3 rounded-md transition-colors border border-accent-500/30 shadow-accent-purple font-mono hover:shadow-accent-purple"
           >
             <FileDown size={18} />
             {t("about.downloadCV")}
@@ -176,7 +204,7 @@ export default function AboutPage() {
             href="https://drive.google.com/file/d/1o57CZwy56e-hpwvckCEYCRYAYAMnDDn9/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-neon-purple/10 hover:bg-neon-purple/20 text-neon-purple px-6 py-3 rounded-md transition-colors border border-neon-purple/30 shadow-neon-purple font-mono hover:shadow-neon-purple"
+            className="inline-flex items-center gap-2 bg-accent-600/10 hover:bg-accent-600/20 text-accent-600 px-6 py-3 rounded-md transition-colors border border-accent-600/30 shadow-neon-purple font-mono hover:shadow-neon-purple"
           >
             <ExternalLink size={18} />
             {t("about.viewOnline")}
@@ -187,7 +215,7 @@ export default function AboutPage() {
         {/*
         <div className="flex justify-center mt-12 animate-fade-in delay-200">
           <div className="relative">
-            <div className="w-48 h-48 rounded-lg overflow-hidden border-2 border-neon-pink/30 shadow-neon-pink bg-cyber-dark/50 backdrop-blur-sm">
+            <div className="w-48 h-48 rounded-lg overflow-hidden border-2 border-accent-500/30 shadow-accent-purple bg-drcv-600/50 backdrop-blur-sm">
               <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/10 via-transparent to-neon-purple/10"></div>
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
@@ -199,13 +227,13 @@ export default function AboutPage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neon-pink/5 to-transparent animate-pulse"></div>
             </div>
-            <div className="absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-neon-pink/50"></div>
-            <div className="absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-neon-pink/50"></div>
-            <div className="absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-neon-pink/50"></div>
-            <div className="absolute -bottom-2 -right-2 w-4 h-4 border-r-2 border-b-2 border-neon-pink/50"></div>
+            <div className="absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-accent-500/50"></div>
+            <div className="absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-accent-500/50"></div>
+            <div className="absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-accent-500/50"></div>
+            <div className="absolute -bottom-2 -right-2 w-4 h-4 border-r-2 border-b-2 border-accent-500/50"></div>
             <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-              <div className="bg-cyber-dark border border-neon-pink/30 px-3 py-1 rounded text-xs font-mono text-neon-pink">
-                <span className="text-neon-pink">$</span> whoami
+              <div className="bg-drcv-600 border border-accent-500/30 px-3 py-1 rounded text-xs font-mono text-accent-500">
+                <span className="text-accent-500">$</span> whoami
               </div>
             </div>
           </div>
@@ -216,7 +244,7 @@ export default function AboutPage() {
       {bioComplete && (
         <>
           <section className="section-reveal delay-200">
-            <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">
+            <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">
               {t("about.experienceTimeline")}
             </h2>
             <div className="space-y-6">
@@ -230,17 +258,17 @@ export default function AboutPage() {
                   </div>
                   <div className="terminal-content">
                     <p className="mb-1">
-                      <span className="text-neon-pink">$</span> cat job_details.txt
+                      <span className="text-accent-500">$</span> cat job_details.txt
                     </p>
                     <div className="mb-2">
                       <p>
-                        <span className="text-neon-pink">{t("common.title")}:</span> {exp.title}
+                        <span className="text-accent-500">{t("common.title")}:</span> {exp.title}
                       </p>
                       <p>
-                        <span className="text-neon-pink">{t("common.period")}:</span> {exp.period}
+                        <span className="text-accent-500">{t("common.period")}:</span> {exp.period}
                       </p>
                       <p>
-                        <span className="text-neon-pink">{t("common.description")}:</span> {exp.description}
+                        <span className="text-accent-500">{t("common.description")}:</span> {exp.description}
                       </p>
                     </div>
                   </div>
@@ -250,19 +278,19 @@ export default function AboutPage() {
           </section>
 
           <section className="tech-stack-section section-reveal delay-700">
-            <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">{t("about.techStack")}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">{t("about.techStack")}</h2>
             <div className="animate-slide-in delay-800">
               <TechStack />
             </div>
           </section>
 
           <section className="section-reveal delay-800">
-            <h2 className="text-2xl font-bold mb-6 text-white neon-text-pink font-mono">{t("about.contact")}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">{t("about.contact")}</h2>
 
             <div className="grid md:grid-cols-1 gap-8">
               {/* Email contact */}
               <div className="relative animate-fade-in-up delay-900">
-                <div className="bg-cyber-dark border border-neon-pink/20 rounded-md p-1 flex items-center hover:border-neon-pink/40 transition-colors">
+                <div className="bg-drcv-600 border border-accent-500/20 rounded-md p-1 flex items-center hover:border-accent-500/40 transition-colors">
                   <input
                     type="text"
                     value={EMAIL_ADDRESS}
@@ -272,14 +300,14 @@ export default function AboutPage() {
                   <div className="flex space-x-2 mr-2">
                     <button
                       onClick={sendEmail}
-                      className="bg-neon-pink/20 hover:bg-neon-pink/30 text-neon-pink p-2 rounded-md transition-colors hover:shadow-neon-pink"
+                      className="bg-accent-500/20 hover:bg-accent-500/30 text-accent-500 p-2 rounded-md transition-colors hover:shadow-accent-purple"
                       title={t("about.sendEmail")}
                     >
                       <Send size={20} />
                     </button>
                     <button
                       onClick={() => copyToClipboard(EMAIL_ADDRESS)}
-                      className="bg-neon-pink/20 hover:bg-neon-pink/30 text-neon-pink p-2 rounded-md transition-colors hover:shadow-neon-pink"
+                      className="bg-accent-500/20 hover:bg-accent-500/30 text-accent-500 p-2 rounded-md transition-colors hover:shadow-accent-purple"
                       title={t("about.copyEmail")}
                     >
                       <Copy size={20} />
@@ -298,44 +326,44 @@ export default function AboutPage() {
                 </div>
                 <div className="terminal-content">
                   <p className="mb-4">
-                    <span className="text-neon-pink">$</span> ifconfig
+                    <span className="text-accent-500">$</span> ifconfig
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-3">
                       <div>
-                        <p className="mb-1 text-neon-pink">github:</p>
+                        <p className="mb-1 text-accent-500">github:</p>
                         <Link
                           href={GITHUB_URL}
-                          className="flex items-center gap-2 hover:text-neon-pink transition-colors font-mono group"
+                          className="flex items-center gap-2 hover:text-accent-500 transition-colors font-mono group"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Github size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(255,0,255,0.6)]" />
+                          <Github size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(168, 85, 247, 0.6)]" />
                           github.com/drcvmx
                         </Link>
                       </div>
                       <div>
-                        <p className="mb-1 text-neon-cyan">linkedin:</p>
+                        <p className="mb-1 text-accent-400">linkedin:</p>
                         <Link
                           href={LINKEDIN_URL}
-                          className="flex items-center gap-2 hover:text-neon-cyan transition-colors font-mono group"
+                          className="flex items-center gap-2 hover:text-accent-400 transition-colors font-mono group"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Linkedin size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]" />
+                          <Linkedin size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(147, 51, 234, 0.6)]" />
                           linkedin.com/drcvmx
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <p className="mb-1 text-neon-purple">portfolio:</p>
+                      <p className="mb-1 text-accent-600">portfolio:</p>
                       <Link
                         href={PORTFOLIO_URL}
-                        className="flex items-center gap-2 hover:text-neon-purple transition-colors font-mono group"
+                        className="flex items-center gap-2 hover:text-accent-600 transition-colors font-mono group"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <ExternalLink size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(157,78,221,0.6)]" />
+                        <ExternalLink size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(147, 51, 234, 0.6)]" />
                         portafolio-drcv07.vercel.app
                       </Link>
                     </div>

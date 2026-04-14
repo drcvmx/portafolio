@@ -22,7 +22,7 @@ const translations = {
     "nav.about": "about",
 
     // Home page
-    "home.intro": "Hello, my name is Dante. I'm a Full-stack developer, I'm passionate about soccer, and I enjoy imagining things before creating them. I believe that if you imagine it correctly, anything is possible.",
+    "home.intro": "if you imagine it, the right way, anything can be built. I'm a Fullstack developer. I'm passionate about soccer. I build systems that solve real problems, improve logistics, and optimize workflows — all paired with modern, clean interfaces.",
     "home.terminal.intro": "Hello, my name is Dante. I am a Fullstack Developer passionate about web design and programming",
     "home.learnMore": "Learn more about me",
     "home.featuredProjects": "Featured Projects",
@@ -44,6 +44,7 @@ const translations = {
     "project.backToProjects": "Back to projects",
     "project.viewOnGithub": "View on GitHub",
     "project.liveDemo": "Live Demo",
+    "project.production": "Production",
     "project.overview": "Project Overview",
     "project.keyFeatures": "Key Features",
     "project.pauseSlideshow": "Pause slideshow",
@@ -53,7 +54,7 @@ const translations = {
     // About page
     "about.initProfile": "Initializing personal profile... Access granted. Loading bio data...",
     "about.bio":
-      "Hello, my name is Dante Ricardo Chavez Verdeja, and I am a Computer Engineer. I have worked on both backend and frontend projects, but I prefer web development and making life easier for users. I am a soccer enthusiast, I love playing and watching it every week.",
+      "Hey, I'm Dante. Full-stack Developer and Computer Engineer with 3+ years building efficient, modern digital solutions. if you can imagine it, I can build it. My week is split between creating and sometimes optimizing software systems, and my other big passion: playing soccer every weekend.",
     "about.downloadCV": "Download CV",
     "about.viewOnline": "View Online",
     "about.experienceTimeline": "Experience Timeline",
@@ -76,67 +77,71 @@ const translations = {
     "about.enterMessage": "Enter your message",
 
     // Experience - Updated with real experience
-    "exp.svenson.company": "Frontend Developer",
-    "exp.svenson.period": "2024 - 2025",
-    "exp.svenson.desc":
-      "Developed and enhanced the main customer-facing web application using React.js and Next.js (App Router), building robust and interactive interfaces. Optimized frontend code modularity and efficiency with custom hooks, and connected the frontend to a WhatsApp chatbot, significantly improving customer interaction and query management.",
+    "exp.digimex.title": "Full-Stack Developer",
+    "exp.digimex.company": "DIGIMEX",
+    "exp.digimex.period": "Dec 2025 - Present",
+    "exp.digimex.desc": "Architected an internal logistics system and a B2B catalog platform using Next.js, React, and TypeScript. Integrated Supabase for real-time synchronization, built Edge Functions for workflow automation, and optimized the development cycle using AI-assisted tools.",
 
-    "exp.webDevelopment.title": "Web Development",
-    "exp.webDevelopment.company": "Project Development",
-    "exp.webDevelopment.period": "2023 - Present",
-    "exp.webDevelopment.desc":
-      "Developing web projects and applications to demonstrate my skills using React, Node.js, JavaScript, and CSS.",
+    "exp.fyttsa.title": "Full-Stack Developer",
+    "exp.fyttsa.company": "Grupo Fyttsa",
+    "exp.fyttsa.period": "Aug 2025 - Nov 2025",
+    "exp.fyttsa.desc": "Developed the 'Kraken' enterprise ERP. Built a secure multitenant architecture and optimized intensive API consumption from a PHP backend, improving response times and overall system stability.",
 
-    "exp.university.title": "Universidad Autónoma del Estado de México",
-    "exp.university.company": "Professional Development",
+    "exp.sozu.title": "Full-Stack Developer",
+    "exp.sozu.company": "Grupo Inmobiliario Sozu",
+    "exp.sozu.period": "Sep 2024 - Apr 2025",
+    "exp.sozu.desc": "Participated in the technological modernization of the internal real estate management system. Migrated legacy functionalities to a modern React and TypeScript architecture, integrating Supabase for real-time data storage.",
+
+    "exp.freelance.title": "Software Developer (Contract Projects)",
+    "exp.freelance.company": "Remote",
+    "exp.freelance.period": "Jan 2023 - Present",
+    "exp.freelance.desc": "Developed an NLP video transcription analysis system using Python (Flask) and Next.js (General Motors). Led the frontend development for Seprytec, ensuring strict data validation using React Hook Form and Zod with TypeScript.",
+
+    "exp.university.title": "B.S. in Computer Engineering",
+    "exp.university.company": "Universidad Autónoma del Estado de México",
     "exp.university.period": "2021 - Present",
-    "exp.university.desc":
-      "My professional training in Computer Engineering, where I have worked on academic and social impact projects for my institution.",
+    "exp.university.desc": "Pursuing a degree in Computer Engineering with a focus on software architecture, concurrency, and systems engineering, building a strong foundation in computer science and advanced programming.",
 
     // Footer
     "footer.allRightsReserved": "All rights reserved",
     "footer.builtWith": "Built with",
 
-    // Projects data - New projects
-    "projects.drcvCompany.desc":
-      "A modern corporate website designed to boost companies' online presence, offering a professional and visually impactful experience for their clients.",
-    "projects.drcvCompany.longDesc":
-      "This project develops a comprehensive corporate website, optimized for efficiency and user experience. It leverages Astro for superior performance, Vue.js for interactivity, Tailwind CSS and SCSS for agile design, and Pinia for scalable data management, all built with TypeScript for enhanced robustness. The primary goal is to provide businesses with a solid, attractive, and functional digital platform that enables them to effectively connect with their audience and stand out in the market.",
+    // Projects data
+    "projects.aisuite.desc": "Zero-cost, 100% cloud-free corporate Natural Language Processing (NLP).",
+    "projects.aisuite.longDesc": "The Problem: Corporations, law firms, and senior executives face a bottleneck. They need AI to audit hours of meetings and hundreds of contracts, but cannot send that confidential data to public APIs due to security risks. I present the Solution.",
 
-    "projects.seprytec.desc":
-      "A modern website for a private security company, crafted to instill user trust and comfort through intuitive design.",
-    "projects.seprytec.longDesc":
-      "Built with React and Next.js, this interactive web platform is designed for visual appeal and ease of use, providing intuitive navigation and dynamic sections with interactive buttons that seamlessly guide users through the private security company's services and information.",
+    "projects.pos.desc": "POS ecosystem powered by an autonomous AI Agent that manages direct sales to the cart in real-time.",
+    "projects.pos.longDesc": "The Problem: The retail e-commerce industry loses sales using generic 'FAQ' chatbots that frustrate customers by sending useless links. I present the Solution: An Intelligent Retail ecosystem starring 'Miboot', an AI Agent that doesn't just talk — it executes backend tools. It reads user intent, verifies real stock in the database, and adds products directly to the cart (Zero-Click Conversion). Built on a Multi-Tenant architecture and powered by locally-run LLMs, ensuring zero cost per token and absolute data sovereignty for the store.",
 
-    "projects.drcvNote.desc":
-      "Your digital space for big and small ideas. Save everything from quick reminders to detailed and structured notes, all in one intuitive and organized place.",
-    "projects.drcvNote.longDesc":
-      "This project offers a notes application designed to be your perfect ally in organizing information. With a simple and intuitive interface, you can quickly capture those fleeting ideas or develop extensive and well-structured notes. The goal is to provide you with a digital space where managing your notes feels natural and efficient.",
+    "projects.battlekart.desc": "Complete gamification and loyalty system with admin panel for rewards and customer management.",
+    "projects.battlekart.longDesc": "An impressive frontend loyalty control solution powered by gamification mechanics. It facilitates customer retention through a VIP tier system, annual memberships, and redeemable discount coupons. The project features a database simulation module with LocalStorage persistence for maximum speed demos without backend dependency. Also includes a virtual POS Terminal for custom redemptions and real-time race tracking.",
 
-    "projects.carpinteriaVerdeja.desc":
-      "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
-    "projects.carpinteriaVerdeja.longDesc":
-      "Intuitive and visually impactful frontend webpage, focused on offering a pleasant navigation experience and a memorable design.",
+    "projects.catalogo.desc": "Multi-branch catalog system with inventory management and premium UX.",
+    "projects.catalogo.longDesc": "A digital platform optimized for viewing and managing premium catalogs across multiple geographic locations. Integrates a complete admin panel with local persistence for agile management of brands, categories, and variants.",
 
-    "projects.crimeControl.desc":
-      "A real-time crime control system that centralizes criminal data, incident tracking, and provides precise offender location within correctional facilities, enabling rapid and strategic police response.",
-    "projects.crimeControl.longDesc":
-      "This project develops a comprehensive platform for the administration and predictive analysis of criminal activity, integrating diverse data sources such as incident reports and suspect profiles. Its capability extends to clearly differentiating between civilians and offenders, and crucially, it manages and displays in real-time the location of individuals deprived of liberty within specific cells and prisons. The system aims to optimize resource allocation, enhance coordination among law enforcement agencies, and strengthen crime prevention strategies, all through a robust, accessible, and detailed database.",
+    "projects.balazhi.desc": "Premium luxury materials showcase.",
+    "projects.balazhi.longDesc": "Balazhi Stone is a sophisticated web platform designed for the exhibition and distribution of sintered stones, quartz, and high-end porcelain in Mexico. The project focuses on a minimalist 'Premium Dark' aesthetic with golden accents.",
 
-    "projects.luchavsludopatia.desc":
-      "A supportive and informative website dedicated to combating gambling addiction, drawing inspiration from government resources to offer information, tools, and resources for prevention and seeking help.",
-    "projects.luchavsludopatia.longDesc":
-      "This is a supportive and informative web platform, inspired by government resources, with the strong aim of addressing and mitigating the issue of gambling addiction. The project will focus on providing users with clear and accessible information about gambling addiction, its risks and consequences, as well as offering practical tools and resources for prevention, early detection, and seeking professional help.",
+    "projects.greenAlchemy.desc": "Logistics Management System with architecture to improve internal company workflows.",
+    "projects.greenAlchemy.longDesc": "An advanced logistics management system that centralizes sales, treasury, and logistics workflows in an elegant and functional interface. Implements an autonomous architecture based on demoStorage to ensure full persistence and operability.",
 
-    "projects.youtubeTranscribe.desc":
-      "A web application that extracts and analyzes the content of YouTube videos (via their transcripts) using a Python backend and natural language processing capabilities",
-    "projects.youtubeTranscribe.longDesc":
-      "This web application is designed to automate the process of analyzing YouTube video content. It operates in two main stages: first, a backend developed in Python uses the YouTube transcripts API to obtain the subtitles or transcripts of a video given a YouTube link. Subsequently, these transcripts are sent to a Next.js backend, where an Ollama language model processes and summarizes the text.",
+    "projects.one.desc": "Premium holistic platform for personal wellness and deep spiritual connection.",
+    "projects.one.longDesc": "A comprehensive digital experience that merges a healing crystals boutique, a spiritual training center, and a catalog of therapies and sacred retreats. Designed with elegant minimalist aesthetics, it offers smooth parallax navigation and local data persistence.",
 
-    "projects.sozu.desc":
-      "Comprehensive real estate management system with PostgreSQL database featuring 50+ tables, developed for one of Guadalajara's largest real estate companies.",
-    "projects.sozu.longDesc":
-      "Complete real estate management system handling projects, administrative documents, and complex data relationships. Built with PostgreSQL, collaborative development, and AI implementation to optimize operational processes.",
+    "projects.probin.desc": "Premium platform for real estate development showcase and comprehensive interactive CRM management.",
+    "projects.probin.longDesc": "A high-level frontend solution combining an immersive portal for presenting multiple real estate projects with a powerful admin panel. Allows agents to manage leads, appointments, client profiles, campaigns, and operational closing checklists. Powered by a LocalStorage-based MockDB for ultra-fast sales demos, offline data persistence, and smooth visual experience.",
+
+    "projects.winpot.desc": "High-performance multi-tenant CMS for dynamic casino management and gamified content.",
+    "projects.winpot.longDesc": "A robust solution for casino networks that centralizes the administration of multiple brand identities in a single technical core. Implements an atomic design system and tenant-based architecture to deliver personalized experiences.",
+
+    "projects.seprytec.desc": "Modern website for a private security company.",
+    "projects.seprytec.longDesc": "Modern website for a private security company. Designed to instill trust through intuitive design and smooth navigation.",
+
+    "projects.drcvCompany.desc": "Modern corporate website designed to boost businesses' online presence.",
+    "projects.drcvCompany.longDesc": "A modern corporate website designed to boost businesses' online presence. Optimized for efficiency and user experience, using Astro for performance and Vue.js for interactivity.",
+
+    "projects.youtubeTranscribe.desc": "Web application that extracts and analyzes YouTube video content.",
+    "projects.youtubeTranscribe.longDesc": "Web application that extracts and analyzes YouTube video content. Uses a Python backend to get transcriptions and a language model (Ollama) to process and summarize text.",
 
     // Common
     "common.loading": "Loading...",
@@ -154,7 +159,7 @@ const translations = {
 
     // Home page
     "home.intro":
-      "Hola, mi nombre es Dante. Soy un desarrollador Fullstack, soy apasionado del futbol, me gusta imaginar para despues crear, creo que si lo imaginas de la manera correcta todo se puede hacer.",
+      "si lo imaginas, de la manera correcta, todo se puede hacer. Soy un desarrollador Fullstack. Me apasiona el futbol. Crear sistemas que resuelven problemas reales, mejoran la logística y optimizan procesos en conjunto de interfaces modernas y estéticas.",
     "home.terminal.intro": "Hola, mi nombre es Dante. Soy un desarrollador Fullstack apasionado por el diseño web y la programación",
     "home.learnMore": "Conoce más sobre mí",
     "home.featuredProjects": "Proyectos Destacados",
@@ -176,6 +181,7 @@ const translations = {
     "project.backToProjects": "Volver a proyectos",
     "project.viewOnGithub": "Ver en GitHub",
     "project.liveDemo": "Demo en Vivo",
+    "project.production": "Producción",
     "project.overview": "Resumen del Proyecto",
     "project.keyFeatures": "Características Principales",
     "project.pauseSlideshow": "Pausar presentación",
@@ -185,7 +191,7 @@ const translations = {
     // About page
     "about.initProfile": "Inicializando perfil personal... Acceso concedido. Cargando datos biográficos...",
     "about.bio":
-      "Hola, mi nombre es Dante Ricardo Chávez Verdeja, y soy Ingeniero en Computación. He trabajado en proyectos tanto de backend como frontend, pero prefiero el desarrollo web y hacer la vida más fácil para los usuarios. Soy un entusiasta del fútbol, me encanta jugarlo y verlo cada semana.",
+      "Hola, soy Dante. Desarrollador Full-stack e Ingeniero en Computación con más de 3 años de experiencia creando soluciones digitales eficientes y modernas. si lo imaginas, lo puedo desarrollar. Mi semana se divide entre crear y a veces optimizar sistemas de software y mi otra gran pasión: jugar al fútbol todos los fines de semana.",
     "about.downloadCV": "Descargar CV",
     "about.viewOnline": "Ver en Línea",
     "about.experienceTimeline": "Línea de Tiempo de Experiencia",
@@ -208,67 +214,71 @@ const translations = {
     "about.enterMessage": "Ingresa tu mensaje",
 
     // Experience - Updated with real experience
-    "exp.svenson.company": "Desarrollador Frontend",
-    "exp.svenson.period": "2024 - 2025",
-    "exp.svenson.desc":
-      "Desarrollé y mejoré la aplicación web principal orientada al cliente usando React.js y Next.js (App Router), construyendo interfaces robustas e interactivas. Optimicé la modularidad y eficiencia del código frontend con hooks personalizados, y conecté el frontend a un chatbot de WhatsApp, mejorando significativamente la interacción con el cliente y la gestión de consultas.",
+    "exp.digimex.title": "Desarrollador Full-Stack",
+    "exp.digimex.company": "DIGIMEX",
+    "exp.digimex.period": "Dic 2025 - Presente",
+    "exp.digimex.desc": "Diseñé y desarrollé un sistema de logística interna y plataforma B2B usando Next.js, React y TypeScript. Integré Supabase, construí Edge Functions y optimicé el flujo de desarrollo utilizando herramientas de IA para acelerar prototipos.",
 
-    "exp.webDevelopment.title": "Desarrollo Web",
-    "exp.webDevelopment.company": "Desarrollo de Proyectos",
-    "exp.webDevelopment.period": "2023 - Presente",
-    "exp.webDevelopment.desc":
-      "Desarrollando proyectos web y aplicaciones para demostrar mis habilidades usando React, Node.js, JavaScript y CSS.",
+    "exp.fyttsa.title": "Desarrollador Full-Stack",
+    "exp.fyttsa.company": "Grupo Fyttsa",
+    "exp.fyttsa.period": "Ago 2025 - Nov 2025",
+    "exp.fyttsa.desc": "Desarrollo del ERP Kraken. Construí una arquitectura multitenant para soportar múltiples clientes y optimicé el consumo de APIs desde un backend en PHP, mejorando los tiempos de respuesta y la estabilidad del sistema.",
 
-    "exp.university.title": "Universidad Autónoma del Estado de México",
-    "exp.university.company": "Desarrollo Profesional",
+    "exp.sozu.title": "Desarrollador Full-Stack",
+    "exp.sozu.company": "Grupo Inmobiliario Sozu",
+    "exp.sozu.period": "Sep 2024 - Abr 2025",
+    "exp.sozu.desc": "Participé en la modernización tecnológica del sistema interno de gestión inmobiliaria. Migré funcionalidades de sistemas heredados hacia una arquitectura moderna basada en React y TypeScript, integrando Supabase.",
+
+    "exp.freelance.title": "Software Developer (Proyectos por Contrato)",
+    "exp.freelance.company": "Remoto",
+    "exp.freelance.period": "Ene 2023 - Presente",
+    "exp.freelance.desc": "Desarrollé un sistema de análisis de transcripciones de video con Python y NLP para General Motors, con interfaz en Next.js. Lideré el desarrollo web de Seprytec, asegurando validación estricta con Zod y TypeScript.",
+
+    "exp.university.title": "Ingeniería en Computación",
+    "exp.university.company": "Universidad Autónoma del Estado de México",
     "exp.university.period": "2021 - Presente",
-    "exp.university.desc":
-      "Mi formación profesional en Ingeniería en Computación, donde he trabajado en proyectos académicos y de impacto social para mi institución.",
+    "exp.university.desc": "Formación profesional en Ingeniería en Computación, con enfoque en arquitectura de software y sistemas escalables, desarrollando bases sólidas en ciencias de la computación.",
 
     // Footer
     "footer.allRightsReserved": "Todos los derechos reservados",
     "footer.builtWith": "Construido con",
 
-    // Projects data - New projects
-    "projects.drcvCompany.desc":
-      "Un sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas, ofreciendo una experiencia profesional y visualmente impactante para sus clientes.",
-    "projects.drcvCompany.longDesc":
-      "Este proyecto desarrolla un sitio web corporativo integral, optimizado para la eficiencia y la experiencia del usuario. Utiliza Astro para un rendimiento superior, Vue.js para la interactividad, Tailwind CSS y SCSS para un diseño ágil, y Pinia para una gestión de datos escalable, todo construido con TypeScript para una mayor robustez. El objetivo principal es proporcionar a las empresas una plataforma digital sólida, atractiva y funcional que les permita conectarse eficazmente con su audiencia y destacarse en el mercado.",
+    // Projects data
+    "projects.aisuite.desc": "Procesamiento de Lenguaje Natural (NLP) corporativo de costo cero y 100% libre de la nube.",
+    "projects.aisuite.longDesc": "El Problema: Las corporaciones, firmas legales y altos ejecutivos enfrentan un cuello de botella. Necesitan IA para auditar horas de reuniones y cientos de contratos, pero no pueden enviar esos datos confidenciales a APIs públicas por riesgos de seguridad. Presento la Solución.",
 
-    "projects.seprytec.desc":
-      "Un sitio web moderno para una empresa de seguridad privada, diseñado para infundir confianza y comodidad en los usuarios a través de un diseño intuitivo.",
-    "projects.seprytec.longDesc":
-      "Construido con React y Next.js, esta plataforma web interactiva está diseñada para el atractivo visual y la facilidad de uso, proporcionando navegación intuitiva y secciones dinámicas con botones interactivos que guían a los usuarios a través de los servicios e información de la empresa de seguridad privada.",
+    "projects.pos.desc": "Ecosistema POS impulsado por un Agente IA autónomo que gestiona ventas directas al carrito en tiempo real.",
+    "projects.pos.longDesc": "El Problema: La industria del retail e-commerce pierde ventas usando chatbots genéricos de 'preguntas frecuentes' que frustran al cliente enviando enlaces inútiles. Presento la Solución: Un ecosistema de Retail Inteligente protagonizado por 'Miboot', un Agente IA que no solo conversa, sino que ejecuta herramientas del backend. Lee la intención del usuario, verifica el stock real en la base de datos y añade los productos directamente al carrito (Zero-Click Conversion). Diseñado sobre una arquitectura Multi-Tenant y potenciado por LLMs de ejecución local, garantizando cero costo por token y soberanía absoluta de los datos para la tienda.",
 
-    "projects.drcvNote.desc":
-      "Tu espacio digital para ideas grandes y pequeñas. Guarda todo, desde recordatorios rápidos hasta notas detalladas y estructuradas, todo en un lugar intuitivo y organizado.",
-    "projects.drcvNote.longDesc":
-      "Este proyecto ofrece una aplicación de notas diseñada para ser tu aliado perfecto en la organización de información. Con una interfaz simple e intuitiva, puedes capturar rápidamente esas ideas fugaces o desarrollar notas extensas y bien estructuradas. El objetivo es proporcionarte un espacio digital donde la gestión de tus notas se sienta natural y eficiente.",
+    "projects.battlekart.desc": "Sistema completo de gamificación y lealtad con panel de administración para gestión de recompensas y clientes.",
+    "projects.battlekart.longDesc": "Una impresionante solución frontend de control de lealtad impulsada por mecánicas de gamificación. Facilita la retención de clientes a través de un sistema de niveles VIP, membresías anuales y cupones de descuentos canjeables. El proyecto posee un módulo de simulación de base de datos con persistencia en LocalStorage para desplegar la demostración a máxima velocidad sin dependencia de backend. Incluye también un Terminal POS virtual para personalización de redenciones y registro de carreras en tiempo real.",
 
-    "projects.carpinteriaVerdeja.desc":
-      "Página web frontend intuitiva y visualmente impactante, enfocada en ofrecer una experiencia de navegación agradable y un diseño memorable.",
-    "projects.carpinteriaVerdeja.longDesc":
-      "Página web frontend intuitiva y visualmente impactante, enfocada en ofrecer una experiencia de navegación agradable y un diseño memorable.",
+    "projects.catalogo.desc": "Sistema de catálogo multi-sucursal con gestión de inventario y UX de alta gama.",
+    "projects.catalogo.longDesc": "Plataforma digital optimizada para la visualización y administración de catálogos premium en múltiples ubicaciones geográficas. Integra un panel administrativo completo con persistencia local que permite la gestión ágil de marcas, categorías y variantes.",
 
-    "projects.crimeControl.desc":
-      "Un sistema de control de delincuencia en tiempo real que centraliza datos criminales, seguimiento de incidentes y proporciona la ubicación precisa de los delincuentes dentro de instalaciones correccionales, permitiendo una respuesta policial rápida y estratégica.",
-    "projects.crimeControl.longDesc":
-      "Este proyecto desarrolla una plataforma integral para la administración y análisis predictivo de la actividad criminal, integrando diversas fuentes de datos como informes de incidentes y perfiles de sospechosos. Su capacidad se extiende a diferenciar claramente entre civiles y delincuentes, y crucialmente, gestiona y muestra en tiempo real la ubicación de individuos privados de libertad dentro de celdas y prisiones específicas. El sistema tiene como objetivo optimizar la asignación de recursos, mejorar la coordinación entre agencias de aplicación de la ley y fortalecer las estrategias de prevención del delito, todo a través de una base de datos robusta, accesible y detallada.",
+    "projects.balazhi.desc": "Exhibición premium de materiales de lujo.",
+    "projects.balazhi.longDesc": "Balazhi Stone es una plataforma web sofisticada diseñada para la exhibición y distribución de piedras sinterizadas, cuarzos y porcelanatos de alta gama en México. El proyecto se enfoca en una estética minimalista 'Premium Dark' con acentos dorados.",
 
-    "projects.luchavsludopatia.desc":
-      "Un sitio web de apoyo e información dedicado a combatir la ludopatía, inspirado en recursos gubernamentales para ofrecer información, herramientas y recursos para la prevención y búsqueda de ayuda.",
-    "projects.luchavsludopatia.longDesc":
-      "Esta es una plataforma web de apoyo e información, inspirada en recursos gubernamentales, con el firme objetivo de abordar y mitigar el problema de la ludopatía. El proyecto se centrará en proporcionar a los usuarios información clara y accesible sobre la ludopatía, sus riesgos y consecuencias, así como ofrecer herramientas prácticas y recursos para la prevención, detección temprana y búsqueda de ayuda profesional.",
+    "projects.greenAlchemy.desc": "Sistema de Gestión de Logística con arquitectura para mejorar flujos de trabajo dentro la empresa.",
+    "projects.greenAlchemy.longDesc": "Un sistema avanzado de gestión de logística que centraliza los flujos de venta, tesorería y logística en una interfaz elegante y funcional. Implementa una arquitectura autónoma basada en demoStorage para garantizar persistencia y operatividad total.",
 
-    "projects.youtubeTranscribe.desc":
-      "Una aplicación web que extrae y analiza el contenido de videos de YouTube (a través de sus transcripciones) utilizando un backend de Python y capacidades de procesamiento de lenguaje natural",
-    "projects.youtubeTranscribe.longDesc":
-      "Esta aplicación web está diseñada para automatizar el proceso de análisis de contenido de videos de YouTube. Opera en dos etapas principales: primero, un backend desarrollado en Python utiliza la API de transcripciones de YouTube para obtener los subtítulos o transcripciones de un video dado un enlace de YouTube. Posteriormente, estas transcripciones se envían a un backend de Next.js, donde un modelo de lenguaje Ollama procesa y resume el texto.",
+    "projects.one.desc": "Plataforma holística premium para el bienestar personal y la conexión espiritual profunda.",
+    "projects.one.longDesc": "Una experiencia digital integral que fusiona una boutique de cristales curativos, un centro de formación espiritual y un catálogo de terapias y retiros sagrados. Diseñada con una estética elegante y minimalista, la plataforma ofrece una navegación fluida con efectos de paralaje y persistencia de datos local.",
 
-    "projects.sozu.desc":
-      "Sistema integral de gestión inmobiliaria con base de datos PostgreSQL de más de 50 tablas, desarrollado para una de las inmobiliarias más grandes de Guadalajara.",
-    "projects.sozu.longDesc":
-      "Sistema completo de gestión inmobiliaria que maneja proyectos, documentos administrativos y múltiples relaciones de datos. Desarrollado con PostgreSQL, trabajo colaborativo e implementación de IA para optimizar procesos operacionales.",
+    "projects.probin.desc": "Plataforma premium para la exhibición de desarrollos inmobiliarios y gestión integral interactiva de CRM.",
+    "projects.probin.longDesc": "Una solución frontend de alto nivel que combina un portal inmersivo para la presentación de múltiples proyectos inmobiliarios con un potente panel administrativo. Permite a los agentes gestionar leads, citas, perfiles de clientes, campañas y checklists de cierre operativo. Está impulsada por un MockDB basado en LocalStorage, garantizando demostraciones de ventas ultrarrápidas, persistencia de datos offline y una experiencia visual fluida sin dependencia de un backend tradicional.",
+
+    "projects.winpot.desc": "CMS multi-tenant de alto rendimiento para la gestión dinámica de casinos y contenido gamificado.",
+    "projects.winpot.longDesc": "Una solución robusta para redes de casinos que centraliza la administración de múltiples identidades de marca en un solo núcleo técnico. Implementa un sistema de diseño atómico y arquitectura basada en tenants para ofrecer experiencias personalizadas.",
+
+    "projects.seprytec.desc": "Sitio web moderno para una empresa de seguridad privada.",
+    "projects.seprytec.longDesc": "Sitio web moderno para una empresa de seguridad privada. Diseñado para infundir confianza a través de un diseño intuitivo y navegación fluida.",
+
+    "projects.drcvCompany.desc": "Sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas.",
+    "projects.drcvCompany.longDesc": "Un sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas. Optimizado para eficiencia y experiencia de usuario, utilizando Astro para rendimiento y Vue.js para interactividad.",
+
+    "projects.youtubeTranscribe.desc": "Aplicación web que extrae y analiza el contenido de videos de YouTube.",
+    "projects.youtubeTranscribe.longDesc": "Aplicación web que extrae y analiza el contenido de videos de YouTube. Utiliza un backend en Python para obtener transcripciones y un modelo de lenguaje (Ollama) para procesar y resumir el texto.",
 
     // Common
     "common.loading": "Cargando...",

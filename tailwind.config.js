@@ -39,9 +39,24 @@ module.exports = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
+        // Colores Command Center
+        drcv: {
+          primary: "#00021D",
+          50: "#f0f0f5",
+          100: "#e0e1ea",
+          500: "#00021D",
+          600: "#000118",
+          900: "#000010",
+        },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          50: "#faf5ff",
+          100: "#f3e8ff",
+          400: "#9d4edd",
+          500: "#ff00ff",
+          600: "#00ffff",
+          700: "#7e22ce",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -50,19 +65,6 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        // Colores cyberpunk específicos
-        neon: {
-          pink: "#ff00ff",
-          purple: "#9d4edd",
-          cyan: "#00ffff",
-          blue: "#0072ff",
-          yellow: "#ffdf00",
-        },
-        cyber: {
-          dark: "#0d0a1e",
-          darker: "#070514",
-          light: "#2d1051",
         },
       },
       borderRadius: {
@@ -84,10 +86,10 @@ module.exports = {
         },
         glow: {
           "0%, 100%": {
-            textShadow: "0 0 5px #ff00ff, 0 0 10px #ff00ff",
+            textShadow: "0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 30px #ff00ff",
           },
           "50%": {
-            textShadow: "0 0 5px #9d4edd, 0 0 10px #9d4edd, 0 0 15px #9d4edd",
+            textShadow: "0 0 12px #00ffff, 0 0 24px #00ffff, 0 0 45px #00ffff",
           },
         },
       },
@@ -97,9 +99,8 @@ module.exports = {
         glow: "glow 2s ease-in-out infinite",
       },
       boxShadow: {
-        "neon-pink": "0 0 5px #ff00ff, 0 0 10px #ff00ff",
-        "neon-purple": "0 0 5px #9d4edd, 0 0 10px #9d4edd",
-        "neon-cyan": "0 0 5px #00ffff, 0 0 10px #00ffff",
+        "accent-purple": "0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 24px #ff00ff",
+        "accent-purple-glow": "0 0 20px rgba(255, 0, 255, 0.7), 0 0 40px rgba(255, 0, 255, 0.4)",
       },
     },
   },

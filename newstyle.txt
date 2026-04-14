@@ -1,0 +1,74 @@
+DRCV REY - Guía de Estilo y Marca (Neon Cyberpunk / Terminal)
+Esta guía documenta la identidad visual del proyecto de portafolio personal drcv. El diseño presenta una estética "Neon Cyberpunk" y "Terminal Hacker", caracterizada por colores oscuros absolutos, efectos de tubo de rayos catódicos (CRT), scanlines, acentos de neón vibrante (magenta y cian), y un uso intensivo de tipografías monoespaciadas para evocar nostalgia retro-futurista.
+
+1. Paleta de Colores (Tailwind Config)
+El sistema está configurado exclusivamente en modo oscuro (dark mode) para hacer destellar los efectos neon.
+
+Colores Principales (Brand)
+Los fondos son extremadamente oscuros con ligeros tintes violeta-azul para dar profundidad.
+
+javascript
+// tailwind.config.js
+colors: {
+  cyber: {
+    dark: "#0d0a1e",       // Fondo general (main background)
+    darker: "#070514",     // Fondos profundos (cards, modales, grids)
+    light: "#2d1051",      // Contenedores sutiles, overlays
+  }
+}
+
+Color de Acento (Neon)
+Se usan vibrantes colores puramente digitales para simular las luces de neón o fósforos.
+
+javascript
+neon: {
+  pink: "#ff00ff",   // Color principal: Textos primarios, glows fuertes, hover de cartas
+  cyan: "#00ffff",   // Color secundario: Hover links, detalles técnicos, stack
+  purple: "#9d4edd", // Color terciario: Gradientes de fondo, textos secundarios
+  blue: "#0072ff",   // Adicional para variabilidad
+  yellow: "#ffdf00", // Adicional para alertas o highlights
+}
+
+2. Tipografía Global
+El sistema busca simular una terminal, por lo que una fuente limpia para código es esencial.
+
+Fuente Global: JetBrains Mono (next/font/google).
+Casi todo el proyecto (títulos, descripciones, y utilidades) está bajo esta tipografía.
+Clase base: `font-mono`.
+
+Otras tipografías secundarias:
+Geist Sans/Mono se encuentran reservadas si se desea variar para lectura larga, pero el core identity recae sobre JetBrains Mono.
+
+3. Sistema UI y Efectos Visuales Custom
+Este portafolio utiliza fuertemente CSS puro (en `globals.css`) para sus animaciones y estética en vez de librerías externas.
+
+Fondos y Overlays
+Scanlines: Un efecto CRT fijo mediante un background `bg-grid-pattern` (rgba(255, 0, 255, 0.1)) y degradados `bg-gradient-to-br from-cyber-dark via-cyber-light/10`.
+Degradados Holográficos: Uso de mezclas en las esquinas para darle un look sucio/cyberpunk.
+
+Efectos de Brillo (Glow y Box-Shadow)
+Las sombras no son normales; son halos dispersos de neón.
+Clases usadas frecuentemente:
+- `shadow-neon-pink` / `shadow-neon-cyan`
+- `neon-text-pink` -> text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+- Drop shadows aplicadas directamente sobre iconos de lucide-react al hacer hover.
+
+Glitches y Parpadeos
+Al título "DRCV" o textos importantes se les aplica la clase `.glitch`, la cual inyecta los pseudo-elementos `:before` (magenta) y `:after` (cian) para crear aberración cromática, sumado a una animación que simula interferencia.
+
+Decoraciones HUD (Heads-Up Display)
+En vez de bordes redondeados tradicionales, las Cards (`ProjectCardFlip`) suelen llevar:
+- Decoración en esquinas formadas por bordes fijos y delgados de `neon-pink/60` (corner decorations).
+- Rotación 3D pura (`perspective`) para que las cajas se sientan holográficas.
+
+4. Componentes Específicos
+- Terminal de Inicio (`Terminal.tsx`): Contenedor de consola con encabezado simulando la ventana del OS, typing effect javascript-driven y un cursor parpadeante (`.terminal-cursor`). Persiste estado inicial en `localStorage`.
+- Carrusel Tech (`TechStack.tsx`): Estructura circular/continua donde el elemento activo destella fuertemente, emulando la selección de hardware.
+
+5. Estructura para Replicar (Stack Tecnológico)
+Si se requiere expandir hacia un proyecto hermano:
+1. Instalar Next.js 14 + Tailwind CSS + Lucide React.
+2. Copiar todo el bloque `theme.extend.colors`, `boxShadow` y `keyframes` del `tailwind.config.js`.
+3. Migrar el inmenso archivo `globals.css` (ahí vive `.glitch`, `.bg-grid-pattern`, `.scanline`, `.cyber-scrollbar`, y los mixins de overlays).
+4. Configurar la fuente `JetBrains_Mono` en el layout raíz englobando el HTML.
+5. Inyectar siempre divs con z-index fijos para grid y scanlines bajo el main content.
