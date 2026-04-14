@@ -73,6 +73,14 @@ export default function Home() {
       videoUrl: "https://drive.google.com/file/d/1DZ5351TBt1G-I5S1wP7P4Zc9OtpdNNCQ/preview",
     },
     {
+      id: "pos",
+      title: "DRCV Store",
+      description: t("projects.pos.desc"),
+      image: "",
+      technologies: ["Next.js", "NestJS", "Ollama", "PostgreSQL"],
+      videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
+    },
+    {
       id: "battlekart",
       title: "Go-Kart Zen Loyalty",
       description: t("projects.battlekart.desc"),

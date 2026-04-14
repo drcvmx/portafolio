@@ -49,7 +49,7 @@ export default function ProjectsPage() {
       image: "",
       technologies: ["Next.js", "NestJS", "Ollama", "PostgreSQL", "Tailwind CSS"],
       category: "app",
-      videoUrl: "https://drive.google.com/file/d/1rLSisYiO335UJWL0QzKvIt5isaooHU9N/preview",
+      videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
     },
     {
       id: "battlekart",

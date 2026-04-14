@@ -34,7 +34,7 @@ export default function ProjectPage() {
       title: "DRCV Store - Retail IA Ecosistema",
       description: t("projects.pos.desc"),
       images: [],
-      videoUrl: "https://drive.google.com/file/d/1rLSisYiO335UJWL0QzKvIt5isaooHU9N/preview",
+      videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
       technologies: ["Next.js", "NestJS", "Tailwind CSS", "Ollama", "Qwen 7B", "PostgreSQL"],
       category: "app",
       github: "#",
