@@ -87,13 +87,6 @@ export default function Home() {
       image: "project_webp/battlekart/bk7.png",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     },
-    {
-      id: "catalogo",
-      title: "Green Alchemy — Catálogo",
-      description: t("projects.catalogo.desc"),
-      image: "project_webp/catalogo/catalogo1.png",
-      technologies: ["React", "TypeScript", "Vite", "Supabase"],
-    },
   ]
 
   // Mostrar un estado de carga mientras se verifica localStorage

@@ -42,6 +42,20 @@ export default function ProjectPage() {
       production: "https://store.drcv.online/store",
       longDescription: t("projects.pos.longDesc"),
     },
+    noteDrcv: {
+      title: "Note DRCV (Productivity On-Premise)",
+      description: t("projects.noteDrcv.desc"),
+      images: [
+        "/project_webp/note/note1.png",
+        "/project_webp/note/note2.png",
+      ],
+      technologies: ["Next.js", "React", "Tailwind CSS", "Python 3.14", "FastAPI", "PostgreSQL", "SQLAlchemy", "JWT & Bcrypt", "Supabase (Docker)", "PM2", "Cloudflare Tunnels"],
+      category: "app",
+      github: "https://github.com/drcvmx/noteapp",
+      demo: "https://note.drcv.online/",
+      production: "https://note.drcv.online/",
+      longDescription: t("projects.noteDrcv.longDesc"),
+    },
     battlekart: {
       title: "Go-Kart Zen Loyalty System",
       description: t("projects.battlekart.desc"),

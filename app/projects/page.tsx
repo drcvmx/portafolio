@@ -52,6 +52,14 @@ export default function ProjectsPage() {
       videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
     },
     {
+      id: "noteDrcv",
+      title: "Note DRCV",
+      description: t("projects.noteDrcv.desc"),
+      image: "project_webp/note/note1.png",
+      technologies: ["Next.js", "Python 3.14", "FastAPI", "PostgreSQL"],
+      category: "app",
+    },
+    {
       id: "battlekart",
       title: "Go-Kart Zen Loyalty",
       description: t("projects.battlekart.desc"),
