@@ -364,7 +364,7 @@ export default function AboutPage() {
                         rel="noopener noreferrer"
                       >
                         <ExternalLink size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(147, 51, 234, 0.6)]" />
-                        portafolio-drcv07.vercel.app
+                        portafolio.drcv.site
                       </Link>
                     </div>
                   </div>
