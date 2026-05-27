@@ -76,7 +76,7 @@ export default function Home() {
       id: "pos",
       title: "DRCV Store",
       description: t("projects.pos.desc"),
-      image: "project_webp/seprytec/store/01.png",
+      image: "project_webp/store/01.png",
       technologies: ["Next.js", "NestJS", "Ollama", "PostgreSQL"],
       videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
     },

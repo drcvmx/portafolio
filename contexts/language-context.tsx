@@ -32,8 +32,10 @@ const translations = {
     // Projects page
     "projects.title": "Displaying projects directory. Select category to filter results.",
     "projects.allProjects": "All Projects",
-    "projects.staticWeb": "Static Web",
-    "projects.webApp": "Web App",
+    "projects.categoryAI": "AI & Data",
+    "projects.categoryERP": "ERPs & Internal Systems",
+    "projects.categoryEcommerce": "Industrial E-Commerce",
+    "projects.categoryCorporate": "Corporate Presence",
     "projects.webDevelopment": "Web Development",
     "projects.aiMachineLearning": "AI & Machine Learning",
     "projects.blockchain": "Blockchain",
@@ -140,6 +142,12 @@ const translations = {
     "projects.seprytec.desc": "Modern website for a private security company.",
     "projects.seprytec.longDesc": "Modern website for a private security company. Designed to instill trust through intuitive design and smooth navigation.",
 
+    "projects.greekos.desc": "Cinematic editorial landing page for a premium Mediterranean Greek frozen yogurt brand with 6 locations across Mexico.",
+    "projects.greekos.longDesc": "The Problem: Greekos needed a digital presence that conveyed its premium Mediterranean identity without falling into fast-food clichés. They needed to showcase 6 physical locations, present their menu appetizingly, tell their brand story in an immersive way, and capture franchise inquiries — all in a single memorable web experience.\n\nThe Solution: A high-impact editorial single-page application (SPA). The architecture prioritizes brand narrative with immersive sections: a cinematic hero with product carousel, a 5-act brand story with an animated accordion, a store gallery with cinematic overlays, and integrated contact forms inside premium-designed modals.\n\nHow it works internally:\n• Custom SVG Wave Animation: A custom useWaveAnimation hook generates SVG wave paths procedurally in the navbar and footer based on hover position, creating an organic transition between the nav bar and content — with no heavy animation libraries.\n• Deterministic Particle Positions: Hero particles use predefined arrays instead of random generation, preventing hydration mismatch between SSR/CSR and guaranteeing visual consistency.\n• Dual HSL/RGB Token System: Hybrid CSS variables — RGB for dynamic opacity with alpha-value, and HSL for full compatibility with the shadcn/ui ecosystem.\n• Inline SVG Textures: feTurbulence and feColorMatrix used to create grain and paper textures directly in markup, eliminating additional image requests.\n• Smooth Anchor Scrolling: scroll-padding-top offset of 116px calculated to compensate fixed navbar + announcement bar, achieving precise scroll-to-anchor without hidden content.",
+
+    "projects.jrlMexico.desc": "Hybrid e-commerce platform for Mexico's leading professional barbering tools brand, with Supabase catalog and Shopify Checkout integration.",
+    "projects.jrlMexico.longDesc": "The Problem: JRL México needed their own e-commerce site with full control over catalog, editorial content, and brand experience — without relying exclusively on Shopify for product management. They also required a purchase flow that ended in Shopify Checkout (for its payment gateway) but with a completely custom frontend.\n\nThe Solution: A hybrid architecture where Supabase acts as the single source of truth for the entire catalog, images, collections, and editorial content. The React frontend consumes the database directly via Supabase Data API. Active products are bidirectionally synced with Shopify (Admin API) so checkout and payment processing run on Shopify's infrastructure. The cart is managed in real-time via Shopify Storefront API GraphQL, generating a dynamic checkout URL that redirects the customer to Shopify Checkout.\n\nHow it works internally:\n• The catalog lives in Supabase (products, collections, product_images, product_variants, product_features).\n• Each product has a shopify_product_id and shopify_variant_id (GID) linking it to Shopify.\n• Edge Functions in Deno (bulk-sync-to-shopify, sync-product-to-shopify) handle sync to Shopify Admin API.\n• The cart uses Zustand + localStorage persistence and syncs with Shopify Storefront API on every operation (add, update, remove).\n• The admin panel protects routes via Supabase Auth + user_roles table with RLS policies using SECURITY DEFINER to prevent recursion.\n• All dynamic content (hero images, banners, Instagram posts, corporate texts) is managed from Supabase tables.",
+
     "projects.drcvCompany.desc": "Modern corporate website designed to boost businesses' online presence.",
     "projects.drcvCompany.longDesc": "A modern corporate website designed to boost businesses' online presence. Optimized for efficiency and user experience, using Astro for performance and Vue.js for interactivity.",
 
@@ -172,8 +180,10 @@ const translations = {
     // Projects page
     "projects.title": "Mostrando directorio de proyectos. Selecciona categoría para filtrar resultados.",
     "projects.allProjects": "Todos los Proyectos",
-    "projects.staticWeb": "Web Estática",
-    "projects.webApp": "Aplicación Web",
+    "projects.categoryAI": "IA & Datos",
+    "projects.categoryERP": "ERPs & Sistemas Internos",
+    "projects.categoryEcommerce": "E-Commerce Industrial",
+    "projects.categoryCorporate": "Presencia Corporativa",
     "projects.webDevelopment": "Desarrollo Web",
     "projects.aiMachineLearning": "IA y Aprendizaje Automático",
     "projects.blockchain": "Blockchain",
@@ -279,6 +289,12 @@ const translations = {
 
     "projects.seprytec.desc": "Sitio web moderno para una empresa de seguridad privada.",
     "projects.seprytec.longDesc": "Sitio web moderno para una empresa de seguridad privada. Diseñado para infundir confianza a través de un diseño intuitivo y navegación fluida.",
+
+    "projects.greekos.desc": "Landing page editorial cinematográfica para una marca premium de yogurt helado griego mediterráneo con 6 ubicaciones en México.",
+    "projects.greekos.longDesc": "El Problema: Greekos necesitaba una presencia digital que transmitiera su identidad premium mediterránea sin caer en clichés de fast food. Requerían mostrar 6 tiendas físicas, presentar su menú de forma apetecible, contar su historia de marca de manera envolvente, y capturar consultas de franquicias — todo en una sola experiencia web memorable.\n\nLa Solución: Una single-page application (SPA) tipo landing page editorial de alto impacto visual. La arquitectura prioriza la narrativa de marca con secciones inmersivas: un hero cinematográfico con carrusel de productos, una historia de marca en 5 actos con acordeón animado, una galería de tiendas con overlays cinematográficos, y formularios de contacto integrados en modales con diseño premium.\n\nCómo funciona internamente:\n• Animación de onda SVG procedural: Un hook custom useWaveAnimation genera paths SVG de onda en tiempo real en navbar y footer según la posición del hover, creando una transición orgánica única sin librerías de animación pesadas.\n• Posiciones determinísticas para partículas: Las partículas del hero usan arrays predefinidos en lugar de generación aleatoria, evitando hydration mismatch entre SSR/CSR y garantizando consistencia visual.\n• Sistema de tokens dual HSL/RGB: Variables CSS híbridas — RGB para opacidad dinámica con alpha-value, y HSL para compatibilidad total con el ecosistema shadcn/ui.\n• Texturas SVG inline: feTurbulence y feColorMatrix para crear texturas de grano y papel directamente en el markup, eliminando requests de imagen adicionales.\n• Scroll suave a anclas exactas: scroll-padding-top de 116px calculado para compensar navbar fijo + announcement bar, logrando scroll preciso sin contenido tapado.",
+
+    "projects.jrlMexico.desc": "Plataforma e-commerce híbrida para la marca líder de herramientas de barbería profesional en México, con catálogo en Supabase e integración a Shopify Checkout.",
+    "projects.jrlMexico.longDesc": "El Problema: JRL México necesitaba un sitio de e-commerce propio con control total sobre el catálogo, contenido editorial y experiencia de marca, sin depender exclusivamente de Shopify. Además, requerían un flujo de compra que terminara en Shopify Checkout (por su pasarela de pagos) con un frontend completamente custom.\n\nLa Solución: Una arquitectura híbrida donde Supabase actúa como fuente de verdad de todo el catálogo, imágenes, colecciones y contenido editorial. El frontend React consume directamente la base de datos vía Supabase Data API. Los productos activos se sincronizan bidireccionalmente con Shopify (Admin API) para que el checkout y pagos se ejecuten en su infraestructura. El carrito se gestiona en tiempo real mediante la Shopify Storefront API GraphQL, generando un checkout URL dinámico.\n\nCómo funciona internamente:\n• El catálogo vive en Supabase (products, collections, product_images, product_variants, product_features).\n• Cada producto tiene un shopify_product_id y shopify_variant_id (GID) que lo vincula a Shopify.\n• Edge Functions en Deno (bulk-sync-to-shopify, sync-product-to-shopify) manejan la sincronización a Shopify Admin API.\n• El carrito usa Zustand + persistencia en localStorage y sincroniza con Shopify Storefront API en cada operación (add, update, remove).\n• El admin panel protege rutas vía Supabase Auth + tabla user_roles con RLS policies usando SECURITY DEFINER para evitar recursión.\n• Todo el contenido dinámico (hero images, banners, posts de Instagram, textos corporativos) se administra desde tablas de Supabase.",
 
     "projects.drcvCompany.desc": "Sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas.",
     "projects.drcvCompany.longDesc": "Un sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas. Optimizado para eficiencia y experiencia de usuario, utilizando Astro para rendimiento y Vue.js para interactividad.",

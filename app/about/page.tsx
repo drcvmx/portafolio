@@ -201,7 +201,7 @@ export default function AboutPage() {
             {t("about.downloadCV")}
           </a>
           <a
-            href="https://drive.google.com/file/d/1o57CZwy56e-hpwvckCEYCRYAYAMnDDn9/view"
+            href="https://drive.google.com/file/d/1Qd-JqILYSuwB52u8XCy0lCj9cHS-pibi/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent-600/10 hover:bg-accent-600/20 text-accent-600 px-6 py-3 rounded-md transition-colors border border-accent-600/30 shadow-neon-purple font-mono hover:shadow-neon-purple"
@@ -244,33 +244,32 @@ export default function AboutPage() {
       {bioComplete && (
         <>
           <section className="section-reveal delay-200">
-            <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">
+            <h2 className="text-2xl font-bold mb-8 text-white neon-text-purple font-mono">
               {t("about.experienceTimeline")}
             </h2>
-            <div className="space-y-6">
+
+            <div className="relative pl-8 md:pl-14">
+              {/* Timeline neon line */}
+              <div className="absolute left-2 md:left-5 top-0 bottom-0 w-[2px] timeline-line" />
+
               {experiences.map((exp, index) => (
-                <div key={index} className={`terminal-window scanline animate-fade-in-up delay-${300 + index * 200}`}>
-                  <div className="terminal-header">
-                    <div className="terminal-button terminal-button-red"></div>
-                    <div className="terminal-button terminal-button-yellow"></div>
-                    <div className="terminal-button terminal-button-green"></div>
-                    <div className="terminal-title">{exp.company || exp.title}.sh</div>
-                  </div>
-                  <div className="terminal-content">
-                    <p className="mb-1">
-                      <span className="text-accent-500">$</span> cat job_details.txt
-                    </p>
-                    <div className="mb-2">
-                      <p>
-                        <span className="text-accent-500">{t("common.title")}:</span> {exp.title}
-                      </p>
-                      <p>
-                        <span className="text-accent-500">{t("common.period")}:</span> {exp.period}
-                      </p>
-                      <p>
-                        <span className="text-accent-500">{t("common.description")}:</span> {exp.description}
-                      </p>
+                <div
+                  key={index}
+                  className={`relative mb-12 group animate-fade-in-up delay-${300 + index * 200}`}
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute -left-[34px] md:-left-[46px] top-2 w-4 h-4 rounded-full timeline-dot" />
+
+                  {/* Experience card */}
+                  <div className="hud-corners border border-accent-500/30 bg-drcv-600/80 p-6 hover-glow-pink transition-all">
+                    <div className="flex flex-wrap justify-between gap-2 mb-2">
+                      <h3 className="text-xl font-bold neon-text-cyan">{exp.company}</h3>
+                      <span className="text-xs text-accent-500 tracking-widest border border-accent-500/40 px-2 py-1">
+                        {exp.period}
+                      </span>
                     </div>
+                    <div className="text-sm text-white/70 mb-3">&gt; {exp.title}</div>
+                    <p className="text-sm text-white/85 leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
               ))}

@@ -70,7 +70,7 @@ export default function ProjectCardFlip({
             className={cn(
               "absolute inset-0 w-full h-full",
               "[backface-visibility:hidden] [transform:rotateY(0deg)]",
-              "overflow-hidden rounded-lg",
+              "overflow-hidden rounded-lg hud-corners",
               "bg-drcv-600",
               "border border-accent-500/20",
               "transition-all duration-700",
@@ -106,12 +106,6 @@ export default function ProjectCardFlip({
               <div className="absolute inset-0 bg-gradient-to-t from-drcv-primary/90 via-drcv-primary/20 to-transparent"></div>
               {/* Scanline effect */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-500/5 to-transparent opacity-50"></div>
-              
-              {/* Corner decorations */}
-              <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-accent-500/60"></div>
-              <div className="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-accent-500/60"></div>
-              <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-accent-500/60"></div>
-              <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-accent-500/60"></div>
             </div>
 
             {/* Content section below image */}
@@ -149,7 +143,7 @@ export default function ProjectCardFlip({
             className={cn(
               "absolute inset-0 w-full h-full",
               "[backface-visibility:hidden] [transform:rotateY(180deg)]",
-              "p-5 rounded-lg",
+              "p-5 rounded-lg hud-corners hud-corners-cyan",
               "bg-drcv-600",
               "border border-accent-500/20",
               "flex flex-col",
@@ -160,12 +154,6 @@ export default function ProjectCardFlip({
           >
             {/* Scanline effect on back */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-500/5 to-transparent opacity-50 pointer-events-none rounded-lg"></div>
-            
-            {/* Corner decorations on back */}
-            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-accent-600/60"></div>
-            <div className="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-accent-600/60"></div>
-            <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-accent-600/60"></div>
-            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-accent-600/60"></div>
 
             <div className="flex-1 space-y-3 relative z-10 overflow-y-auto cyber-scrollbar">
               <div className="space-y-2">

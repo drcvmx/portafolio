@@ -68,6 +68,7 @@
   position: relative;
   color: white;
   font-weight: bold;
+  display: inline-block;
 }
 
 .glitch::before,
@@ -79,6 +80,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
+  pointer-events: none;
 }
 
 .glitch::before {
@@ -92,34 +94,25 @@
 }
 
 .glitch:hover::before {
-  animation: glitch-animation 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  opacity: 1;
+  animation: glitch-anim-1 0.4s infinite linear alternate-reverse;
+  opacity: 0.9;
 }
 
 .glitch:hover::after {
-  animation: glitch-animation 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-  opacity: 1;
+  animation: glitch-anim-2 0.4s infinite linear alternate-reverse;
+  opacity: 0.9;
 }
 
-@keyframes glitch-animation {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
+@keyframes glitch-anim-1 {
+  0%   { clip-path: inset(20% 0 60% 0); transform: translate(-3px, -2px); }
+  50%  { clip-path: inset(40% 0 30% 0); transform: translate(3px, 1px); }
+  100% { clip-path: inset(70% 0 10% 0); transform: translate(-2px, 2px); }
+}
+
+@keyframes glitch-anim-2 {
+  0%   { clip-path: inset(60% 0 10% 0); transform: translate(3px, 2px); }
+  50%  { clip-path: inset(10% 0 50% 0); transform: translate(-3px, -1px); }
+  100% { clip-path: inset(30% 0 40% 0); transform: translate(2px, -2px); }
 }
 
 .terminal-cursor {
@@ -161,6 +154,33 @@
   padding: 1rem;
   position: relative;
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+}
+.terminal-window::before,
+.terminal-window::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #ff00ff;
+  border-style: solid;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 4px #ff00ff);
+  pointer-events: none;
+}
+.terminal-window::before {
+  top: -2px;
+  left: -2px;
+  border-width: 2px 0 0 2px;
+}
+.terminal-window::after {
+  bottom: -2px;
+  right: -2px;
+  border-width: 0 2px 2px 0;
+}
+.terminal-window:hover::before,
+.terminal-window:hover::after {
+  width: 28px;
+  height: 28px;
 }
 
 .terminal-header {
@@ -386,29 +406,41 @@
   pointer-events: none;
 }
 
-/* Corner decorations estandarizadas */
-.cyber-corners::before,
-.cyber-corners::before {
-  content: "";
+/* === HUD CORNER BRACKETS === */
+.hud-corners {
+  position: relative;
+}
+.hud-corners::before,
+.hud-corners::after {
+  content: '';
   position: absolute;
-  width: 15px;
-  height: 15px;
-  border: 2px solid rgba(255, 0, 255, 0.8);
-  box-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+  width: 18px;
+  height: 18px;
+  border-color: #ff00ff;
+  border-style: solid;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 4px #ff00ff);
+  pointer-events: none;
 }
-
-.cyber-corners::before {
-  top: 8px;
-  left: 8px;
-  border-right: none;
-  border-bottom: none;
+.hud-corners::before {
+  top: -2px;
+  left: -2px;
+  border-width: 2px 0 0 2px;
 }
-
-.cyber-corners::after {
-  bottom: 8px;
-  right: 8px;
-  border-left: none;
-  border-top: none;
+.hud-corners::after {
+  bottom: -2px;
+  right: -2px;
+  border-width: 0 2px 2px 0;
+}
+.hud-corners-cyan::before,
+.hud-corners-cyan::after {
+  border-color: #00ffff;
+  filter: drop-shadow(0 0 4px #00ffff);
+}
+.hud-corners:hover::before,
+.hud-corners:hover::after {
+  width: 28px;
+  height: 28px;
 }
 
 /* Overlay gradients estandarizados */
@@ -491,4 +523,114 @@
   height: 100%;
   border: none;
   pointer-events: none;
+}
+
+/* === CRT OVERLAY SYSTEM (3 capas globales) === */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background-image:
+    linear-gradient(rgba(13, 10, 30, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+    linear-gradient(90deg, rgba(255, 0, 255, 0.04), rgba(0, 255, 255, 0.03));
+  background-size: 100% 3px, 4px 100%;
+  mix-blend-mode: overlay;
+  animation: crt-flicker 4s infinite;
+}
+
+.cyber-grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+}
+
+@keyframes crt-flicker {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.7; }
+  51% { opacity: 0.5; }
+}
+
+/* Scan line que recorre la pantalla */
+.scan-line {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(0, 255, 255, 0.08), transparent);
+  pointer-events: none;
+  z-index: 50;
+  animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Flicker sutil para textos de sistema */
+@keyframes subtle-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.6; }
+  94% { opacity: 1; }
+}
+.flicker { animation: subtle-flicker 3s infinite; }
+
+/* === TIMELINE NEON === */
+.timeline-line {
+  background: linear-gradient(180deg, transparent, #00ffff, #ff00ff, transparent);
+  box-shadow: 0 0 12px #00ffff;
+}
+.timeline-dot {
+  background: #00ffff;
+  box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.2), 0 0 18px #00ffff;
+}
+
+/* === HOVER GLOWS === */
+.hover-glow-pink:hover {
+  box-shadow:
+    0 0 10px rgba(255, 0, 255, 0.8),
+    0 0 30px rgba(255, 0, 255, 0.6),
+    0 0 60px rgba(255, 0, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+.hover-glow-cyan:hover {
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.8),
+    0 0 30px rgba(0, 255, 255, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+/* === TECH PILLS === */
+.tech-pill {
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 2px 10px;
+  font-size: 11px;
+  text-shadow: 0 0 6px #00ffff;
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.15), 0 0 6px rgba(0, 255, 255, 0.3);
+  background: rgba(0, 255, 255, 0.05);
+}
+
+/* === SCROLLBAR GLOBAL NEON === */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #00021D; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff00ff 0%, #9d4edd 100%);
+  box-shadow: 0 0 8px #ff00ff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff00ff;
+  box-shadow: 0 0 15px #ff00ff;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ff00ff #00021D;
 }
