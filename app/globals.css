@@ -408,7 +408,6 @@
 
 /* === HUD CORNER BRACKETS === */
 .hud-corners {
-  position: relative;
 }
 .hud-corners::before,
 .hud-corners::after {
