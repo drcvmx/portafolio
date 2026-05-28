@@ -65,20 +65,18 @@ export default function Home() {
 
   const featuredProjects = [
     {
-      id: "aisuite",
-      title: "AISUITE",
-      description: t("projects.aisuite.desc"),
-      image: "",
-      technologies: ["Zero-Data Leakage", "Llama 3 Local", "Next.js 14", "PM2 Server", "Cloudflare Tunnels", "Python/Flask"],
-      videoUrl: "https://drive.google.com/file/d/1DZ5351TBt1G-I5S1wP7P4Zc9OtpdNNCQ/preview",
+      id: "jrl_mexico",
+      title: "JRL México",
+      description: t("projects.jrlMexico.desc"),
+      image: "project_webp/jrl/jrl1.png",
+      technologies: ["React 18", "TypeScript", "Supabase", "Shopify API", "Zustand", "TanStack Query", "Framer Motion", "Deno Edge Functions"],
     },
     {
-      id: "pos",
-      title: "DRCV Store",
-      description: t("projects.pos.desc"),
-      image: "project_webp/store/01.png",
-      technologies: ["Next.js", "NestJS", "Ollama", "PostgreSQL"],
-      videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
+      id: "green_alchemy_sgl",
+      title: "Green Alchemy SGL",
+      description: t("projects.greenAlchemy.desc"),
+      image: "project_webp/greensystem/green1.png",
+      technologies: ["React", "TypeScript", "Vite", "Supabase"],
     },
     {
       id: "battlekart",
