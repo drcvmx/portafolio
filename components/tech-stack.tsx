@@ -61,7 +61,7 @@ function CarouselCard({
   const currentItem = items[currentIndex]
 
   return (
-    <div className="bg-cyber-dark/80 border border-accent-500/30 rounded-lg p-3 sm:p-6 lg:p-8 w-full min-w-0 aspect-square md:aspect-[4/3] text-center backdrop-blur-sm relative overflow-hidden flex flex-col justify-center">
+    <div className="bg-cyber-dark/80 border border-accent-500/30 rounded-lg p-3 sm:p-6 lg:p-8 w-full min-w-0 min-h-[19rem] md:min-h-0 md:aspect-[4/3] text-center backdrop-blur-sm relative overflow-hidden flex flex-col justify-center">
       {/* Efecto de brillo de fondo */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-500/5 via-transparent to-neon-purple/5 pointer-events-none"></div>
 
