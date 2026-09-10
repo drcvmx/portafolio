@@ -36,6 +36,8 @@ const translations = {
     "projects.categoryERP": "ERPs & Internal Systems",
     "projects.categoryEcommerce": "Industrial E-Commerce",
     "projects.categoryCorporate": "Corporate Presence",
+    "projects.categoryBackend": "Backend",
+    "projects.selfTaughtBadge": "Self-taught // Learning project in progress",
     "projects.webDevelopment": "Web Development",
     "projects.aiMachineLearning": "AI & Machine Learning",
     "projects.blockchain": "Blockchain",
@@ -113,7 +115,7 @@ const translations = {
 
     "projects.pos.desc": "POS ecosystem powered by an autonomous AI Agent that manages direct sales to the cart in real-time.",
 
-    "projects.noteDrcv.desc": "On-Premise productivity platform with custom asynchronous backend architecture, native JWT security and Zero-Trust deployment.",
+    "projects.noteDrcv.desc": "Layered FastAPI backend for a productivity platform, with JWT authentication, PostgreSQL persistence, SQLAlchemy repositories, Pydantic validation, and password recovery by email.",
 
     "projects.battlekart.desc": "Complete gamification and loyalty system with admin panel for rewards and customer management.",
 
@@ -130,6 +132,8 @@ const translations = {
     "projects.winpot.desc": "High-performance multi-tenant CMS for dynamic casino management and gamified content.",
 
     "projects.seprytec.desc": "Modern website for a private security company.",
+    "projects.delincuencia.desc": "Full-stack penitentiary management system with Next.js, Express, Oracle Database, JWT authentication, role-based permissions, and an Oracle Cloud deployment architecture.",
+    "projects.puntodeventa.desc": "Modular multi-tenant POS backend built with NestJS and PostgreSQL, supporting catalogs, inventory, orders, payments, restaurant operations, chatbot integrations, and WhatsApp tickets.",
 
     "projects.greekos.desc": "Cinematic editorial landing page for a premium Mediterranean Greek frozen yogurt brand with 6 locations across Mexico.",
 
@@ -169,6 +173,8 @@ const translations = {
     "projects.categoryERP": "ERPs & Sistemas Internos",
     "projects.categoryEcommerce": "E-Commerce Industrial",
     "projects.categoryCorporate": "Presencia Corporativa",
+    "projects.categoryBackend": "Backend",
+    "projects.selfTaughtBadge": "Autodidacta // Proyecto de aprendizaje en evolución",
     "projects.webDevelopment": "Desarrollo Web",
     "projects.aiMachineLearning": "IA y Aprendizaje Automático",
     "projects.blockchain": "Blockchain",
@@ -246,7 +252,7 @@ const translations = {
 
     "projects.pos.desc": "Ecosistema POS impulsado por un Agente IA autónomo que gestiona ventas directas al carrito en tiempo real.",
 
-    "projects.noteDrcv.desc": "Plataforma de productividad On-Premise con arquitectura backend asíncrona propia, seguridad nativa JWT y despliegue Zero-Trust.",
+    "projects.noteDrcv.desc": "Backend por capas para una plataforma de productividad, construido con FastAPI, JWT, PostgreSQL, repositorios SQLAlchemy, validación Pydantic y recuperación de contraseña por email.",
 
     "projects.battlekart.desc": "Sistema completo de gamificación y lealtad con panel de administración para gestión de recompensas y clientes.",
 
@@ -263,6 +269,8 @@ const translations = {
     "projects.winpot.desc": "CMS multi-tenant de alto rendimiento para la gestión dinámica de casinos y contenido gamificado.",
 
     "projects.seprytec.desc": "Sitio web moderno para una empresa de seguridad privada.",
+    "projects.delincuencia.desc": "Sistema full-stack de gestión penitenciaria con Next.js, Express, Oracle Database, autenticación JWT, permisos por roles y arquitectura de despliegue en Oracle Cloud.",
+    "projects.puntodeventa.desc": "Backend modular multi-tenant para un punto de venta con NestJS y PostgreSQL, con catálogo, inventario, pedidos, pagos, operaciones de restaurante, chatbot y tickets por WhatsApp.",
 
     "projects.greekos.desc": "Landing page editorial cinematográfica para una marca premium de yogurt helado griego mediterráneo con 6 ubicaciones en México.",
 

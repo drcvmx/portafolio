@@ -27,7 +27,7 @@ export default function ProjectPage() {
       ],
       videoUrl: "https://drive.google.com/file/d/1DZ5351TBt1G-I5S1wP7P4Zc9OtpdNNCQ/preview",
       technologies: ["Zero-Data Leakage", "Llama 3 Local", "Next.js 14", "PM2 Server", "Cloudflare Tunnels", "Python/Flask"],
-      category: "app",
+      category: "backend",
       github: "#",
       demo: "#",
       production: "https://aisuite.drcv.online/",
@@ -44,23 +44,25 @@ export default function ProjectPage() {
       ],
       videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
       technologies: ["Next.js", "NestJS", "Tailwind CSS", "Ollama", "Qwen 7B", "PostgreSQL"],
-      category: "app",
+      category: "backend",
       github: "#",
       demo: "#",
       production: "https://store.drcv.online/store",
     },
     noteDrcv: {
-      title: "Note DRCV (Productivity On-Premise)",
+      title: "DRCV Note Backend",
       description: t("projects.noteDrcv.desc"),
       images: [
         "/project_webp/note/note1.png",
         "/project_webp/note/note2.png",
+        "/project_webp/note/note3.png",
+        "/project_webp/note/note4.png",
       ],
-      technologies: ["Next.js", "React", "Tailwind CSS", "Python 3.14", "FastAPI", "PostgreSQL", "SQLAlchemy", "JWT & Bcrypt", "Supabase (Docker)", "PM2", "Cloudflare Tunnels"],
-      category: "app",
-      github: "https://github.com/drcvmx/noteapp",
+      technologies: ["Python", "FastAPI", "Uvicorn", "PostgreSQL", "SQLAlchemy", "Pydantic", "JWT", "Passlib", "bcrypt", "SMTP"],
+      category: "backend",
+      github: "https://github.com/drcvmx/note-drcv-backend",
       demo: "#",
-      production: "https://note.drcv.online/",
+      production: "#",
     },
     battlekart: {
       title: "Go-Kart Zen Loyalty System",
@@ -208,6 +210,36 @@ export default function ProjectPage() {
       demo: "#",
       production: "https://seprytec.drcv.site/",
     },
+    delincuencia: {
+      title: "Sistema de Control de Delincuencia",
+      description: t("projects.delincuencia.desc"),
+      images: [
+        "/project_webp/crimen/crimen4.webp",
+        "/project_webp/crimen/crimen3.webp",
+        "/project_webp/delincuencia/1.png",
+        "/project_webp/delincuencia/2.png",
+      ],
+      technologies: ["Next.js 14", "React", "TypeScript", "Express", "Node.js", "Oracle Database 19c", "JWT", "bcryptjs", "Joi", "Zod", "OCI"],
+      category: "backend",
+      github: "https://github.com/drcvmx/control-delincuencia-con-backend",
+      demo: "#",
+      production: "#",
+    },
+    puntodeventa: {
+      title: "Punto de Venta DRCV Backend",
+      description: t("projects.puntodeventa.desc"),
+      images: [
+        "/project_webp/store/03.png",
+        "/project_webp/store/04.png",
+        "/project_webp/puntodeventa/1.png",
+        "/project_webp/puntodeventa/2.png",
+      ],
+      technologies: ["Node.js", "TypeScript", "NestJS 11", "REST API", "PostgreSQL", "TypeORM", "JWT", "Openpay", "Groq", "WhatsApp Web", "Puppeteer", "Jest"],
+      category: "backend",
+      github: "https://github.com/drcvmx/punto-venta-drcv-backend",
+      demo: "#",
+      production: "#",
+    },
   }
 
   const project = projects[id as keyof typeof projects]
@@ -319,6 +351,11 @@ export default function ProjectPage() {
                 {project.title}
               </h1>
               <p className="mt-4 max-w-3xl text-sm md:text-base leading-relaxed text-white/75">{project.description}</p>
+              {project.category === "backend" && (
+                <div className="mt-4 inline-flex border border-neon-cyan/40 bg-neon-cyan/5 px-3 py-2 text-[10px] uppercase tracking-[0.16em] text-neon-cyan">
+                  {t("projects.selfTaughtBadge")}
+                </div>
+              )}
             </div>
             <div className="project-status text-right">
               <ShieldCheck size={22} className="ml-auto text-accent-500" />

@@ -61,15 +61,15 @@ function CarouselCard({
   const currentItem = items[currentIndex]
 
   return (
-    <div className="bg-cyber-dark/80 border border-accent-500/30 rounded-lg p-8 max-w-xs w-full text-center backdrop-blur-sm relative overflow-hidden flex flex-col justify-center">
+    <div className="bg-cyber-dark/80 border border-accent-500/30 rounded-lg p-3 sm:p-6 lg:p-8 w-full min-w-0 aspect-square md:aspect-[4/3] text-center backdrop-blur-sm relative overflow-hidden flex flex-col justify-center">
       {/* Efecto de brillo de fondo */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent-500/5 via-transparent to-neon-purple/5 pointer-events-none"></div>
 
       {/* Título opcional */}
       {title && (
         <div className="mb-4">
-          <h3 className="text-sm font-bold text-accent-500 font-mono leading-tight">{title}</h3>
-          {subtitle && <p className="text-[10px] text-white/50 mt-1">{subtitle}</p>}
+          <h3 className="text-[10px] sm:text-sm font-bold text-accent-500 font-mono leading-tight break-words">{title}</h3>
+          {subtitle && <p className="text-[9px] sm:text-[10px] leading-tight sm:leading-relaxed text-white/50 mt-1 sm:mt-2 break-words">{subtitle}</p>}
         </div>
       )}
 
@@ -77,23 +77,23 @@ function CarouselCard({
       <div className="relative z-10 flex-1 flex flex-col justify-center">
         {/* Logo de la tecnología */}
         <div className="mb-6 flex justify-center">
-          <div className="w-16 h-16 rounded-full bg-drcv-600/20 flex items-center justify-center border border-accent-500/20 shadow-lg">
+            <div className="w-11 h-11 sm:w-16 sm:h-16 rounded-full bg-drcv-600/20 flex items-center justify-center border border-accent-500/20 shadow-lg">
             <img
               src={`/${currentItem.icon}`}
               alt={currentItem.name}
-              className="w-10 h-10 object-contain transition-all duration-500"
+              className="w-7 h-7 sm:w-10 sm:h-10 object-contain transition-all duration-500"
               style={{ filter: currentItem.invert ? "invert(1) brightness(2)" : "none" }}
             />
           </div>
         </div>
 
         {/* Nombre de la tecnología */}
-        <div className={`text-2xl font-bold font-mono ${currentItem.color} transition-all duration-500 mb-6`}>
+        <div className={`text-base sm:text-2xl font-bold font-mono ${currentItem.color} transition-all duration-500 mb-3 sm:mb-6 break-words`}>
           {currentItem.name}
         </div>
 
         {/* Indicador de progreso */}
-        <div className="flex justify-center space-x-1 mb-4">
+        <div className="flex justify-center space-x-1 mb-2 sm:mb-4">
           {items.map((_, index) => (
             <div
               key={index}
@@ -124,7 +124,7 @@ function CarouselCard({
 /* ------------------------------------------------------------------ */
 export function TechStack() {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-stretch gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-2 items-stretch gap-3 sm:gap-6 w-full">
       <CarouselCard
         items={CORE_STACK}
         title="CORE STACK"

@@ -50,7 +50,7 @@ export default function ProjectsPage() {
       description: t("projects.battlekart.desc"),
       image: "project_webp/battlekart/bk7.png",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
-      category: "erp",
+      category: "backend",
     },
     {
       id: "probin",
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
       description: t("projects.catalogo.desc"),
       image: "project_webp/catalogo/catalogo1.png",
       technologies: ["React", "TypeScript", "Vite", "Supabase"],
-      category: "ecommerce",
+      category: "backend",
     },
     {
       id: "one_soul",
@@ -101,39 +101,29 @@ export default function ProjectsPage() {
       category: "corporate",
     },
     {
-      id: "seprytec",
-      title: "Seprytec",
-      description: t("projects.seprytec.desc"),
-      image: "project_webp/seprytec/seprytec1.webp",
-      technologies: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
-      category: "corporate",
+      id: "delincuencia",
+      title: "Sistema de Control de Delincuencia",
+      description: t("projects.delincuencia.desc"),
+      image: "project_webp/crimen/crimen4.webp",
+      technologies: ["Next.js 14", "TypeScript", "Express", "Oracle 19c", "JWT", "OCI"],
+      category: "backend",
+    },
+    {
+      id: "puntodeventa",
+      title: "Punto de Venta DRCV Backend",
+      description: t("projects.puntodeventa.desc"),
+      image: "project_webp/store/03.png",
+      technologies: ["NestJS 11", "TypeScript", "PostgreSQL", "TypeORM", "Openpay", "JWT"],
+      category: "backend",
     },
     // ── PROYECTOS PERSONALES / ECOSISTEMA DRCV ───────────────────────
     {
-      id: "aisuite",
-      title: "AISUITE",
-      description: t("projects.aisuite.desc"),
-      image: "",
-      technologies: ["Zero-Data Leakage", "Llama 3 Local", "Next.js 14", "PM2 Server", "Cloudflare Tunnels", "Python/Flask"],
-      category: "ai",
-      videoUrl: "https://drive.google.com/file/d/1DZ5351TBt1G-I5S1wP7P4Zc9OtpdNNCQ/preview",
-    },
-    {
       id: "noteDrcv",
-      title: "Note DRCV",
+      title: "DRCV Note Backend",
       description: t("projects.noteDrcv.desc"),
       image: "project_webp/note/note1.png",
-      technologies: ["Next.js", "Python 3.14", "FastAPI", "PostgreSQL"],
-      category: "erp",
-    },
-    {
-      id: "pos",
-      title: "DRCV Store",
-      description: t("projects.pos.desc"),
-      image: "project_webp/store/01.png",
-      technologies: ["Next.js", "NestJS", "Ollama", "PostgreSQL", "Tailwind CSS"],
-      category: "ecommerce",
-      videoUrl: "https://drive.google.com/file/d/1lNEgr6vZ6ie-cprDcxAEoav3oBAjEE9M/preview",
+      technologies: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "JWT", "Pydantic"],
+      category: "backend",
     },
   ]
 
@@ -143,6 +133,7 @@ export default function ProjectsPage() {
     { id: "erp", name: t("projects.categoryERP") },
     { id: "ecommerce", name: t("projects.categoryEcommerce") },
     { id: "corporate", name: t("projects.categoryCorporate") },
+    { id: "backend", name: t("projects.categoryBackend") },
   ]
 
   const filteredProjects =
