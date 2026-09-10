@@ -16,7 +16,7 @@ const EMAIL_ADDRESS = "drcv.work.code@gmail.com"
 const CV_FILENAME = "cv_drcv.pdf"
 const GITHUB_URL = "https://github.com/drcvmx"
 const LINKEDIN_URL = "https://www.linkedin.com/in/dante-ricardo-chavez-verdeja-501388361/"
-const PORTFOLIO_URL = "https://portafolio-drcv07.vercel.app/"
+const PORTFOLIO_URL = "https://portafolio.drcv.site/"
 
 export default function AboutPage() {
   const { t } = useLanguage()

@@ -13,7 +13,7 @@ import { useLanguage } from "@/contexts/language-context"
 const EMAIL_ADDRESS = "drcv.work.code@gmail.com"
 const GITHUB_URL = "https://github.com/drcvmx"
 const LINKEDIN_URL = "https://www.linkedin.com/in/dante-ricardo-chavez-verdeja-501388361/"
-const PORTFOLIO_URL = "https://portafolio-drcv07.vercel.app/"
+const PORTFOLIO_URL = "https://portafolio.drcv.site/"
 
 export default function Home() {
   const { t } = useLanguage()
@@ -211,7 +211,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                       >
                         <ExternalLink size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(157,78,221,0.6)]" />
-                        portafolio-drcv07.vercel.app
+                        portafolio.drcv.site
                       </Link>
                     </div>
                   </div>
