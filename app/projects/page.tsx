@@ -1,30 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import ProjectCardFlip from "@/components/new-card-version"
-import { Terminal } from "@/components/terminal"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function ProjectsPage() {
   const { t } = useLanguage()
-  const [isLoading, setIsLoading] = useState(true)
   const [activeFilter, setActiveFilter] = useState<string>("all")
-  const [introComplete, setIntroComplete] = useState(false)
-  const [skipAnimation, setSkipAnimation] = useState(false)
-
-  useEffect(() => {
-    const animationCompleted = localStorage.getItem("projectsAnimationCompleted") === "true"
-    if (animationCompleted) {
-      setSkipAnimation(true)
-      setIntroComplete(true)
-    }
-    setIsLoading(false)
-  }, [])
-
-  const handleIntroComplete = () => {
-    setIntroComplete(true)
-    localStorage.setItem("projectsAnimationCompleted", "true")
-  }
 
   const projects = [
     // ── EXPERIENCIA REAL / CLIENTES ──────────────────────────────────
@@ -139,45 +121,30 @@ export default function ProjectsPage() {
   const filteredProjects =
     activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
 
-  if (isLoading) {
-    return <div className="py-12 flex justify-center">{t("common.loading")}</div>
-  }
-
   return (
     <div className="space-y-8">
-      {skipAnimation || introComplete ? (
-        <div className="terminal-window scanline">
-          <div className="terminal-header">
-            <div className="terminal-button terminal-button-red"></div>
-            <div className="terminal-button terminal-button-yellow"></div>
-            <div className="terminal-button terminal-button-green"></div>
-            <div className="terminal-title">projects.sh</div>
-          </div>
-          <div className="terminal-content">
-            <p className="mb-4">
-              <span className="neon-text-purple">$</span> {t("projects.title")}
-              <span className="terminal-cursor"></span>
-            </p>
-          </div>
+      <div className="terminal-window scanline">
+        <div className="terminal-header">
+          <div className="terminal-button terminal-button-red"></div>
+          <div className="terminal-button terminal-button-yellow"></div>
+          <div className="terminal-button terminal-button-green"></div>
+          <div className="terminal-title">projects.sh</div>
         </div>
-      ) : (
-        <Terminal
-          text={t("projects.title")}
-          typingSpeed={40}
-          className="w-full"
-          onComplete={handleIntroComplete}
-          skipAnimation={skipAnimation}
-        />
-      )}
+        <div className="terminal-content">
+          <p className="mb-4">
+            <span className="neon-text-purple">$</span> {t("projects.title")}
+            <span className="terminal-cursor"></span>
+          </p>
+        </div>
+      </div>
 
-      {introComplete && (
-        <>
-          <div className="flex flex-wrap gap-2 animate-fade-in delay-100">
+      <>
+        <div className="flex flex-wrap gap-2">
             {categories.map((category, index) => (
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`px-3 py-1 text-sm rounded-md transition-colors animate-fade-in-up delay-${200 + index * 50} ${
+                className={`px-3 py-1 text-sm rounded-md transition-colors ${
                   activeFilter === category.id
                     ? "bg-primary text-primary-foreground"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -188,7 +155,7 @@ export default function ProjectsPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <ProjectCardFlip
                 key={project.id}
@@ -200,9 +167,8 @@ export default function ProjectsPage() {
                 videoUrl={'videoUrl' in project ? (project as any).videoUrl : undefined}
               />
             ))}
-          </div>
-        </>
-      )}
+        </div>
+      </>
     </div>
   )
 }

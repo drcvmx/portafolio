@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
-import { Terminal } from "@/components/terminal"
+import { useState } from "react"
 import { Github, Linkedin, Send, Copy, FileDown, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -21,31 +20,10 @@ const PORTFOLIO_URL = "https://portafolio.drcv.site/"
 export default function AboutPage() {
   const { t } = useLanguage()
   // Inicializar estados con valores de localStorage si están disponibles
-  const [isLoading, setIsLoading] = useState(true)
-  const [bioComplete, setBioComplete] = useState(false)
-  const [skipAnimation, setSkipAnimation] = useState(false)
+  const bioComplete = true
   const [message, setMessage] = useState("")
   const [name, setName] = useState("")
   const [userEmail, setUserEmail] = useState("")
-
-  useEffect(() => {
-    // Verificar localStorage al montar el componente
-    const animationCompleted = localStorage.getItem("aboutAnimationCompleted") === "true"
-
-    if (animationCompleted) {
-      setSkipAnimation(true)
-      setBioComplete(true)
-    }
-
-    // Indicar que la carga inicial ha terminado
-    setIsLoading(false)
-  }, [])
-
-  // Guardar el estado de la animación cuando se complete la bio
-  const handleBioComplete = () => {
-    setBioComplete(true)
-    localStorage.setItem("aboutAnimationCompleted", "true")
-  }
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
@@ -113,16 +91,10 @@ export default function AboutPage() {
     },
   ]
 
-  // Mostrar un estado de carga mientras se verifica localStorage
-  if (isLoading) {
-    return <div className="py-12 flex justify-center">{t("common.loading")}</div>
-  }
-
   return (
     <div className="space-y-16">
       <section>
-        {skipAnimation || bioComplete ? (
-          <div className="terminal-window scanline max-w-3xl mx-auto">
+        <div className="terminal-window scanline max-w-3xl mx-auto">
             <div className="terminal-header">
               <div className="terminal-button terminal-button-red"></div>
               <div className="terminal-button terminal-button-yellow"></div>
@@ -150,16 +122,6 @@ export default function AboutPage() {
               <span className="terminal-cursor"></span>
             </div>
           </div>
-        ) : (
-          <Terminal
-            text={t("about.bio")}
-            typingSpeed={20}
-            className="max-w-3xl mx-auto"
-            showPrompt={false}
-            onComplete={handleBioComplete}
-            skipAnimation={skipAnimation || bioComplete}
-          />
-        )}
 
         <div className="flex justify-center gap-4 mt-12">
           <a
