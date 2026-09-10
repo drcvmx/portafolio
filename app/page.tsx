@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Terminal } from "@/components/terminal"
 import ProjectCardFlip from "@/components/new-card-version"
 import { TechStack } from "@/components/tech-stack"
 import { ArrowRight } from "lucide-react"
@@ -19,29 +18,6 @@ const PORTFOLIO_URL = "https://portafolio-drcv07.vercel.app/"
 export default function Home() {
   const { t } = useLanguage()
   const [message, setMessage] = useState("")
-  // Inicializar estados con valores de localStorage si están disponibles
-  const [isLoading, setIsLoading] = useState(true)
-  const [introComplete, setIntroComplete] = useState(false)
-  const [skipAnimation, setSkipAnimation] = useState(false)
-
-  useEffect(() => {
-    // Verificar localStorage al montar el componente
-    const animationCompleted = localStorage.getItem("introAnimationCompleted") === "true"
-
-    if (animationCompleted) {
-      setSkipAnimation(true)
-      setIntroComplete(true)
-    }
-
-    // Indicar que la carga inicial ha terminado
-    setIsLoading(false)
-  }, [])
-
-  // Guardar el estado de la animación cuando se complete
-  const handleIntroComplete = () => {
-    setIntroComplete(true)
-    localStorage.setItem("introAnimationCompleted", "true")
-  }
 
   const sendEmail = () => {
     window.open(`mailto:${EMAIL_ADDRESS}?subject=Contact from Portfolio&body=${encodeURIComponent(message)}`)
@@ -87,67 +63,50 @@ export default function Home() {
     },
   ]
 
-  // Mostrar un estado de carga mientras se verifica localStorage
-  if (isLoading) {
-    return <div className="py-12 flex justify-center text-accent-500">{t("common.loading")}</div>
-  }
+
 
   return (
     <div className="space-y-16">
       <section className="py-12">
-        {skipAnimation || introComplete ? (
-          <div className="terminal-window scanline max-w-3xl mx-auto">
-            <div className="terminal-header">
-              <div className="terminal-button terminal-button-red"></div>
-              <div className="terminal-button terminal-button-yellow"></div>
-              <div className="terminal-button terminal-button-green"></div>
-              <div className="terminal-title">terminal</div>
-            </div>
-            <div className="terminal-content">
-              <span className="text-accent-500">$ </span>
-              {(() => {
-                const text = t("home.intro")
-                const mottoEndEN = text.indexOf("built.")
-                const mottoEndES = text.indexOf("hacer.")
-                const mottoEnd = mottoEndEN !== -1 ? mottoEndEN + 6 : mottoEndES !== -1 ? mottoEndES + 6 : -1
-                if (mottoEnd !== -1) {
-                  return (
-                    <>
-                      <span className="neon-text-purple font-bold">{text.slice(0, mottoEnd)}</span>
-                      <span>{text.slice(mottoEnd)}</span>
-                    </>
-                  )
-                }
-                return <span>{text}</span>
-              })()}
-              <span className="terminal-cursor"></span>
-            </div>
+        <div className="terminal-window scanline max-w-3xl mx-auto animate-fade-in-up">
+          <div className="terminal-header">
+            <div className="terminal-button terminal-button-red"></div>
+            <div className="terminal-button terminal-button-yellow"></div>
+            <div className="terminal-button terminal-button-green"></div>
+            <div className="terminal-title">terminal</div>
           </div>
-        ) : (
-          <Terminal
-            text={t("home.intro")}
-            typingSpeed={40}
-            className="max-w-3xl mx-auto"
-            onComplete={handleIntroComplete}
-            skipAnimation={skipAnimation}
-          />
-        )}
+          <div className="terminal-content">
+            <span className="text-accent-500">$ </span>
+            {(() => {
+              const text = t("home.intro")
+              const mottoEndEN = text.indexOf("built.")
+              const mottoEndES = text.indexOf("hacer.")
+              const mottoEnd = mottoEndEN !== -1 ? mottoEndEN + 6 : mottoEndES !== -1 ? mottoEndES + 6 : -1
+              if (mottoEnd !== -1) {
+                return (
+                  <>
+                    <span className="neon-text-purple font-bold">{text.slice(0, mottoEnd)}</span>
+                    <span>{text.slice(mottoEnd)}</span>
+                  </>
+                )
+              }
+              return <span>{text}</span>
+            })()}
+            <span className="terminal-cursor"></span>
+          </div>
+        </div>
 
-        {introComplete && (
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="/about"
+        <div className="mt-8 flex justify-center animate-fade-in-up delay-200">
+          <Link
+            href="/about"
               className="inline-flex items-center gap-2 bg-accent-500/10 hover:bg-accent-500/20 text-accent-500 px-4 py-2 rounded-md transition-colors border border-accent-500/30 shadow-accent-purple"
             >
               {t("home.learnMore")} <ArrowRight size={16} />
             </Link>
           </div>
-        )}
       </section>
 
-      {introComplete && (
-        <>
-          <section>
+      <section>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white neon-text-purple">{t("home.featuredProjects")}</h2>
               <Link
@@ -171,6 +130,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">{t("home.technologies")}</h2>
             <TechStack />
           </section>
+
           <section className="section-reveal delay-800">
             <h2 className="text-2xl font-bold mb-6 text-white neon-text-purple font-mono">{t("about.contact")}</h2>
 
@@ -259,8 +219,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-        </>
-      )}
     </div>
   )
 }

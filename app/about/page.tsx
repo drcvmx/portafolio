@@ -22,7 +22,6 @@ export default function AboutPage() {
   const { t } = useLanguage()
   // Inicializar estados con valores de localStorage si están disponibles
   const [isLoading, setIsLoading] = useState(true)
-  const [introComplete, setIntroComplete] = useState(false)
   const [bioComplete, setBioComplete] = useState(false)
   const [skipAnimation, setSkipAnimation] = useState(false)
   const [message, setMessage] = useState("")
@@ -35,7 +34,6 @@ export default function AboutPage() {
 
     if (animationCompleted) {
       setSkipAnimation(true)
-      setIntroComplete(true)
       setBioComplete(true)
     }
 
@@ -124,71 +122,43 @@ export default function AboutPage() {
     <div className="space-y-16">
       <section>
         {skipAnimation || bioComplete ? (
-          <>
-            <div className="terminal-window scanline max-w-3xl mx-auto">
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
-                <div className="terminal-title">terminal</div>
-              </div>
-              <div className="terminal-content">
-                <span className="text-accent-500">$ </span>
-                <span>{t("about.initProfile")}</span>
-                <span className="terminal-cursor"></span>
-              </div>
+          <div className="terminal-window scanline max-w-3xl mx-auto">
+            <div className="terminal-header">
+              <div className="terminal-button terminal-button-red"></div>
+              <div className="terminal-button terminal-button-yellow"></div>
+              <div className="terminal-button terminal-button-green"></div>
+              <div className="terminal-title">profile.sh</div>
             </div>
-
-            <div className="terminal-window scanline max-w-3xl mx-auto mt-4">
-              <div className="terminal-header">
-                <div className="terminal-button terminal-button-red"></div>
-                <div className="terminal-button terminal-button-yellow"></div>
-                <div className="terminal-button terminal-button-green"></div>
-                <div className="terminal-title">terminal</div>
-              </div>
-              <div className="terminal-content">
-                {(() => {
-                  const text = t("about.bio")
-                  const phrases = ["si lo imaginas, lo puedo desarrollar.", "if you can imagine it, I can build it."]
-                  for (const phrase of phrases) {
-                    const idx = text.toLowerCase().indexOf(phrase)
-                    if (idx !== -1) {
-                      return (
-                        <>
-                          <span>{text.slice(0, idx)}</span>
-                          <span className="neon-text-purple font-bold">{text.slice(idx, idx + phrase.length)}</span>
-                          <span>{text.slice(idx + phrase.length)}</span>
-                        </>
-                      )
-                    }
+            <div className="terminal-content">
+              {(() => {
+                const text = t("about.bio")
+                const phrases = ["si lo imaginas, lo puedo desarrollar.", "if you can imagine it, I can build it."]
+                for (const phrase of phrases) {
+                  const idx = text.toLowerCase().indexOf(phrase)
+                  if (idx !== -1) {
+                    return (
+                      <>
+                        <span>{text.slice(0, idx)}</span>
+                        <span className="neon-text-purple font-bold">{text.slice(idx, idx + phrase.length)}</span>
+                        <span>{text.slice(idx + phrase.length)}</span>
+                      </>
+                    )
                   }
-                  return <span>{text}</span>
-                })()}
-                <span className="terminal-cursor"></span>
-              </div>
+                }
+                return <span>{text}</span>
+              })()}
+              <span className="terminal-cursor"></span>
             </div>
-          </>
+          </div>
         ) : (
-          <>
-            <Terminal
-              text={t("about.initProfile")}
-              typingSpeed={30}
-              className="max-w-3xl mx-auto"
-              onComplete={() => setIntroComplete(true)}
-              skipAnimation={skipAnimation || introComplete}
-            />
-
-            {introComplete && (
-              <Terminal
-                text={t("about.bio")}
-                typingSpeed={20}
-                className="max-w-3xl mx-auto mt-4"
-                showPrompt={false}
-                onComplete={handleBioComplete}
-                skipAnimation={skipAnimation || bioComplete}
-              />
-            )}
-          </>
+          <Terminal
+            text={t("about.bio")}
+            typingSpeed={20}
+            className="max-w-3xl mx-auto"
+            showPrompt={false}
+            onComplete={handleBioComplete}
+            skipAnimation={skipAnimation || bioComplete}
+          />
         )}
 
         <div className="flex justify-center gap-4 mt-12">

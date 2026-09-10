@@ -22,7 +22,7 @@ const translations = {
     "nav.about": "about",
 
     // Home page
-    "home.intro": "if you imagine it, the right way, anything can be built. I'm a Fullstack developer. I'm passionate about soccer. I build systems that solve real problems, improve logistics, and optimize workflows — all paired with modern, clean interfaces.",
+    "home.intro": "if you imagine it, the right way, anything can be built. I'm a Fullstack developer. I'm passionate about soccer.l problems, improve logistics, and optimize workflows — all paired with modern, clean interfaces",
     "home.terminal.intro": "Hello, my name is Dante. I am a Fullstack Developer passionate about web design and programming",
     "home.learnMore": "Learn more about me",
     "home.featuredProjects": "Featured Projects",
@@ -56,7 +56,7 @@ const translations = {
     // About page
     "about.initProfile": "Initializing personal profile... Access granted. Loading bio data...",
     "about.bio":
-      "Hey, I'm Dante. Full-stack Developer and Computer Engineer with 3+ years building efficient, modern digital solutions. if you can imagine it, I can build it. My week is split between creating and sometimes optimizing software systems, and my other big passion: playing soccer every weekend.",
+      "Hey, I'm Dante. Full-stack Developer and Computer Engineer with 2+ years building efficient, modern digital solutions. if you can imagine it, I can build it. My week is split between creating and sometimes optimizing software systems, and my other big passion: playing soccer every weekend.",
     "about.downloadCV": "Download CV",
     "about.viewOnline": "View Online",
     "about.experienceTimeline": "Experience Timeline",
@@ -82,22 +82,22 @@ const translations = {
     "exp.digimex.title": "Full-Stack Developer",
     "exp.digimex.company": "DIGIMEX",
     "exp.digimex.period": "Dec 2025 - Present",
-    "exp.digimex.desc": "Architected an internal logistics system and a B2B catalog platform using Next.js, React, and TypeScript. Integrated Supabase for real-time synchronization, built Edge Functions for workflow automation, and optimized the development cycle using AI-assisted tools.",
+    "exp.digimex.desc": "Developed multiple logistics, operations, and commercial web solutions using Next.js, React, and TypeScript. Built B2B storefronts with Shopify integrations, product catalogs with CRUD workflows, Supabase-backed systems, and checkout flows connected to Shopify and PayPal. Also used AI-assisted tools to accelerate prototyping and delivery.",
 
     "exp.fyttsa.title": "Full-Stack Developer",
     "exp.fyttsa.company": "Grupo Fyttsa",
     "exp.fyttsa.period": "Aug 2025 - Nov 2025",
     "exp.fyttsa.desc": "Developed the 'Kraken' enterprise ERP. Built a secure multitenant architecture and optimized intensive API consumption from a PHP backend, improving response times and overall system stability.",
 
-    "exp.sozu.title": "Full-Stack Developer",
+    "exp.sozu.title": "Full-Stack Developer (Professional Internship)",
     "exp.sozu.company": "Grupo Inmobiliario Sozu",
-    "exp.sozu.period": "Sep 2024 - Apr 2025",
+    "exp.sozu.period": "Feb 2025 - Aug 2025",
     "exp.sozu.desc": "Participated in the technological modernization of the internal real estate management system. Migrated legacy functionalities to a modern React and TypeScript architecture, integrating Supabase for real-time data storage.",
 
-    "exp.freelance.title": "Software Developer (Contract Projects)",
-    "exp.freelance.company": "Remote",
-    "exp.freelance.period": "Jan 2023 - Present",
-    "exp.freelance.desc": "Developed an NLP video transcription analysis system using Python (Flask) and Next.js (General Motors). Led the frontend development for Seprytec, ensuring strict data validation using React Hook Form and Zod with TypeScript.",
+    "exp.freelance.title": "Software Developer (Social Service)",
+    "exp.freelance.company": "Social Service",
+    "exp.freelance.period": "Aug 2024 - Nov 2024",
+    "exp.freelance.desc": "Developed a video transcription analysis engine using Python and NLP, with a Next.js interface. Worked on the processing pipeline, data analysis, and the technical integration required to turn video content into usable information.",
 
     "exp.university.title": "B.S. in Computer Engineering",
     "exp.university.company": "Universidad Autónoma del Estado de México",
@@ -110,49 +110,34 @@ const translations = {
 
     // Projects data
     "projects.aisuite.desc": "100% on-premise B2B AI Suite with GPU-accelerated processing. Extracts, transcribes, and reasons over legal contracts and audio using local LLMs to ensure Zero Data Leakage (Offline Privacy).",
-    "projects.aisuite.longDesc": "The Problem: Corporations, law firms, and senior executives face a critical bottleneck: they need the power of Artificial Intelligence to audit hundreds of hours of meetings or heavy contracts, but the security department strictly prohibits sending confidential data to public APIs due to massive risks of data leaks or legal non-compliance.\n\nThe Solution & Architecture (Data Sovereignty): I developed an enterprise-grade AI suite designed under a Zero Data Leakage philosophy. The system does not depend on the internet nor consume third-party cloud tokens. Analysis, audio transcriptions, and inference happen on proprietary hardware in isolation, making the marginal cost per analysis literally $0.00.\n\nHow does it work internally? (The Deep-Tech Stack):\n• Secure Infrastructure: Deployed on a proprietary Linux server managed with PM2, exposed only through Zero-Trust tunnels (Cloudflare Tunnels and Tailscale).\n• Inference Engine (Python VRAM Backend): A specialized Flask API that intelligently distributes processing. It uses the CPU (LiteParse) for ultrafast PDF ingestion and parsing, preserving all video memory (GPU/RTX) for deep, complex reasoning using local LLMs (Llama 3 / Qwen) via Ollama and transcriptions through Whisper.\n• Operator Console (Next.js Frontend): An immersive B2B interface ('Command Center') developed in Next.js 14, featuring micro-animations, multimodal drag-and-drop, encrypted PDF report exports, and a 'Chat Widget' injected with the document's context.",
 
     "projects.pos.desc": "POS ecosystem powered by an autonomous AI Agent that manages direct sales to the cart in real-time.",
-    "projects.pos.longDesc": "The Problem: The retail e-commerce industry loses sales using generic 'FAQ' chatbots that frustrate customers by sending useless links. I present the Solution: An Intelligent Retail ecosystem starring 'Miboot', an AI Agent that doesn't just talk — it executes backend tools. It reads user intent, verifies real stock in the database, and adds products directly to the cart (Zero-Click Conversion). Built on a Multi-Tenant architecture and powered by locally-run LLMs, ensuring zero cost per token and absolute data sovereignty for the store.",
 
     "projects.noteDrcv.desc": "On-Premise productivity platform with custom asynchronous backend architecture, native JWT security and Zero-Trust deployment.",
-    "projects.noteDrcv.longDesc": "Scalable productivity and note-taking platform 100% On-Premise managed. It implements an advanced Python monolithic backend (FastAPI) with a custom JWT security system built from scratch. The infrastructure orchestrates Next.js, PostgreSQL databases in isolated containers and daemonization with PM2, all globally exposed securely through Cloudflare reverse tunnels (Zero Trust).",
 
     "projects.battlekart.desc": "Complete gamification and loyalty system with admin panel for rewards and customer management.",
-    "projects.battlekart.longDesc": "An impressive frontend loyalty control solution powered by gamification mechanics. It facilitates customer retention through a VIP tier system, annual memberships, and redeemable discount coupons. The project features a database simulation module with LocalStorage persistence for maximum speed demos without backend dependency. Also includes a virtual POS Terminal for custom redemptions and real-time race tracking.",
 
     "projects.catalogo.desc": "Multi-branch catalog system with inventory management and premium UX.",
-    "projects.catalogo.longDesc": "A digital platform optimized for viewing and managing premium catalogs across multiple geographic locations. Integrates a complete admin panel with local persistence for agile management of brands, categories, and variants.",
 
     "projects.balazhi.desc": "Premium luxury materials showcase.",
-    "projects.balazhi.longDesc": "Balazhi Stone is a sophisticated web platform designed for the exhibition and distribution of sintered stones, quartz, and high-end porcelain in Mexico. The project focuses on a minimalist 'Premium Dark' aesthetic with golden accents.",
 
     "projects.greenAlchemy.desc": "Logistics Management System with architecture to improve internal company workflows.",
-    "projects.greenAlchemy.longDesc": "An advanced logistics management system that centralizes sales, treasury, and logistics workflows in an elegant and functional interface. Implements an autonomous architecture based on demoStorage to ensure full persistence and operability.",
 
     "projects.one.desc": "Premium holistic platform for personal wellness and deep spiritual connection.",
-    "projects.one.longDesc": "A comprehensive digital experience that merges a healing crystals boutique, a spiritual training center, and a catalog of therapies and sacred retreats. Designed with elegant minimalist aesthetics, it offers smooth parallax navigation and local data persistence.",
 
     "projects.probin.desc": "Premium platform for real estate development showcase and comprehensive interactive CRM management.",
-    "projects.probin.longDesc": "A high-level frontend solution combining an immersive portal for presenting multiple real estate projects with a powerful admin panel. Allows agents to manage leads, appointments, client profiles, campaigns, and operational closing checklists. Powered by a LocalStorage-based MockDB for ultra-fast sales demos, offline data persistence, and smooth visual experience.",
 
     "projects.winpot.desc": "High-performance multi-tenant CMS for dynamic casino management and gamified content.",
-    "projects.winpot.longDesc": "A robust solution for casino networks that centralizes the administration of multiple brand identities in a single technical core. Implements an atomic design system and tenant-based architecture to deliver personalized experiences.",
 
     "projects.seprytec.desc": "Modern website for a private security company.",
-    "projects.seprytec.longDesc": "Modern website for a private security company. Designed to instill trust through intuitive design and smooth navigation.",
 
     "projects.greekos.desc": "Cinematic editorial landing page for a premium Mediterranean Greek frozen yogurt brand with 6 locations across Mexico.",
-    "projects.greekos.longDesc": "The Problem: Greekos needed a digital presence that conveyed its premium Mediterranean identity without falling into fast-food clichés. They needed to showcase 6 physical locations, present their menu appetizingly, tell their brand story in an immersive way, and capture franchise inquiries — all in a single memorable web experience.\n\nThe Solution: A high-impact editorial single-page application (SPA). The architecture prioritizes brand narrative with immersive sections: a cinematic hero with product carousel, a 5-act brand story with an animated accordion, a store gallery with cinematic overlays, and integrated contact forms inside premium-designed modals.\n\nHow it works internally:\n• Custom SVG Wave Animation: A custom useWaveAnimation hook generates SVG wave paths procedurally in the navbar and footer based on hover position, creating an organic transition between the nav bar and content — with no heavy animation libraries.\n• Deterministic Particle Positions: Hero particles use predefined arrays instead of random generation, preventing hydration mismatch between SSR/CSR and guaranteeing visual consistency.\n• Dual HSL/RGB Token System: Hybrid CSS variables — RGB for dynamic opacity with alpha-value, and HSL for full compatibility with the shadcn/ui ecosystem.\n• Inline SVG Textures: feTurbulence and feColorMatrix used to create grain and paper textures directly in markup, eliminating additional image requests.\n• Smooth Anchor Scrolling: scroll-padding-top offset of 116px calculated to compensate fixed navbar + announcement bar, achieving precise scroll-to-anchor without hidden content.",
 
     "projects.jrlMexico.desc": "Hybrid e-commerce platform for Mexico's leading professional barbering tools brand, with Supabase catalog and Shopify Checkout integration.",
-    "projects.jrlMexico.longDesc": "The Problem: JRL México needed their own e-commerce site with full control over catalog, editorial content, and brand experience — without relying exclusively on Shopify for product management. They also required a purchase flow that ended in Shopify Checkout (for its payment gateway) but with a completely custom frontend.\n\nThe Solution: A hybrid architecture where Supabase acts as the single source of truth for the entire catalog, images, collections, and editorial content. The React frontend consumes the database directly via Supabase Data API. Active products are bidirectionally synced with Shopify (Admin API) so checkout and payment processing run on Shopify's infrastructure. The cart is managed in real-time via Shopify Storefront API GraphQL, generating a dynamic checkout URL that redirects the customer to Shopify Checkout.\n\nHow it works internally:\n• The catalog lives in Supabase (products, collections, product_images, product_variants, product_features).\n• Each product has a shopify_product_id and shopify_variant_id (GID) linking it to Shopify.\n• Edge Functions in Deno (bulk-sync-to-shopify, sync-product-to-shopify) handle sync to Shopify Admin API.\n• The cart uses Zustand + localStorage persistence and syncs with Shopify Storefront API on every operation (add, update, remove).\n• The admin panel protects routes via Supabase Auth + user_roles table with RLS policies using SECURITY DEFINER to prevent recursion.\n• All dynamic content (hero images, banners, Instagram posts, corporate texts) is managed from Supabase tables.",
 
     "projects.drcvCompany.desc": "Modern corporate website designed to boost businesses' online presence.",
-    "projects.drcvCompany.longDesc": "A modern corporate website designed to boost businesses' online presence. Optimized for efficiency and user experience, using Astro for performance and Vue.js for interactivity.",
 
     "projects.youtubeTranscribe.desc": "Web application that extracts and analyzes YouTube video content.",
-    "projects.youtubeTranscribe.longDesc": "Web application that extracts and analyzes YouTube video content. Uses a Python backend to get transcriptions and a language model (Ollama) to process and summarize text.",
 
     // Common
     "common.loading": "Loading...",
@@ -170,7 +155,7 @@ const translations = {
 
     // Home page
     "home.intro":
-      "si lo imaginas, de la manera correcta, todo se puede hacer. Soy un desarrollador Fullstack. Me apasiona el futbol. Crear sistemas que resuelven problemas reales, mejoran la logística y optimizan procesos en conjunto de interfaces modernas y estéticas.",
+      "si lo imaginas, de la manera correcta, todo se puede hacer. Soy un desarrollador Fullstack. Me apasiona el futbol y los deportes.",
     "home.terminal.intro": "Hola, mi nombre es Dante. Soy un desarrollador Fullstack apasionado por el diseño web y la programación",
     "home.learnMore": "Conoce más sobre mí",
     "home.featuredProjects": "Proyectos Destacados",
@@ -204,7 +189,7 @@ const translations = {
     // About page
     "about.initProfile": "Inicializando perfil personal... Acceso concedido. Cargando datos biográficos...",
     "about.bio":
-      "Hola, soy Dante. Desarrollador Full-stack e Ingeniero en Computación con más de 3 años de experiencia creando soluciones digitales eficientes y modernas. si lo imaginas, lo puedo desarrollar. Mi semana se divide entre crear y a veces optimizar sistemas de software y mi otra gran pasión: jugar al fútbol todos los fines de semana.",
+      "Hola, soy Dante. Desarrollador Full-stack e Ingeniero en Computación con más de 2 años de experiencia creando soluciones digitales eficientes y modernas. si lo imaginas, lo puedo desarrollar. Mi semana se divide entre crear y a veces optimizar sistemas de software y mi otra gran pasión: jugar al fútbol todos los fines de semana.",
     "about.downloadCV": "Descargar CV",
     "about.viewOnline": "Ver en Línea",
     "about.experienceTimeline": "Línea de Tiempo de Experiencia",
@@ -230,22 +215,22 @@ const translations = {
     "exp.digimex.title": "Desarrollador Full-Stack",
     "exp.digimex.company": "DIGIMEX",
     "exp.digimex.period": "Dic 2025 - Presente",
-    "exp.digimex.desc": "Diseñé y desarrollé un sistema de logística interna y plataforma B2B usando Next.js, React y TypeScript. Integré Supabase, construí Edge Functions y optimicé el flujo de desarrollo utilizando herramientas de IA para acelerar prototipos.",
+    "exp.digimex.desc": "Desarrollé múltiples soluciones web de logística, operaciones y comercio usando Next.js, React y TypeScript. Construí sitios B2B con integraciones de Shopify, catálogos de productos con flujos CRUD, sistemas respaldados por Supabase y checkouts conectados con Shopify y PayPal. También utilicé herramientas asistidas por IA para acelerar el prototipado y la entrega.",
 
     "exp.fyttsa.title": "Desarrollador Full-Stack",
     "exp.fyttsa.company": "Grupo Fyttsa",
     "exp.fyttsa.period": "Ago 2025 - Nov 2025",
     "exp.fyttsa.desc": "Desarrollo del ERP Kraken. Construí una arquitectura multitenant para soportar múltiples clientes y optimicé el consumo de APIs desde un backend en PHP, mejorando los tiempos de respuesta y la estabilidad del sistema.",
 
-    "exp.sozu.title": "Desarrollador Full-Stack",
+    "exp.sozu.title": "Desarrollador Full-Stack (Prácticas Profesionales)",
     "exp.sozu.company": "Grupo Inmobiliario Sozu",
-    "exp.sozu.period": "Sep 2024 - Abr 2025",
+    "exp.sozu.period": "Feb 2025 - Ago 2025",
     "exp.sozu.desc": "Participé en la modernización tecnológica del sistema interno de gestión inmobiliaria. Migré funcionalidades de sistemas heredados hacia una arquitectura moderna basada en React y TypeScript, integrando Supabase.",
 
-    "exp.freelance.title": "Software Developer (Proyectos por Contrato)",
-    "exp.freelance.company": "Remoto",
-    "exp.freelance.period": "Ene 2023 - Presente",
-    "exp.freelance.desc": "Desarrollé un sistema de análisis de transcripciones de video con Python y NLP para General Motors, con interfaz en Next.js. Lideré el desarrollo web de Seprytec, asegurando validación estricta con Zod y TypeScript.",
+    "exp.freelance.title": "Desarrollador de Software (Servicio Social)",
+    "exp.freelance.company": "Servicio Social",
+    "exp.freelance.period": "Ago 2024 - Nov 2024",
+    "exp.freelance.desc": "Desarrollé un motor de análisis de transcripciones de video con Python y NLP, acompañado de una interfaz en Next.js. Trabajé en el procesamiento, análisis de datos y la integración técnica necesaria para convertir contenido audiovisual en información utilizable.",
 
     "exp.university.title": "Ingeniería en Computación",
     "exp.university.company": "Universidad Autónoma del Estado de México",
@@ -258,49 +243,34 @@ const translations = {
 
     // Projects data
     "projects.aisuite.desc": "AI Suite B2B 100% on-premise con procesamiento acelerado por GPU. Extrae, transcribe y razona sobre contratos legales y audios utilizando LLMs locales para garantizar Cero Fugas de Datos (Offline Privacy).",
-    "projects.aisuite.longDesc": "El Problema: Las corporaciones, firmas legales y altos ejecutivos enfrentan un cuello de botella crítico: necesitan el poder de la Inteligencia Artificial para auditar cientos de horas de reuniones o contratos pesados, pero el departamento de seguridad (Compliance) les prohíbe estrictamente enviar datos confidenciales a APIs públicas por los enormes riesgos de la fuga de datos o el incumplimiento legal.\n\nLa Solución & Arquitectura (Soberanía de Datos): Desarrollé una suite de IA de grado empresarial diseñada bajo una filosofía Zero Data Leakage. El sistema no depende de internet ni consume tokens en nubes de terceros. El análisis, las transcripciones de audio y la inferencia ocurren en hardware propio de forma aislada. Adicionalmente, el costo marginal por análisis dentro de esta Bóveda es literalmente $0.00.\n\n¿Cómo funciona internamente? (El Stack Deep-Tech):\n• Infraestructura Segura: Despliegue en un servidor Linux propio gerenciado con PM2, expuesto únicamente a través de túneles Zero-Trust (Cloudflare Tunnels y Tailscale).\n• Motor de Inferencia (Backend Python VRAM): Una API especializada en Flask que distribuye inteligentemente el procesamiento. Usa la CPU (LiteParse) para una ingesta y parsing ultrarrápido de PDFs, preservando toda la memoria de video (GPU/RTX) para el razonamiento profundo y complejo usando LLMs locales (Llama 3 / Qwen) vía Ollama y transcripciones mediante Whisper.\n• Consola de Operador (Frontend Next.js): Una interfaz B2B inmersa ('Command Center') con microanimaciones, arrastre de archivos multimodal, exportación de reportes PDF encriptados, y un 'Chat Widget' con el contexto del documento inyectado.",
 
     "projects.pos.desc": "Ecosistema POS impulsado por un Agente IA autónomo que gestiona ventas directas al carrito en tiempo real.",
-    "projects.pos.longDesc": "El Problema: La industria del retail e-commerce pierde ventas usando chatbots genéricos de 'preguntas frecuentes' que frustran al cliente enviando enlaces inútiles. Presento la Solución: Un ecosistema de Retail Inteligente protagonizado por 'Miboot', un Agente IA que no solo conversa, sino que ejecuta herramientas del backend. Lee la intención del usuario, verifica el stock real en la base de datos y añade los productos directamente al carrito (Zero-Click Conversion). Diseñado sobre una arquitectura Multi-Tenant y potenciado por LLMs de ejecución local, garantizando cero costo por token y soberanía absoluta de los datos para la tienda.",
 
     "projects.noteDrcv.desc": "Plataforma de productividad On-Premise con arquitectura backend asíncrona propia, seguridad nativa JWT y despliegue Zero-Trust.",
-    "projects.noteDrcv.longDesc": "Plataforma escalable de productividad y toma de notas gestionada al 100% On-Premise. Implementa un backend monolítico en Python avanzado (FastAPI) con un sistema de seguridad JWT customizado desde cero. La infraestructura orquesta Next.js, bases de datos PostgreSQL en contenedores aislados y daemonización con PM2, todo expuesto globalmente de forma segura mediante túneles inversos de Cloudflare (Zero Trust).",
 
     "projects.battlekart.desc": "Sistema completo de gamificación y lealtad con panel de administración para gestión de recompensas y clientes.",
-    "projects.battlekart.longDesc": "Una impresionante solución frontend de control de lealtad impulsada por mecánicas de gamificación. Facilita la retención de clientes a través de un sistema de niveles VIP, membresías anuales y cupones de descuentos canjeables. El proyecto posee un módulo de simulación de base de datos con persistencia en LocalStorage para desplegar la demostración a máxima velocidad sin dependencia de backend. Incluye también un Terminal POS virtual para personalización de redenciones y registro de carreras en tiempo real.",
 
     "projects.catalogo.desc": "Sistema de catálogo multi-sucursal con gestión de inventario y UX de alta gama.",
-    "projects.catalogo.longDesc": "Plataforma digital optimizada para la visualización y administración de catálogos premium en múltiples ubicaciones geográficas. Integra un panel administrativo completo con persistencia local que permite la gestión ágil de marcas, categorías y variantes.",
 
     "projects.balazhi.desc": "Exhibición premium de materiales de lujo.",
-    "projects.balazhi.longDesc": "Balazhi Stone es una plataforma web sofisticada diseñada para la exhibición y distribución de piedras sinterizadas, cuarzos y porcelanatos de alta gama en México. El proyecto se enfoca en una estética minimalista 'Premium Dark' con acentos dorados.",
 
     "projects.greenAlchemy.desc": "Sistema de Gestión de Logística con arquitectura para mejorar flujos de trabajo dentro la empresa.",
-    "projects.greenAlchemy.longDesc": "Un sistema avanzado de gestión de logística que centraliza los flujos de venta, tesorería y logística en una interfaz elegante y funcional. Implementa una arquitectura autónoma basada en demoStorage para garantizar persistencia y operatividad total.",
 
     "projects.one.desc": "Plataforma holística premium para el bienestar personal y la conexión espiritual profunda.",
-    "projects.one.longDesc": "Una experiencia digital integral que fusiona una boutique de cristales curativos, un centro de formación espiritual y un catálogo de terapias y retiros sagrados. Diseñada con una estética elegante y minimalista, la plataforma ofrece una navegación fluida con efectos de paralaje y persistencia de datos local.",
 
     "projects.probin.desc": "Plataforma premium para la exhibición de desarrollos inmobiliarios y gestión integral interactiva de CRM.",
-    "projects.probin.longDesc": "Una solución frontend de alto nivel que combina un portal inmersivo para la presentación de múltiples proyectos inmobiliarios con un potente panel administrativo. Permite a los agentes gestionar leads, citas, perfiles de clientes, campañas y checklists de cierre operativo. Está impulsada por un MockDB basado en LocalStorage, garantizando demostraciones de ventas ultrarrápidas, persistencia de datos offline y una experiencia visual fluida sin dependencia de un backend tradicional.",
 
     "projects.winpot.desc": "CMS multi-tenant de alto rendimiento para la gestión dinámica de casinos y contenido gamificado.",
-    "projects.winpot.longDesc": "Una solución robusta para redes de casinos que centraliza la administración de múltiples identidades de marca en un solo núcleo técnico. Implementa un sistema de diseño atómico y arquitectura basada en tenants para ofrecer experiencias personalizadas.",
 
     "projects.seprytec.desc": "Sitio web moderno para una empresa de seguridad privada.",
-    "projects.seprytec.longDesc": "Sitio web moderno para una empresa de seguridad privada. Diseñado para infundir confianza a través de un diseño intuitivo y navegación fluida.",
 
     "projects.greekos.desc": "Landing page editorial cinematográfica para una marca premium de yogurt helado griego mediterráneo con 6 ubicaciones en México.",
-    "projects.greekos.longDesc": "El Problema: Greekos necesitaba una presencia digital que transmitiera su identidad premium mediterránea sin caer en clichés de fast food. Requerían mostrar 6 tiendas físicas, presentar su menú de forma apetecible, contar su historia de marca de manera envolvente, y capturar consultas de franquicias — todo en una sola experiencia web memorable.\n\nLa Solución: Una single-page application (SPA) tipo landing page editorial de alto impacto visual. La arquitectura prioriza la narrativa de marca con secciones inmersivas: un hero cinematográfico con carrusel de productos, una historia de marca en 5 actos con acordeón animado, una galería de tiendas con overlays cinematográficos, y formularios de contacto integrados en modales con diseño premium.\n\nCómo funciona internamente:\n• Animación de onda SVG procedural: Un hook custom useWaveAnimation genera paths SVG de onda en tiempo real en navbar y footer según la posición del hover, creando una transición orgánica única sin librerías de animación pesadas.\n• Posiciones determinísticas para partículas: Las partículas del hero usan arrays predefinidos en lugar de generación aleatoria, evitando hydration mismatch entre SSR/CSR y garantizando consistencia visual.\n• Sistema de tokens dual HSL/RGB: Variables CSS híbridas — RGB para opacidad dinámica con alpha-value, y HSL para compatibilidad total con el ecosistema shadcn/ui.\n• Texturas SVG inline: feTurbulence y feColorMatrix para crear texturas de grano y papel directamente en el markup, eliminando requests de imagen adicionales.\n• Scroll suave a anclas exactas: scroll-padding-top de 116px calculado para compensar navbar fijo + announcement bar, logrando scroll preciso sin contenido tapado.",
 
     "projects.jrlMexico.desc": "Plataforma e-commerce híbrida para la marca líder de herramientas de barbería profesional en México, con catálogo en Supabase e integración a Shopify Checkout.",
-    "projects.jrlMexico.longDesc": "El Problema: JRL México necesitaba un sitio de e-commerce propio con control total sobre el catálogo, contenido editorial y experiencia de marca, sin depender exclusivamente de Shopify. Además, requerían un flujo de compra que terminara en Shopify Checkout (por su pasarela de pagos) con un frontend completamente custom.\n\nLa Solución: Una arquitectura híbrida donde Supabase actúa como fuente de verdad de todo el catálogo, imágenes, colecciones y contenido editorial. El frontend React consume directamente la base de datos vía Supabase Data API. Los productos activos se sincronizan bidireccionalmente con Shopify (Admin API) para que el checkout y pagos se ejecuten en su infraestructura. El carrito se gestiona en tiempo real mediante la Shopify Storefront API GraphQL, generando un checkout URL dinámico.\n\nCómo funciona internamente:\n• El catálogo vive en Supabase (products, collections, product_images, product_variants, product_features).\n• Cada producto tiene un shopify_product_id y shopify_variant_id (GID) que lo vincula a Shopify.\n• Edge Functions en Deno (bulk-sync-to-shopify, sync-product-to-shopify) manejan la sincronización a Shopify Admin API.\n• El carrito usa Zustand + persistencia en localStorage y sincroniza con Shopify Storefront API en cada operación (add, update, remove).\n• El admin panel protege rutas vía Supabase Auth + tabla user_roles con RLS policies usando SECURITY DEFINER para evitar recursión.\n• Todo el contenido dinámico (hero images, banners, posts de Instagram, textos corporativos) se administra desde tablas de Supabase.",
 
     "projects.drcvCompany.desc": "Sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas.",
-    "projects.drcvCompany.longDesc": "Un sitio web corporativo moderno diseñado para impulsar la presencia en línea de las empresas. Optimizado para eficiencia y experiencia de usuario, utilizando Astro para rendimiento y Vue.js para interactividad.",
 
     "projects.youtubeTranscribe.desc": "Aplicación web que extrae y analiza el contenido de videos de YouTube.",
-    "projects.youtubeTranscribe.longDesc": "Aplicación web que extrae y analiza el contenido de videos de YouTube. Utiliza un backend en Python para obtener transcripciones y un modelo de lenguaje (Ollama) para procesar y resumir el texto.",
 
     // Common
     "common.loading": "Cargando...",

@@ -3,7 +3,7 @@
 import { useParams, notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Github, ExternalLink, Globe, Play, Pause } from "lucide-react"
+import { ArrowLeft, Github, ExternalLink, Globe, Play, Pause, ArrowUpRight, Layers3, ShieldCheck } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import { useLanguage } from "@/contexts/language-context"
 
@@ -31,7 +31,6 @@ export default function ProjectPage() {
       github: "#",
       demo: "#",
       production: "https://aisuite.drcv.online/",
-      longDescription: t("projects.aisuite.longDesc"),
       credentials: { user: "prueba@drcv.company", pass: "pruebas123" },
     },
     pos: {
@@ -49,7 +48,6 @@ export default function ProjectPage() {
       github: "#",
       demo: "#",
       production: "https://store.drcv.online/store",
-      longDescription: t("projects.pos.longDesc"),
     },
     noteDrcv: {
       title: "Note DRCV (Productivity On-Premise)",
@@ -63,7 +61,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/noteapp",
       demo: "#",
       production: "https://note.drcv.online/",
-      longDescription: t("projects.noteDrcv.longDesc"),
     },
     battlekart: {
       title: "Go-Kart Zen Loyalty System",
@@ -82,7 +79,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/battlekart-drcv",
       demo: "https://battlekarvip.drcv.site/",
       production: "https://battlekartvip.com/",
-      longDescription: t("projects.battlekart.longDesc"),
     },
     catalogo: {
       title: "Green Alchemy — Catálogo Digital",
@@ -98,7 +94,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/catalogo-alchemy",
       demo: "#",
       production: "https://catalogo-alchemy.drcv.site/",
-      longDescription: t("projects.catalogo.longDesc"),
     },
     balazhi: {
       title: "Balazhi Stone",
@@ -114,7 +109,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/balazhi-for-drcv",
       demo: "https://balazhi.drcv.site/",
       production: "https://balazhistone.com/",
-      longDescription: t("projects.balazhi.longDesc"),
     },
     green_alchemy_sgl: {
       title: "Green Alchemy SGL",
@@ -130,7 +124,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/greensystem-for-drcv",
       demo: "#",
       production: "https://greensystem.com.mx/",
-      longDescription: t("projects.greenAlchemy.longDesc"),
     },
     one_soul: {
       title: "ONE · Soul Essence",
@@ -146,7 +139,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/onefordrcv",
       demo: "https://one.drcv.site/",
       production: "https://onesomosuno.com/",
-      longDescription: t("projects.one.longDesc"),
     },
     probin: {
       title: "Probin Real Estate CMS",
@@ -162,7 +154,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/probin-for-dante",
       demo: "https://probin.drcv.site/",
       production: "https://probinrealestate.com/",
-      longDescription: t("projects.probin.longDesc"),
     },
     winpot: {
       title: "Winpot CMS & Multi-Tenant",
@@ -178,7 +169,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/winpotfordrcv",
       demo: "http://winpot.drcv.site/",
       production: "https://winpotsetup.com/",
-      longDescription: t("projects.winpot.longDesc"),
     },
     greekos: {
       title: "Greekos — Sitio Web Oficial",
@@ -191,7 +181,6 @@ export default function ProjectPage() {
       github: "#",
       demo: "#",
       production: "https://www.greekos.com.mx",
-      longDescription: t("projects.greekos.longDesc"),
     },
     jrl_mexico: {
       title: "JRL México — E-commerce Profesional",
@@ -204,7 +193,6 @@ export default function ProjectPage() {
       github: "#",
       demo: "#",
       production: "https://www.jrlmexico.mx",
-      longDescription: t("projects.jrlMexico.longDesc"),
     },
     seprytec: {
       title: "Seprytec",
@@ -219,7 +207,6 @@ export default function ProjectPage() {
       github: "https://github.com/drcvmx/seprytec_remaster",
       demo: "#",
       production: "https://seprytec.drcv.site/",
-      longDescription: t("projects.seprytec.longDesc"),
     },
   }
 
@@ -310,36 +297,47 @@ export default function ProjectPage() {
 
   return (
     <div className="space-y-8">
-      <Link href="/projects" className="inline-flex items-center gap-2 text-primary hover:underline">
+      <Link href="/projects" className="project-back-link inline-flex items-center gap-2 text-primary hover:underline">
         <ArrowLeft size={16} /> {t("project.backToProjects")}
       </Link>
 
-      <div className="terminal-window">
-        <div className="terminal-header">
-          <div className="terminal-button terminal-button-red"></div>
-          <div className="terminal-button terminal-button-yellow"></div>
-          <div className="terminal-button terminal-button-green"></div>
-          <div className="terminal-title">project_details.sh</div>
-        </div>
-        <div className="terminal-content">
-          <p className="mb-2">
-            <span className="text-primary">$</span> cat {id}.json
-          </p>
-          <div className="mb-4">
-            <p>
-              <span className="text-primary">{t("common.title")}:</span> {project.title}
-            </p>
-            <p>
-              <span className="text-primary">{t("common.category")}:</span> {project.category}
-            </p>
-            <p className="flex flex-wrap gap-2 mt-2">
-              <span className="text-primary">{t("common.stack")}:</span>
-              {project.technologies.map((tech, index) => (
-                <span key={index} className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded">
-                  {tech}
-                </span>
-              ))}
-            </p>
+      <div className="project-dossier terminal-window scanline">
+        <div className="project-dossier-grid" />
+        <div className="relative z-10">
+          <div className="terminal-header">
+            <div className="terminal-button terminal-button-red"></div>
+            <div className="terminal-button terminal-button-yellow"></div>
+            <div className="terminal-button terminal-button-green"></div>
+            <div className="terminal-title">project_dossier.sh // {id}</div>
+            <span className="ml-auto text-xs text-accent-500">ONLINE</span>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end py-6">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-accent-500 mb-3">&gt; dossier_loaded / {project.category}</p>
+              <h1 className="glitch text-3xl md:text-5xl font-bold text-white neon-text-purple" data-text={project.title}>
+                {project.title}
+              </h1>
+              <p className="mt-4 max-w-3xl text-sm md:text-base leading-relaxed text-white/75">{project.description}</p>
+            </div>
+            <div className="project-status text-right">
+              <ShieldCheck size={22} className="ml-auto text-accent-500" />
+              <span className="mt-2 block text-[10px] uppercase tracking-[0.2em] text-white/50">Verified build</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-px border border-primary/20 bg-primary/20 sm:grid-cols-4">
+            <div className="project-metric"><span>MODULE</span><strong>{project.category.toUpperCase()}</strong></div>
+            <div className="project-metric"><span>MEDIA</span><strong>{carouselItems.length} ASSETS</strong></div>
+            <div className="project-metric"><span>STACK</span><strong>{project.technologies.length} TOOLS</strong></div>
+            <div className="project-metric"><span>STATUS</span><strong className="text-accent-500">DEPLOYED</strong></div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {project.technologies.slice(0, 6).map((tech) => (
+              <span key={tech} className="project-tech-tag"><Layers3 size={12} />{tech}</span>
+            ))}
+            {project.technologies.length > 6 && <span className="project-tech-tag">+{project.technologies.length - 6} more</span>}
           </div>
         </div>
       </div>
@@ -497,7 +495,8 @@ export default function ProjectPage() {
         )}
       </div>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="project-actions flex flex-wrap gap-3">
+        <span className="w-full text-xs uppercase tracking-[0.2em] text-accent-500">// access_points</span>
         {project.github && project.github !== "#" && (
           <a
             href={project.github}
@@ -505,7 +504,7 @@ export default function ProjectPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-4 py-2 rounded-md transition-colors"
           >
-            <Github size={16} /> {t("project.viewOnGithub")}
+            <Github size={16} /> {t("project.viewOnGithub")} <ArrowUpRight size={14} />
           </a>
         )}
         {project.demo && project.demo !== "#" && (
@@ -515,7 +514,7 @@ export default function ProjectPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-md transition-colors border border-primary/30"
           >
-            <ExternalLink size={16} /> {t("project.liveDemo")}
+            <ExternalLink size={16} /> {t("project.liveDemo")} <ArrowUpRight size={14} />
           </a>
         )}
         {project.production && project.production !== "#" && project.production !== project.demo && (
@@ -525,14 +524,9 @@ export default function ProjectPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent-500/20 hover:bg-accent-500/30 text-accent-500 px-4 py-2 rounded-md transition-colors border border-accent-500/40 font-bold"
           >
-            <Globe size={16} /> {t("project.production")}
+            <Globe size={16} /> {t("project.production")} <ArrowUpRight size={14} />
           </a>
         )}
-      </div>
-
-      <div className="prose prose-invert max-w-none">
-        <h2 className="text-2xl font-bold mb-4 text-white neon-text-purple">{t("project.overview")}</h2>
-        <p className="text-muted-foreground">{project.longDescription}</p>
       </div>
 
       {/* Credenciales de acceso (solo para proyectos premium como AISUITE) */}

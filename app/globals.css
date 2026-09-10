@@ -222,6 +222,89 @@
   white-space: pre-line;
 }
 
+.project-dossier {
+  isolation: isolate;
+  overflow: hidden;
+  animation: dossier-enter 0.6s ease-out both;
+}
+
+.project-dossier-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: linear-gradient(rgba(255, 0, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(90deg, black, transparent 82%);
+}
+
+.project-status {
+  border-left: 1px solid rgba(0, 255, 255, 0.35);
+  padding-left: 1.5rem;
+}
+
+.project-metric {
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 2, 29, 0.7);
+}
+
+.project-metric span,
+.project-metric strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-metric span {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+}
+
+.project-metric strong {
+  margin-top: 0.35rem;
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.project-tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 255, 255, 0.06);
+  color: #67ffff;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
+.project-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@keyframes dossier-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .project-status {
+    border-left: 0;
+    border-top: 1px solid rgba(0, 255, 255, 0.35);
+    padding: 0.75rem 0 0;
+    text-align: left;
+  }
+
+  .project-status svg { margin-left: 0; }
+}
+
 .command-prompt::before {
   content: "$ ";
   color: #ff00ff;
@@ -633,3 +716,200 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #ff00ff #00021D;
 }
+
+/* ================================================================
+   AI COPILOT SECTION STYLES
+   ================================================================ */
+
+/* --- Marquee --- */
+.copilot-marquee-wrapper { position: relative; }
+.copilot-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: copilot-marquee 22s linear infinite;
+}
+.copilot-marquee-reverse {
+  animation-direction: reverse;
+}
+@keyframes copilot-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --- Badge neon --- */
+.copilot-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--badge-color, #ff00ff);
+  padding: 4px 10px;
+  font-size: 11px;
+  font-family: var(--font-jetbrains-mono), monospace;
+  color: var(--badge-color, #ff00ff);
+  background: color-mix(in srgb, var(--badge-color, #ff00ff) 6%, transparent);
+  text-shadow: 0 0 8px var(--badge-color, #ff00ff);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--badge-color, #ff00ff) 30%, transparent),
+              inset 0 0 6px color-mix(in srgb, var(--badge-color, #ff00ff) 10%, transparent);
+  transition: all 0.25s ease;
+}
+.copilot-badge:hover {
+  box-shadow: 0 0 16px var(--badge-color, #ff00ff),
+              inset 0 0 10px color-mix(in srgb, var(--badge-color, #ff00ff) 20%, transparent);
+}
+.copilot-badge-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--badge-color, #ff00ff);
+  box-shadow: 0 0 6px var(--badge-color, #ff00ff);
+  animation: subtle-flicker 3s infinite;
+}
+
+/* --- Panel sweep (existing but ensure defined) --- */
+.panel-sweep {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(0,255,255,0.07), transparent);
+  height: 40%;
+  transform: translateY(-120%);
+  animation: panel-sweep 6s ease-in-out infinite;
+}
+@keyframes panel-sweep {
+  0% { transform: translateY(-120%); }
+  60%, 100% { transform: translateY(320%); }
+}
+
+/* --- Meter fill --- */
+.meter-fill {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 8px rgba(0,255,255,0.45);
+  transition: width 1.4s cubic-bezier(.2,.8,.2,1);
+}
+
+/* --- Log line animation --- */
+.log-line { animation: log-in 0.45s ease-out both; }
+@keyframes log-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* --- Blink dot --- */
+.copilot-blink { animation: copilot-blink 1.2s steps(2) infinite; }
+@keyframes copilot-blink { 50% { opacity: 0; } }
+
+/* --- Pillar card internal scanline + glitch blocks --- */
+.copilot-pillar-card { overflow: hidden; }
+.copilot-card-scan {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255,0,255,0.015) 3px,
+    rgba(255,0,255,0.015) 4px
+  );
+  z-index: 0;
+}
+.copilot-glitch-block {
+  position: absolute;
+  width: 40%;
+  height: 3px;
+  background: #ff00ff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.copilot-pillar-card:hover .copilot-glitch-block-1 {
+  animation: glitch-block-1 0.5s steps(1) infinite;
+}
+.copilot-pillar-card:hover .copilot-glitch-block-2 {
+  animation: glitch-block-2 0.7s steps(1) infinite;
+}
+@keyframes glitch-block-1 {
+  0%, 100% { opacity: 0; top: 20%; left: 10%; width: 35%; background: #ff00ff; }
+  33%       { opacity: 0.6; top: 45%; left: 5%; width: 50%; background: #00ffff; }
+  66%       { opacity: 0.3; top: 70%; left: 30%; width: 25%; }
+}
+@keyframes glitch-block-2 {
+  0%, 100% { opacity: 0; top: 60%; left: 55%; width: 30%; background: #00ffff; }
+  40%       { opacity: 0.5; top: 30%; left: 60%; width: 20%; background: #ff00ff; }
+  80%       { opacity: 0.2; top: 80%; left: 40%; width: 45%; }
+}
+
+/* --- Cyberpunk background layers --- */
+.copilot-persp-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,0,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,0,255,0.07) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(400px) rotateX(20deg) scaleY(2.5);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, black 0%, transparent 70%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 70%);
+  z-index: 0;
+}
+.copilot-noise {
+  position: absolute; inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none; z-index: 0;
+}
+.copilot-bg-block {
+  position: absolute;
+  height: 2px;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+.copilot-bg-block-1 {
+  top: 22%; left: 5%; width: 15%;
+  background: #ff00ff;
+  opacity: 0.18;
+  animation: copilot-float-block 7s steps(3) infinite;
+}
+.copilot-bg-block-2 {
+  top: 55%; right: 8%; width: 10%;
+  background: #00ffff;
+  opacity: 0.14;
+  animation: copilot-float-block 5.5s steps(3) infinite 1.2s;
+}
+.copilot-bg-block-3 {
+  top: 78%; left: 35%; width: 8%;
+  background: #ff00ff;
+  opacity: 0.12;
+  animation: copilot-float-block 9s steps(3) infinite 0.5s;
+}
+@keyframes copilot-float-block {
+  0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.15; }
+  33%       { transform: translateX(12px) scaleX(1.6); opacity: 0.5; }
+  66%       { transform: translateX(-6px) scaleX(0.7); opacity: 0.1; }
+}
+.copilot-flare {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+.copilot-flare-pink {
+  width: 350px; height: 350px;
+  top: -80px; left: -80px;
+  background: radial-gradient(circle, rgba(255,0,255,0.12), transparent 70%);
+}
+.copilot-flare-cyan {
+  width: 300px; height: 300px;
+  bottom: -60px; right: -60px;
+  background: radial-gradient(circle, rgba(0,255,255,0.10), transparent 70%);
+}
+
+/* --- hover glow cyan (ensure defined) --- */
+.hover-glow-cyan:hover {
+  box-shadow:
+    0 0 10px rgba(0,255,255,0.8),
+    0 0 30px rgba(0,255,255,0.5),
+    0 0 60px rgba(0,255,255,0.2);
+  transition: box-shadow 0.3s ease;
+}
+
