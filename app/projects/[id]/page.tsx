@@ -221,7 +221,7 @@ export default function ProjectPage() {
       ],
       technologies: ["Next.js 14", "React", "TypeScript", "Express", "Node.js", "Oracle Database 19c", "JWT", "bcryptjs", "Joi", "Zod", "OCI"],
       category: "backend",
-      github: "https://github.com/drcvmx/control-delincuencia-con-backend",
+      github: "https://github.com/drcvmx/control-delincuencia-con-backend-express-intancia-oracle",
       demo: "#",
       production: "#",
     },
